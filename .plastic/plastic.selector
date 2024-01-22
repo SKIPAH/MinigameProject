@@ -1,0 +1,4 @@
+repository "MinigameProject@unity_0F42CAD0590775A17380@cloud"
+  path "/"
+    br "/main"
+    co "/main"
