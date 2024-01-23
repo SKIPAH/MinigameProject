@@ -11,5 +11,6 @@ public class Teleport : MonoBehaviour, IInteractable
     {
         PlayerMonkey.Instance.transform.position = teleportDestination.position;
         PlayerMonkey2.Instance.transform.position = teleportDestination.position;
+        PlayerMonkey3.Instance.transform.position = teleportDestination.position;
     }
 }

@@ -35,8 +35,8 @@ public class MiniGameManager : MonoBehaviour
     private void Start()
     {
         player.OnPlayerDied += Player_OnPlayerDied;
-        //   gameState = State.Countdown;
-        gameState = State.TestState;
+        gameState = State.Countdown;
+        //gameState = State.TestState;
     }
 
     private void Player_OnPlayerDied(object sender, EventArgs e)

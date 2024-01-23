@@ -2,19 +2,45 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerMonkey3 : MonoBehaviour
 {
+
+    public static PlayerMonkey3 Instance { get; private set; }
 
     [SerializeField] private Transform coconutFull;
     [SerializeField] private Transform coconutCut;
 
+    [SerializeField] private float speed = 5f;
+
+    private IInteractable interactable = null;
+
+    private bool isInteractable = false;
+
     private int coconutsCutMax = 50;
     private int coconutsCutten = 0;
 
+    private float horizontal;
+    private float vertical;
 
+    private bool canMove = false;
+
+
+    private void Start()
+    {
+        Instance = this;
+    }
     private void Update()
     {
         CutCoconut();
+        if (canMove)
+        {
+            Movement();
+        }
+        if (Input.GetKeyDown(KeyCode.E) && isInteractable)
+        {
+            interactable.Interact();
+        }
     }
 
     private void CutCoconut()
@@ -29,9 +55,34 @@ public class PlayerMonkey3 : MonoBehaviour
             else
             {
                 Debug.Log("Enough");
+                canMove = true;
             }
-            
         }
+
+    }
+
+    private void Movement()
+    {
+        horizontal = Input.GetAxisRaw("Horizontal");
+        vertical = Input.GetAxisRaw("Vertical");
+        Vector3 movement = new Vector3(horizontal, vertical, 0).normalized;
+
+        transform.position += movement * speed * Time.deltaTime;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        interactable = collision.GetComponent<IInteractable>();
+        if (interactable != null)
+        {
+            isInteractable = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        interactable = null;
+        isInteractable = false;
     }
 
 

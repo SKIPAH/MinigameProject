@@ -27,7 +27,7 @@ public class LionEnemy : MonoBehaviour, IPlayerDied
 
     private void Start()
     {
-        isGameOn = true;
+        isGameOn = false;
         lionTransform = gameObject.transform;
         bananas.OnBananaHit += Bananas_OnBananaHit;
     }
