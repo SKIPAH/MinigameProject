@@ -8,6 +8,8 @@ public class PlayerMonkey3 : MonoBehaviour
 
     public static PlayerMonkey3 Instance { get; private set; }
 
+    
+
     [SerializeField] private Transform coconutFull;
     [SerializeField] private Transform coconutCut;
 
@@ -50,6 +52,7 @@ public class PlayerMonkey3 : MonoBehaviour
             if(coconutsCutten < coconutsCutMax )
             {
                 Transform coconut = Instantiate(coconutCut, coconutFull.GetComponent<Transform>().position, coconutFull.GetComponent<Transform>().rotation);
+                Destroy(coconut.gameObject, 15f);
                 coconutsCutten++;
             }
             else

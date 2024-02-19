@@ -8,6 +8,10 @@ public class PlayerMonkey2 : MonoBehaviour
     public static PlayerMonkey2 Instance { get; private set; }
 
     public event EventHandler OnPlayer2Died;
+
+    public event EventHandler OnPlayer2Teleported;
+    
+
     private IInteractable interactable = null;
 
     private float horizontal;
@@ -28,7 +32,9 @@ public class PlayerMonkey2 : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E) && isInteractable)
         {
-            interactable.Interact();
+            OnPlayer2Teleported?.Invoke(this, EventArgs.Empty);
+            SwapMonkey.Instance.SwapMonkeyMode();
+            interactable.Interact();  
         }
     }
 

@@ -18,7 +18,7 @@ public class GameLionUI : MonoBehaviour
     {
         Hide();
         lionGame.OnLionGameStarted += LionGame_OnLionGameStarted;
-      //  teleportToCoconut.SetActive(false);
+        teleportToCoconut.SetActive(false);
     }
 
     private void LionGame_OnLionGameStarted(object sender, System.EventArgs e)

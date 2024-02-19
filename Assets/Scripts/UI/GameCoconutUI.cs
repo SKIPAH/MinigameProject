@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GameCoconutUI : MonoBehaviour
 {
+    
     [SerializeField] private Text roundTimeText;
     [SerializeField] private Text countdownTimerText;
 
@@ -18,10 +19,16 @@ public class GameCoconutUI : MonoBehaviour
 
     private void Start()
     {
+        PlayerMonkey2.Instance.OnPlayer2Teleported += Instance_OnPlayer2Teleported;
         roundTimeText.text = string.Empty;
         Hide();
     }
 
+    private void Instance_OnPlayer2Teleported(object sender, System.EventArgs e)
+    {
+        Show();
+        isCoconutGameOn = true;
+    }
 
     private void CountdownTimer()
     {
@@ -40,10 +47,6 @@ public class GameCoconutUI : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        
-    }
 
     private void Show()
     {

@@ -29,6 +29,13 @@ public class PlayerMonkey : MonoBehaviour
 
     private bool isInteractable = false;
 
+    private enum MonkeyState
+    {
+        mode2d,
+        modetopdown,
+        modecoconut
+    }
+
 
 
     private void Start()

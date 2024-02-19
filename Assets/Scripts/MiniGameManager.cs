@@ -22,7 +22,6 @@ public class MiniGameManager : MonoBehaviour
         GameOver,
         Countdown,
         WaitingForTeleport,
-        TestState
     }
 
     private State gameState;
@@ -36,7 +35,7 @@ public class MiniGameManager : MonoBehaviour
     {
         player.OnPlayerDied += Player_OnPlayerDied;
         gameState = State.Countdown;
-        //gameState = State.TestState;
+        
     }
 
     private void Player_OnPlayerDied(object sender, EventArgs e)
@@ -46,7 +45,7 @@ public class MiniGameManager : MonoBehaviour
 
     private void Update()
     {
-       // Debug.Log(gameState);
+    
         switch (gameState)
         {
             case State.Countdown:
@@ -68,8 +67,7 @@ public class MiniGameManager : MonoBehaviour
                 break;
             case State.WaitingForTeleport:
                 break;
-            case State.TestState:
-                break;
+
 
         }
     }

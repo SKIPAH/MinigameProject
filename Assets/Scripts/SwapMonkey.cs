@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class SwapMonkey : MonoBehaviour
 {
+
+    public static SwapMonkey Instance { get; private set; }
+    [SerializeField] private PlayerMonkey2 monkey2;
+
     [SerializeField] private List<GameObject> playerMonkeys = new List<GameObject>();
     [SerializeField] private CinemachineVirtualCamera virtualCamera;
     [SerializeField] private Bananas bananas;
@@ -12,6 +16,8 @@ public class SwapMonkey : MonoBehaviour
 
     private void Start()
     {
+        Instance = this;
+
         if (playerMonkeys.Count > 0)
         {
             currentMonkey = playerMonkeys[0];
@@ -28,6 +34,11 @@ public class SwapMonkey : MonoBehaviour
         }
     }
 
+    private void Monkey2_OnPlayer2Teleported(object sender, System.EventArgs e)
+    {
+        SwapMonkeyMode();
+    }
+
     private void Bananas_OnBananaHit(object sender, System.EventArgs e)
     {
         SwapMonkeyMode();
@@ -41,7 +52,7 @@ public class SwapMonkey : MonoBehaviour
         }
     }
 
-    private void SwapMonkeyMode()
+    public void SwapMonkeyMode()
     {
         int currentIndex = playerMonkeys.IndexOf(currentMonkey);
         int nextIndex = (currentIndex + 1) % playerMonkeys.Count;
@@ -54,78 +65,3 @@ public class SwapMonkey : MonoBehaviour
         Debug.Log("Switched to monkey " + (nextIndex + 1));
     }
 }
-
-    /* OLD CODE MADE CHATGPT DO THIS BETTR ONE
-   
-
-public class SwapMonkey : MonoBehaviour
-{
-    [SerializeField] private GameObject playerMonkey1;
-    [SerializeField] private GameObject playerMonkey2;
-    [SerializeField] private GameObject playerMonkey3;
-
-    [SerializeField] private CinemachineVirtualCamera virtualCamera;
-    [SerializeField] private Bananas bananas;
-    private GameObject currentMonkey;
-
-
-
-    private void Start()
-    {
-        currentMonkey = playerMonkey1;
-        playerMonkey1.SetActive(true);
-        playerMonkey2.SetActive(false);
-        playerMonkey3.SetActive(false);
-        bananas.OnBananaHit += Bananas_OnBananaHit;
-
-
-    }
-
-    private void Bananas_OnBananaHit(object sender, System.EventArgs e)
-    {
-        SwapMonkeyMode();
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            SwapMonkeyMode();
-        }
-    }
-
-
-    private void SwapMonkeyMode()
-    {
-
-
-        if (currentMonkey == playerMonkey1)
-        {
-            playerMonkey1.SetActive(false);
-            playerMonkey2.SetActive(true);
-            currentMonkey = playerMonkey2;
-            virtualCamera.Follow = playerMonkey2.transform;
-            Debug.Log("lol");
-        }
-        else if (currentMonkey == playerMonkey2)
-        {
-            playerMonkey2.SetActive(false);
-            playerMonkey3.SetActive(true);
-            currentMonkey = playerMonkey3;
-            virtualCamera.Follow = playerMonkey3.transform;
-            Debug.Log("xd");
-        }
-        else
-        {
-            playerMonkey3.SetActive(false);
-            playerMonkey1.SetActive(true);
-            currentMonkey = playerMonkey1;
-            virtualCamera.Follow = playerMonkey1.transform;
-            Debug.Log("loler");
-        }
-    }
-
-}
-
-}
-    */

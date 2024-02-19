@@ -5219,6 +5219,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MonkeyPlayer2
       objectReference: {fileID: 0}
+    - target: {fileID: 6581760378802694548, guid: 287001d4e5aff314e8e61500aed0b035, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8167239478948098914, guid: 287001d4e5aff314e8e61500aed0b035, type: 3}
       propertyPath: m_LocalPosition.x
       value: 210.98181
@@ -5544,6 +5548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df7f789f661bc89488d68728cf435142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monkey2: {fileID: 1798274132}
   playerMonkeys:
   - {fileID: 1983230973}
   - {fileID: 1798274125}
@@ -6859,6 +6864,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2057543816}
+  - component: {fileID: 2057543817}
   m_Layer: 5
   m_Name: GameCoconutUI
   m_TagString: Untagged
@@ -6887,6 +6893,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2057543817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057543815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c25f9bb4cb5426b4b82a1f2f6344dbff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roundTimeText: {fileID: 784927569}
+  countdownTimerText: {fileID: 1746445371}
+  gameTime: 15
+  countdownTime: 3
 --- !u!1 &2076513716
 GameObject:
   m_ObjectHideFlags: 0
