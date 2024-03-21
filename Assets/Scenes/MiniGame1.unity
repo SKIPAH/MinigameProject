@@ -4477,8 +4477,8 @@ Transform:
   m_GameObject: {fileID: 1034084893}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 437.42, y: 1.86, z: 0}
-  m_LocalScale: {x: 69.076294, y: 0.9634, z: 1}
+  m_LocalPosition: {x: 476.3875, y: 1.86, z: 0}
+  m_LocalScale: {x: 147.00818, y: 0.9634, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1584487406}
@@ -5783,7 +5783,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1584487406}
   m_Layer: 0
-  m_Name: SHOOTCOCONUTGAME
+  m_Name: THROWCOCONUTGAMEASFAR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

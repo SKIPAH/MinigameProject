@@ -28,12 +28,35 @@ public class PlayerMonkey3 : MonoBehaviour
     private bool canMove = false;
 
 
+
+    public enum GameMonkeyState
+    {
+        coconutGame,
+        coconutThrow,
+    }
+    private GameMonkeyState state;
+
+
+
     private void Start()
     {
         Instance = this;
+        state = GameMonkeyState.coconutGame;
     }
     private void Update()
     {
+
+        switch (state)
+        {
+            case GameMonkeyState.coconutGame:
+                break;
+            case GameMonkeyState.coconutThrow:
+                break;
+        }
+
+
+
+
         CutCoconut();
         if (canMove)
         {
