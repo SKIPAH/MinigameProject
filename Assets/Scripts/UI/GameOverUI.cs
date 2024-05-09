@@ -22,14 +22,7 @@ public class GameOverUI : MonoBehaviour
     private void Start()
     {
         player.OnPlayerDied += Player_OnPlayerDied;
-        player2.OnPlayer2Died += Player2_OnPlayer2Died;
         Hide();
-
-    }
-
-    private void Player2_OnPlayer2Died(object sender, System.EventArgs e)
-    {
-        Show();
     }
 
     private void Player_OnPlayerDied(object sender, System.EventArgs e)

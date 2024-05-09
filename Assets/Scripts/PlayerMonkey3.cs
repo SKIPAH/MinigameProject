@@ -49,23 +49,13 @@ public class PlayerMonkey3 : MonoBehaviour
         switch (state)
         {
             case GameMonkeyState.coconutGame:
+                CutCoconutState();
                 break;
             case GameMonkeyState.coconutThrow:
+                CoconutThrowState();
                 break;
         }
 
-
-
-
-        CutCoconut();
-        if (canMove)
-        {
-            Movement();
-        }
-        if (Input.GetKeyDown(KeyCode.E) && isInteractable)
-        {
-            interactable.Interact();
-        }
     }
 
     private void CutCoconut()
@@ -112,4 +102,25 @@ public class PlayerMonkey3 : MonoBehaviour
     }
 
 
+
+    public void CutCoconutState()
+    {
+        CutCoconut();
+        if (canMove)
+        {
+            Movement();
+        }
+        if (Input.GetKeyDown(KeyCode.E) && isInteractable)
+        {
+            interactable.Interact();
+        }
+    }
+
+    public void CoconutThrowState()
+    {
+        state = GameMonkeyState.coconutGame;
+        Debug.Log("coconutthrowstate");
+    }
+
+   
 }
