@@ -9,18 +9,19 @@ public class CameraManager : MonoBehaviour
     [SerializeField] private Transform asteroidCameraPos;
     [SerializeField] private Transform trampolineCameraPos;
 
-
-
     private void Start()
     {
         mainCameraObject.transform.position = asteroidCameraPos.transform.position;
     }
 
-
-
     public void ChangeCameraPos(Transform cameraPos)
     {
         mainCameraObject.transform.position = cameraPos.position;
+    }
+
+    public void ChangeCameraProjectionSize()
+    {
+        mainCamera.orthographicSize = 50.0f;
     }
 
 }

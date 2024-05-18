@@ -553,6 +553,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teleportDestination: {fileID: 1628898468}
   monkey1: {fileID: 1983230973}
+  monkeyTeleported:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &79009284
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -996,6 +999,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teleportDestination: {fileID: 1031813438}
   monkey1: {fileID: 1983230973}
+  monkeyTeleported:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2082306852}
+        m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
+        m_MethodName: ChangeCameraPos
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1129318658}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!212 &325749097
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1741,6 +1759,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teleportDestination: {fileID: 1898520866}
   monkey1: {fileID: 1983230973}
+  monkeyTeleported:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &399648677
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2133,7 +2154,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 10.38
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3347,7 +3368,7 @@ Transform:
   m_GameObject: {fileID: 826175410}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3446,6 +3467,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teleportDestination: {fileID: 2098235270}
   monkey1: {fileID: 1983230973}
+  monkeyTeleported:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &828461118
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4328,6 +4352,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teleportDestination: {fileID: 325749095}
   monkey1: {fileID: 1983230973}
+  monkeyTeleported:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2082306852}
+        m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
+        m_MethodName: ChangeCameraPos
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1655509911}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2082306852}
+        m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
+        m_MethodName: ChangeCameraProjectionSize
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!212 &1031813440
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4903,7 +4954,7 @@ Transform:
   m_GameObject: {fileID: 1129318657}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4939,7 +4990,7 @@ Transform:
   m_GameObject: {fileID: 1212500674}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5705,7 +5756,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tryAgainButton: {fileID: 1646556028}
   player: {fileID: 1461985980}
-  player2: {fileID: 0}
 --- !u!1 &1584487405
 GameObject:
   m_ObjectHideFlags: 0
@@ -5835,6 +5885,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teleportDestination: {fileID: 1628898468}
   monkey1: {fileID: 1983230973}
+  monkeyTeleported:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &1628898471
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6033,7 +6086,7 @@ Transform:
   m_GameObject: {fileID: 1655509910}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 72.8, y: 5.3, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6627,6 +6680,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teleportDestination: {fileID: 1031813438}
   monkey1: {fileID: 1983230973}
+  monkeyTeleported:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &1898520869
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6882,6 +6938,7 @@ MonoBehaviour:
   mainCamera: {fileID: 519420031}
   mainCameraObject: {fileID: 519420028}
   asteroidCameraPos: {fileID: 539800463}
+  trampolineCameraPos: {fileID: 0}
 --- !u!114 &2084159161 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6657870419756429647, guid: a3954470a6d4bea40b3261dd98069310, type: 3}
@@ -7070,6 +7127,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teleportDestination: {fileID: 828461115}
   monkey1: {fileID: 1983230973}
+  monkeyTeleported:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &2098235273
 SpriteRenderer:
   m_ObjectHideFlags: 0

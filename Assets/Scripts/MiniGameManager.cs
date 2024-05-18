@@ -9,6 +9,8 @@ public class MiniGameManager : MonoBehaviour
 {
     [SerializeField] private PlayerMonkey player;
     [SerializeField] private GameAsteroidUI gameUI;
+
+    private bool isGameOver = false;
     public static MiniGameManager Instance { get; private set; }
 
 
@@ -45,10 +47,19 @@ public class MiniGameManager : MonoBehaviour
 
     private void Update()
     {
+
+        if (isGameOver)
+        {
+            if(Input.GetKeyUp(KeyCode.Space)) 
+            {
+                TryAgain();
+            }
+        }
     
         switch (gameState)
         {
             case State.Countdown:
+                isGameOver = false;
                 Time.timeScale = 1.0f;
                 OnCountdownStarted?.Invoke(this, EventArgs.Empty);
                 if(gameUI.countdownTime <= 0f)
@@ -59,16 +70,15 @@ public class MiniGameManager : MonoBehaviour
                 break;
 
             case State.GameStart:
-                
+                isGameOver = false;
                 break;
 
             case State.GameOver:
-                Time.timeScale = 0f;
+                isGameOver = true;
+                Time.timeScale = 0f;             
                 break;
             case State.WaitingForTeleport:
                 break;
-
-
         }
     }
 

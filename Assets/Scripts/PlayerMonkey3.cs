@@ -8,8 +8,6 @@ public class PlayerMonkey3 : MonoBehaviour
 
     public static PlayerMonkey3 Instance { get; private set; }
 
-    
-
     [SerializeField] private Transform coconutFull;
     [SerializeField] private Transform coconutCut;
 
@@ -27,16 +25,12 @@ public class PlayerMonkey3 : MonoBehaviour
 
     private bool canMove = false;
 
-
-
     public enum GameMonkeyState
     {
         coconutGame,
         coconutThrow,
     }
     private GameMonkeyState state;
-
-
 
     private void Start()
     {

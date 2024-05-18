@@ -8,9 +8,6 @@ public class GameOverUI : MonoBehaviour
 
     [SerializeField] private Button tryAgainButton;
     [SerializeField] private PlayerMonkey player;
-    [SerializeField] private PlayerMonkey2 player2;
-
-
 
     private void Awake()
     {
@@ -38,7 +35,5 @@ public class GameOverUI : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
-
-
 
 }

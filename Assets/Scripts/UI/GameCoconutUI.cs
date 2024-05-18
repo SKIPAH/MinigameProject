@@ -19,8 +19,6 @@ public class GameCoconutUI : MonoBehaviour
 
     private void Start()
     {
-        
-       // PlayerMonkey2.Instance.OnPlayer2Teleported += Instance_OnPlayer2Teleported;
         roundTimeText.text = string.Empty;
         Hide();
     }
