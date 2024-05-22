@@ -9,9 +9,12 @@ public class CameraManager : MonoBehaviour
     [SerializeField] private Transform asteroidCameraPos;
     [SerializeField] private Transform trampolineCameraPos;
 
+    [SerializeField] private GameObject cinemachineGameObject;
     private void Start()
     {
         mainCameraObject.transform.position = asteroidCameraPos.transform.position;
+        mainCamera.orthographicSize = 10.0f;
+        cinemachineGameObject.SetActive(false);
     }
 
     public void ChangeCameraPos(Transform cameraPos)
@@ -21,7 +24,11 @@ public class CameraManager : MonoBehaviour
 
     public void ChangeCameraProjectionSize()
     {
-        mainCamera.orthographicSize = 50.0f;
+        mainCamera.orthographicSize = 20.0f;
+        cinemachineGameObject.SetActive(true);
     }
+
+
+    
 
 }
