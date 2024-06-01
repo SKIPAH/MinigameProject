@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class AsteroidShooterGame : MonoBehaviour {
@@ -8,7 +7,8 @@ public class AsteroidShooterGame : MonoBehaviour {
 
     [SerializeField] private Transform asteroidPrefab;
     
-    [SerializeField] private float spawnTimerMax = 3f;
+    [SerializeField] private float spawnTimerMax = 1f;
+    [SerializeField] private float changeDirectionTimer = 1f;
     [SerializeField] private Transform shootingPoint;
     [SerializeField] private GameObject asteroidShooter;
 
@@ -63,9 +63,7 @@ public class AsteroidShooterGame : MonoBehaviour {
             {
                 ShootAsteroid();
                 spawnTimer = 0f;
-                MoveShooter();
             }
-
         }
     }
 
@@ -98,7 +96,8 @@ public class AsteroidShooterGame : MonoBehaviour {
 
     private void MoveShooter()
     {
-        LeanTween.moveY(asteroidShooter, -5, 1).setEaseLinear().setLoopPingPong();
+        LeanTween.moveY(asteroidShooter, -5, changeDirectionTimer).setEaseLinear().setLoopPingPong();
+        Debug.Log("MOving");
     }
 
 

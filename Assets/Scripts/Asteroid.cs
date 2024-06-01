@@ -32,6 +32,6 @@ public class Asteroid : MonoBehaviour, IPlayerDied
 
     public void PlayerDied()
     {
-        Debug.Log("Fuck off");
+        Debug.Log("Player died");
     }
 }

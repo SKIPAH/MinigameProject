@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
 
 public class PlayerMonkey : MonoBehaviour
 {
@@ -10,24 +10,27 @@ public class PlayerMonkey : MonoBehaviour
 
     public event EventHandler OnPlayerDied;
 
-    [SerializeField] private JumpPad jumpPad;
     private IInteractable interactable = null;
 
     private float horizontal;
+    private float vertical;
     private float speed = 8f;
     private float jumpingPower = 16f;
     private bool isFacingRight = true;
     private bool isFlipping = false;
     private Vector2 playerGravity;
+    private bool doubleJumpUsed = false;
+    private bool isInteractable = false;
+    private bool isMovementModeHorizontal = true;
 
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float fallMultiplier;
-    private bool doubleJumpUsed = false;
 
-    private bool isInteractable = false;
+    
+    
 
     private enum MonkeyState
     {
@@ -43,28 +46,28 @@ public class PlayerMonkey : MonoBehaviour
         Instance = this;
         rb = GetComponent<Rigidbody2D>();
         playerGravity = new Vector2(0, -Physics2D.gravity.y);
+
     }
+
+
     private void Update()
     {
-        //returns -1, 0 or +1 depending where moving
-        horizontal = Input.GetAxisRaw("Horizontal");
-
-        Jumping();
-        FlipPlayerDirection();
-
-
-        //FALL GRAVITY SPEED
-        if (rb.velocity.y < 0)
+        if (!isMovementModeHorizontal)
         {
-            rb.velocity -= playerGravity * fallMultiplier * Time.deltaTime;
+            MovementModeTopDown();
+        }
+        else
+        {
+            MovementModeHorizontal();
         }
 
-        if(Input.GetKeyDown(KeyCode.E) && isInteractable)
+
+
+
+        if (Input.GetKeyDown(KeyCode.E) && isInteractable)
         {
             interactable.Interact();
         }
-
-
     }
 
 
@@ -165,4 +168,44 @@ public class PlayerMonkey : MonoBehaviour
         isInteractable = false;
     }
 
+
+
+
+    public void ChangeGravityMode()
+    {
+        rb.gravityScale = 0;
+        fallMultiplier = 0;
+    }
+
+
+
+    private void MovementModeHorizontal()
+    {
+        horizontal = Input.GetAxisRaw("Horizontal");
+        Jumping();
+        FlipPlayerDirection();
+
+        //FALL GRAVITY SPEED
+        if (rb.velocity.y < 0)
+        {
+            rb.velocity -= playerGravity * fallMultiplier * Time.deltaTime;
+        }
+
+    }
+    private void MovementModeTopDown()
+    {
+        horizontal = Input.GetAxisRaw("Horizontal");
+        vertical = Input.GetAxisRaw("Vertical");
+
+        Vector3 movement = new Vector3(horizontal, vertical, 0).normalized;
+
+        transform.position += movement * speed * Time.deltaTime;
+    }
+
+
+
+    public void ChangeMovementMode()
+    {
+        isMovementModeHorizontal = !isMovementModeHorizontal;
+    }
 }

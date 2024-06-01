@@ -17,7 +17,7 @@ public class LionEnemy : MonoBehaviour, IPlayerDied
 
    
     private Transform lionTransform;
-    [SerializeField] private Transform playerMonkey2;
+    [SerializeField] private Transform playerMonkey;
 
     private int randomDirectionNumber;
    
@@ -74,9 +74,9 @@ public class LionEnemy : MonoBehaviour, IPlayerDied
         }
         if(randomDirectionNumber == 4)
         {
-            if(playerMonkey2 != null)
+            if(playerMonkey != null)
             {
-                lionTransform.position = (Vector2.MoveTowards(lionTransform.position, playerMonkey2.position, lionSpeed * Time.deltaTime));
+                lionTransform.position = (Vector2.MoveTowards(lionTransform.position, playerMonkey.position, lionSpeed * Time.deltaTime));
             }
             
         }
