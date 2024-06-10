@@ -1,12 +1,13 @@
 
+using Cinemachine;
 using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
     public static CameraManager Instance { get; private set; }
 
-
     [SerializeField] private Camera mainCamera;
+    [SerializeField] private CinemachineVirtualCamera cinemachineCam;
     [SerializeField] private GameObject mainCameraObject;
     [SerializeField] private Transform asteroidCameraPos;
     [SerializeField] private Transform lionGameCameraPos;
@@ -32,7 +33,7 @@ public class CameraManager : MonoBehaviour
     }
     public void ChangeCameraProjectionSize()
     {
-        mainCamera.orthographicSize = 15.0f;
+        cinemachineCam.m_Lens.OrthographicSize = 15.0f;
         cinemachineGameObject.SetActive(true);
     }
     public void ChangeCameraProjectionSizeDefault()
@@ -43,6 +44,6 @@ public class CameraManager : MonoBehaviour
     public void ChangeCameraProjectionSizeLionGame()
     {
         cinemachineGameObject.SetActive(false);
-        mainCamera.orthographicSize = 12.0f;
+        mainCamera.orthographicSize = 15.0f;
     }
 }

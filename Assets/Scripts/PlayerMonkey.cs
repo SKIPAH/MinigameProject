@@ -25,6 +25,7 @@ public class PlayerMonkey : MonoBehaviour
 
 
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private BoxCollider2D boxCollider;
     [SerializeField] Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float fallMultiplier;
@@ -61,13 +62,12 @@ public class PlayerMonkey : MonoBehaviour
             MovementModeHorizontal();
         }
 
-
-
-
         if (Input.GetKeyDown(KeyCode.E) && isInteractable)
         {
             interactable.Interact();
         }
+
+       // if(Input.GetKeyDown(KeyCode.Space) && 
     }
 
 
@@ -92,8 +92,6 @@ public class PlayerMonkey : MonoBehaviour
             transform.localScale = localScale;
         }
     }
-
-
 
     private void Jumping()
     {
@@ -194,8 +192,12 @@ public class PlayerMonkey : MonoBehaviour
     }
     private void MovementModeTopDown()
     {
+        FlipPlayerDirection();
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
+        rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+        rb.interpolation = RigidbodyInterpolation2D.Interpolate;
+        boxCollider.isTrigger = true;
 
         Vector3 movement = new Vector3(horizontal, vertical, 0).normalized;
 
@@ -206,6 +208,9 @@ public class PlayerMonkey : MonoBehaviour
 
     public void ChangeMovementMode()
     {
+        gameObject.SetActive(false);
+        gameObject.SetActive(true);
+       
         isMovementModeHorizontal = !isMovementModeHorizontal;
     }
 }

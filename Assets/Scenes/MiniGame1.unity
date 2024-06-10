@@ -1839,7 +1839,19 @@ MonoBehaviour:
   monkey1: {fileID: 1983230973}
   monkeyTeleported:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2082306852}
+        m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
+        m_MethodName: ChangeCameraPos
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1212500675}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!212 &399648677
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3185,7 +3197,6 @@ Transform:
   - {fileID: 1562105975}
   - {fileID: 2076513717}
   - {fileID: 1031813438}
-  - {fileID: 1461985982}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &784927567
@@ -3449,8 +3460,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826175410}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 307.63, y: 7.07, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4453,6 +4464,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1396635023}
+        m_TargetAssemblyTypeName: GameAsteroidUI, Assembly-CSharp
+        m_MethodName: Hide
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!212 &1031813440
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5095,8 +5118,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1212500674}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 301.75, y: 4.03, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6956,6 +6979,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4473412771029266252, guid: 6b61bcbadda2c5c468391d12ff5b3a4a, type: 3}
   m_PrefabInstance: {fileID: 2794480279363002997}
   m_PrefabAsset: {fileID: 0}
+--- !u!61 &1983230974 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7519255738472544049, guid: 6b61bcbadda2c5c468391d12ff5b3a4a, type: 3}
+  m_PrefabInstance: {fileID: 2794480279363002997}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2057543815
 GameObject:
   m_ObjectHideFlags: 0
@@ -7091,6 +7119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 519420031}
+  cinemachineCam: {fileID: 2141208711}
   mainCameraObject: {fileID: 519420028}
   asteroidCameraPos: {fileID: 539800463}
   lionGameCameraPos: {fileID: 1129318658}
@@ -7384,7 +7413,7 @@ MonoBehaviour:
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 34
-    OrthographicSize: 23.253035
+    OrthographicSize: 10
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -7514,12 +7543,16 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 782746557}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4133551804424824015, guid: 6b61bcbadda2c5c468391d12ff5b3a4a, type: 3}
       propertyPath: jumpPad
       value: 
       objectReference: {fileID: 2084159161}
+    - target: {fileID: 4133551804424824015, guid: 6b61bcbadda2c5c468391d12ff5b3a4a, type: 3}
+      propertyPath: boxCollider
+      value: 
+      objectReference: {fileID: 1983230974}
     - target: {fileID: 4473412771029266252, guid: 6b61bcbadda2c5c468391d12ff5b3a4a, type: 3}
       propertyPath: m_Name
       value: MonkeyPlayer
@@ -7566,6 +7599,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5742977914707679451, guid: 6b61bcbadda2c5c468391d12ff5b3a4a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7458786505578318169, guid: 6b61bcbadda2c5c468391d12ff5b3a4a, type: 3}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7458786505578318169, guid: 6b61bcbadda2c5c468391d12ff5b3a4a, type: 3}
+      propertyPath: m_CollisionDetection
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -7639,6 +7680,7 @@ SceneRoots:
   - {fileID: 211714640}
   - {fileID: 1877595829}
   - {fileID: 619394802}
+  - {fileID: 2794480279363002997}
   - {fileID: 782746557}
   - {fileID: 33249813}
   - {fileID: 219570078}

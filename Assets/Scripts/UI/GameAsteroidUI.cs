@@ -6,14 +6,12 @@ public class GameAsteroidUI : MonoBehaviour
 {
 
     public event EventHandler OnAsteroidGameFinished;
-
     [SerializeField] private Text roundTimeText;
     [SerializeField] private Text countdownTimerText;
-
-
-    [SerializeField] private float gameTime = 10f;
-    private float gameTimeUI = 15f;
-    public float countdownTime = 3f;
+    [SerializeField] private float gameTime;
+    
+    private float gameTimeUI;
+    public float countdownTime;
 
     private bool IsAsteroidGameOn = false;
 
@@ -21,6 +19,7 @@ public class GameAsteroidUI : MonoBehaviour
     
     private void Start()
     {
+        
         MiniGameManager.Instance.OnCountdownStarted += MiniGameManager_OnCountdownStarted;
         MiniGameManager.Instance.OnGameStarted += MiniGameManager_OnAsteroidGameStarted;
         roundTimeText.text = string.Empty;
@@ -39,11 +38,6 @@ public class GameAsteroidUI : MonoBehaviour
     private void Update()
     {
         GameTimer();
-        gameTimeUI -= Time.deltaTime;
-        if (gameTimeUI <= 0f)
-        {
-            roundTimeText.text = "";
-        }
     }
 
     private void CountdownTimer()
@@ -78,11 +72,17 @@ public class GameAsteroidUI : MonoBehaviour
             {
                 roundTimeText.text = "Done!";
                 OnAsteroidGameFinished?.Invoke(this, EventArgs.Empty);
-
-            }
-            
-        }
-       
+            }       
+        }     
     }
 
+
+    public void Show()
+    {
+        gameObject.SetActive(true);
+    }
+    public void Hide()
+    {
+        gameObject.SetActive(false);
+    }
 }

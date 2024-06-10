@@ -55,6 +55,8 @@ public class MiniGameManager : MonoBehaviour
                 TryAgain();
             }
         }
+
+        Debug.Log(gameState);
     
         switch (gameState)
         {

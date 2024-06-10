@@ -20,6 +20,7 @@ public class Bananas : MonoBehaviour
         {
             groundAndTeleport.gameObject.SetActive(true);
             OnBananaHit?.Invoke(this, EventArgs.Empty);
+
             PlayerMonkey.Instance.transform.position = liongamePos.transform.position;
             PlayerMonkey.Instance.ChangeGravityMode();
             PlayerMonkey.Instance.ChangeMovementMode();
