@@ -8,19 +8,21 @@ using static UnityEditor.Searcher.SearcherWindow.Alignment;
 public class LionEnemy : MonoBehaviour, IPlayerDied
 {
     [SerializeField] private Bananas bananas;
+    [SerializeField] private GameLionUI gameLionUI;
+
 
     public event EventHandler OnLionGameStarted;
 
     private float changeDirectionTimer = 0f;
-    private float changeDirectionTimerMax = 0.8f;
-    private float lionSpeed = 4.0f;
+    private float changeDirectionTimerMax = 0.5f;
+    private float lionSpeed = 6.0f;
 
-   
+
     private Transform lionTransform;
     [SerializeField] private Transform playerMonkey;
 
     private int randomDirectionNumber;
-   
+
 
     private bool isGameOn = false;
 
@@ -30,6 +32,12 @@ public class LionEnemy : MonoBehaviour, IPlayerDied
         isGameOn = false;
         lionTransform = gameObject.transform;
         bananas.OnBananaHit += Bananas_OnBananaHit;
+        gameLionUI.OnLionGameEnded += GameLionUI_OnLionGameEnded;
+    }
+
+    private void GameLionUI_OnLionGameEnded(object sender, EventArgs e)
+    {
+        isGameOn = false;
     }
 
     private void Bananas_OnBananaHit(object sender, System.EventArgs e)
@@ -39,26 +47,26 @@ public class LionEnemy : MonoBehaviour, IPlayerDied
     }
     private void Update()
     {
-
         if (isGameOn)
         {
             MovementEnemy();
         }
+        else return;
     }
 
     private void MovementEnemy()
     {
         changeDirectionTimer += Time.deltaTime;
 
-        if(changeDirectionTimer >= changeDirectionTimerMax)
+        if (changeDirectionTimer >= changeDirectionTimerMax)
         {
             randomDirectionNumber = UnityEngine.Random.Range(0, 5);
             changeDirectionTimer = 0f;
-        } 
+        }
 
         if (randomDirectionNumber == 0)
         {
-            lionTransform.Translate(lionSpeed * Time.deltaTime * Vector3.right);      
+            lionTransform.Translate(lionSpeed * Time.deltaTime * Vector3.right);
         }
         if (randomDirectionNumber == 1)
         {
@@ -72,13 +80,13 @@ public class LionEnemy : MonoBehaviour, IPlayerDied
         {
             lionTransform.Translate(lionSpeed * Time.deltaTime * Vector3.down);
         }
-        if(randomDirectionNumber == 4)
+        if (randomDirectionNumber == 4)
         {
-            if(playerMonkey != null)
+            if (playerMonkey != null)
             {
                 lionTransform.position = (Vector2.MoveTowards(lionTransform.position, playerMonkey.position, lionSpeed * Time.deltaTime));
             }
-            
+
         }
     }
 
@@ -87,5 +95,4 @@ public class LionEnemy : MonoBehaviour, IPlayerDied
     {
         Debug.Log("LOL");
     }
-
 }

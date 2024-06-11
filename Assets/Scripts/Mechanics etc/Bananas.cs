@@ -25,7 +25,7 @@ public class Bananas : MonoBehaviour
             PlayerMonkey.Instance.ChangeGravityMode();
             PlayerMonkey.Instance.ChangeMovementMode();
 
-            CameraManager.Instance.ChangeCameraProjectionSizeDefault();
+            CameraManager.Instance.ChangeCameraProjectionSizeLionGame();
 
         }     
     }

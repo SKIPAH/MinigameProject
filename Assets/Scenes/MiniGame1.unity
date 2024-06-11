@@ -1467,6 +1467,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 841458560}
     - target: {fileID: 5327907072008365111, guid: 6dfb7077e3437e84188e2d50152f2ba0, type: 3}
+      propertyPath: gameLionUI
+      value: 
+      objectReference: {fileID: 1122543044}
+    - target: {fileID: 5327907072008365111, guid: 6dfb7077e3437e84188e2d50152f2ba0, type: 3}
       propertyPath: playerMonkey
       value: 
       objectReference: {fileID: 1461985982}
@@ -1567,6 +1571,10 @@ PrefabInstance:
       propertyPath: bananas
       value: 
       objectReference: {fileID: 841458560}
+    - target: {fileID: 5327907072008365111, guid: 6dfb7077e3437e84188e2d50152f2ba0, type: 3}
+      propertyPath: gameLionUI
+      value: 
+      objectReference: {fileID: 1122543044}
     - target: {fileID: 5327907072008365111, guid: 6dfb7077e3437e84188e2d50152f2ba0, type: 3}
       propertyPath: playerMonkey
       value: 
@@ -2880,6 +2888,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 841458560}
     - target: {fileID: 5327907072008365111, guid: 6dfb7077e3437e84188e2d50152f2ba0, type: 3}
+      propertyPath: gameLionUI
+      value: 
+      objectReference: {fileID: 1122543044}
+    - target: {fileID: 5327907072008365111, guid: 6dfb7077e3437e84188e2d50152f2ba0, type: 3}
       propertyPath: playerMonkey
       value: 
       objectReference: {fileID: 1461985982}
@@ -3837,6 +3849,10 @@ PrefabInstance:
       propertyPath: bananas
       value: 
       objectReference: {fileID: 841458560}
+    - target: {fileID: 5327907072008365111, guid: 6dfb7077e3437e84188e2d50152f2ba0, type: 3}
+      propertyPath: gameLionUI
+      value: 
+      objectReference: {fileID: 1122543044}
     - target: {fileID: 5327907072008365111, guid: 6dfb7077e3437e84188e2d50152f2ba0, type: 3}
       propertyPath: playerMonkey
       value: 
@@ -5025,6 +5041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lionGame: {fileID: 1368419692}
+  gameTime: 2
   gameTimeText: {fileID: 265438349}
   teleportToCoconut: {fileID: 399648674}
 --- !u!1 &1129318657
@@ -6693,6 +6710,10 @@ PrefabInstance:
       propertyPath: bananas
       value: 
       objectReference: {fileID: 841458560}
+    - target: {fileID: 5327907072008365111, guid: 6dfb7077e3437e84188e2d50152f2ba0, type: 3}
+      propertyPath: gameLionUI
+      value: 
+      objectReference: {fileID: 1122543044}
     - target: {fileID: 5327907072008365111, guid: 6dfb7077e3437e84188e2d50152f2ba0, type: 3}
       propertyPath: playerMonkey
       value: 

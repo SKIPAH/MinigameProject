@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,14 +7,13 @@ using UnityEngine.UI;
 public class GameLionUI : MonoBehaviour
 {
     [SerializeField] private LionEnemy lionGame;
-    private float gameTime = 10f;
+    [SerializeField] private float gameTime;
     [SerializeField] private Text gameTimeText;
     [SerializeField] private GameObject teleportToCoconut;
 
+    public event EventHandler OnLionGameEnded;
+
     private bool isLionGameOn = false;
-
-
-
     private void Start()
     {
         Hide();
@@ -45,12 +45,10 @@ public class GameLionUI : MonoBehaviour
             {
                 gameTimeText.text = "DONE";
                 teleportToCoconut.SetActive(true);
+                OnLionGameEnded?.Invoke(this, EventArgs.Empty);
             }
         }
     }
-
-
-
 
     private void Show()
     {
