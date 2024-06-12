@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,12 +22,6 @@ public class GameCoconutUI : MonoBehaviour
         Hide();
     }
 
-    private void Instance_OnPlayer2Teleported(object sender, System.EventArgs e)
-    {
-        Show();
-        isCoconutGameOn = true;
-    }
-
     private void CountdownTimer()
     {
         countdownTime -= Time.deltaTime;
@@ -47,12 +40,12 @@ public class GameCoconutUI : MonoBehaviour
     }
 
 
-    private void Show()
+    public void Show()
     {
         gameObject.SetActive(true);
     }
 
-    private void Hide()
+    public void Hide()
     {
         gameObject.SetActive(false);
     }

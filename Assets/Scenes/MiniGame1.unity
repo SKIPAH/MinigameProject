@@ -200,7 +200,7 @@ Transform:
   m_GameObject: {fileID: 42923046}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 307.95, y: 25.46, z: 0}
+  m_LocalPosition: {x: 307.95, y: 19.74, z: 0}
   m_LocalScale: {x: 0.60224, y: 37.434547, z: 0.60224}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1855,6 +1855,42 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 1212500675}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1122543044}
+        m_TargetAssemblyTypeName: GameLionUI, Assembly-CSharp
+        m_MethodName: Hide
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1461985980}
+        m_TargetAssemblyTypeName: PlayerMonkey, Assembly-CSharp
+        m_MethodName: CoconutGameModeOn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2082306852}
+        m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
+        m_MethodName: ChangeCameraProjectionSizeDefault
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4286,8 +4322,8 @@ Transform:
   m_GameObject: {fileID: 996431983}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 325.62, y: 11.95, z: 0}
-  m_LocalScale: {x: 0.60224, y: 28.307114, z: 0.60224}
+  m_LocalPosition: {x: 325.62, y: 8.9161, z: 0}
+  m_LocalScale: {x: 0.60224, y: 22.23807, z: 0.60224}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1896258363}
@@ -5136,7 +5172,7 @@ Transform:
   m_GameObject: {fileID: 1212500674}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 301.75, y: 4.03, z: -2}
+  m_LocalPosition: {x: 306.02, y: 7.96, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5170,8 +5206,8 @@ Transform:
   m_GameObject: {fileID: 1241884770}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 289.71, y: 11.67, z: 0}
-  m_LocalScale: {x: 0.60224, y: 28.307114, z: 0.60224}
+  m_LocalPosition: {x: 289.71, y: 8.843, z: 0}
+  m_LocalScale: {x: 0.60224, y: 22.654182, z: 0.60224}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1896258363}
@@ -6814,7 +6850,7 @@ Transform:
   m_GameObject: {fileID: 1898520865}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 298.87, y: 1.6799927, z: 0}
+  m_LocalPosition: {x: 306.45, y: 1.82, z: 0}
   m_LocalScale: {x: 1.4752144, y: 2.3375, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7571,9 +7607,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2084159161}
     - target: {fileID: 4133551804424824015, guid: 6b61bcbadda2c5c468391d12ff5b3a4a, type: 3}
+      propertyPath: coconutCut
+      value: 
+      objectReference: {fileID: 8351787278719231828, guid: 144371072eda9894192eccc568bee7e9, type: 3}
+    - target: {fileID: 4133551804424824015, guid: 6b61bcbadda2c5c468391d12ff5b3a4a, type: 3}
       propertyPath: boxCollider
       value: 
       objectReference: {fileID: 1983230974}
+    - target: {fileID: 4133551804424824015, guid: 6b61bcbadda2c5c468391d12ff5b3a4a, type: 3}
+      propertyPath: coconutFull
+      value: 
+      objectReference: {fileID: 8328042991243571242, guid: 0a73939f9f85a34498e81bde7fb565ec, type: 3}
     - target: {fileID: 4473412771029266252, guid: 6b61bcbadda2c5c468391d12ff5b3a4a, type: 3}
       propertyPath: m_Name
       value: MonkeyPlayer

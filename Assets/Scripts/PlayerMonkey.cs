@@ -21,8 +21,7 @@ public class PlayerMonkey : MonoBehaviour
     private Vector2 playerGravity;
     private bool doubleJumpUsed = false;
     private bool isInteractable = false;
-    private bool isMovementModeHorizontal = true;
-
+ 
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private BoxCollider2D boxCollider;
@@ -30,46 +29,57 @@ public class PlayerMonkey : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float fallMultiplier;
 
-    
-    
 
-    private enum MonkeyState
+    [Header("CoconutModeStuff")]
+
+    [SerializeField] private Transform coconutFull;
+    [SerializeField] private Transform coconutCut;
+
+    [SerializeField] private int coconutsCutMax = 10;
+    private int coconutsCutten = 0;
+    public enum MonkeyState
     {
-        mode2d,
-        modetopdown,
-        modecoconut
+        Mode2d,
+        Modetopdown,
+        Modecoconut
     }
 
-
+    private MonkeyState state;
+    private MonkeyState previousState;
 
     private void Start()
     {
+        state = MonkeyState.Mode2d;
         Instance = this;
         rb = GetComponent<Rigidbody2D>();
         playerGravity = new Vector2(0, -Physics2D.gravity.y);
 
     }
-
-
     private void Update()
     {
-        if (!isMovementModeHorizontal)
+        switch (state)
         {
-            MovementModeTopDown();
-        }
-        else
-        {
-            MovementModeHorizontal();
+            case MonkeyState.Mode2d:
+                MovementModeHorizontal();
+                break;
+            case MonkeyState.Modetopdown:
+                MovementModeTopDown();
+                break;
+            case MonkeyState.Modecoconut:
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    Debug.Log("COCOnut");
+                }
+                break;
         }
 
         if (Input.GetKeyDown(KeyCode.E) && isInteractable)
         {
             interactable.Interact();
         }
-
-       // if(Input.GetKeyDown(KeyCode.Space) && 
+        
+        Debug.Log(state);
     }
-
 
     private bool IsGrounded()
     {
@@ -92,7 +102,6 @@ public class PlayerMonkey : MonoBehaviour
             transform.localScale = localScale;
         }
     }
-
     private void Jumping()
     {
         if (Input.GetButtonDown("Jump") && IsGrounded())
@@ -111,8 +120,6 @@ public class PlayerMonkey : MonoBehaviour
             doubleJumpUsed = true;
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower * 1.2f);
             StartCoroutine(Rotate());
-
-
         }
     }
 
@@ -133,18 +140,13 @@ public class PlayerMonkey : MonoBehaviour
                 float zRotation = Mathf.Lerp(startRotation, startRotation + 446, elapsedTime);
                 transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, zRotation);
             }
-
             yield return null;
-
         }
         transform.eulerAngles = Vector3.zero;
-
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
         interactable = collision.GetComponent<IInteractable>();
        
         IPlayerDied playerDied = collision.GetComponent<IPlayerDied>();
@@ -166,16 +168,11 @@ public class PlayerMonkey : MonoBehaviour
         isInteractable = false;
     }
 
-
-
-
     public void ChangeGravityMode()
     {
         rb.gravityScale = 0;
         fallMultiplier = 0;
     }
-
-
 
     private void MovementModeHorizontal()
     {
@@ -188,7 +185,6 @@ public class PlayerMonkey : MonoBehaviour
         {
             rb.velocity -= playerGravity * fallMultiplier * Time.deltaTime;
         }
-
     }
     private void MovementModeTopDown()
     {
@@ -204,13 +200,16 @@ public class PlayerMonkey : MonoBehaviour
         transform.position += movement * speed * Time.deltaTime;
     }
 
-
+    public void CoconutGameModeOn()
+    {
+        state = MonkeyState.Modecoconut;
+    }
 
     public void ChangeMovementMode()
     {
         gameObject.SetActive(false);
         gameObject.SetActive(true);
-       
-        isMovementModeHorizontal = !isMovementModeHorizontal;
+        state = MonkeyState.Modetopdown;
     }
 }
+
