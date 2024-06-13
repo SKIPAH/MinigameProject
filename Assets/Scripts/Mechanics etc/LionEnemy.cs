@@ -1,32 +1,17 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.Searcher.SearcherWindow.Alignment;
-
 public class LionEnemy : MonoBehaviour, IPlayerDied
 {
     [SerializeField] private Bananas bananas;
     [SerializeField] private GameLionUI gameLionUI;
-
-
+    [SerializeField] private Transform playerMonkey;
     public event EventHandler OnLionGameStarted;
-
     private float changeDirectionTimer = 0f;
     private float changeDirectionTimerMax = 0.5f;
     private float lionSpeed = 6.0f;
-
-
     private Transform lionTransform;
-    [SerializeField] private Transform playerMonkey;
-
     private int randomDirectionNumber;
-
-
     private bool isGameOn = false;
-
-
     private void Start()
     {
         isGameOn = false;
@@ -34,12 +19,10 @@ public class LionEnemy : MonoBehaviour, IPlayerDied
         bananas.OnBananaHit += Bananas_OnBananaHit;
         gameLionUI.OnLionGameEnded += GameLionUI_OnLionGameEnded;
     }
-
     private void GameLionUI_OnLionGameEnded(object sender, EventArgs e)
     {
         isGameOn = false;
     }
-
     private void Bananas_OnBananaHit(object sender, System.EventArgs e)
     {
         isGameOn = true;
@@ -53,17 +36,14 @@ public class LionEnemy : MonoBehaviour, IPlayerDied
         }
         else return;
     }
-
     private void MovementEnemy()
     {
         changeDirectionTimer += Time.deltaTime;
-
         if (changeDirectionTimer >= changeDirectionTimerMax)
         {
             randomDirectionNumber = UnityEngine.Random.Range(0, 5);
             changeDirectionTimer = 0f;
         }
-
         if (randomDirectionNumber == 0)
         {
             lionTransform.Translate(lionSpeed * Time.deltaTime * Vector3.right);
@@ -86,11 +66,8 @@ public class LionEnemy : MonoBehaviour, IPlayerDied
             {
                 lionTransform.position = (Vector2.MoveTowards(lionTransform.position, playerMonkey.position, lionSpeed * Time.deltaTime));
             }
-
         }
     }
-
-
     public void PlayerDied()
     {
         Debug.Log("LOL");

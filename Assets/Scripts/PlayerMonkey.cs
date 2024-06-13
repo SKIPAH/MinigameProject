@@ -1,17 +1,13 @@
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
-
-
 public class PlayerMonkey : MonoBehaviour
 {
-
     public static PlayerMonkey Instance { get; private set; }
-
     public event EventHandler OnPlayerDied;
-
+    public event EventHandler OnCoconutGameModeOn;
     private IInteractable interactable = null;
-
     private float horizontal;
     private float vertical;
     private float speed = 8f;
@@ -21,20 +17,15 @@ public class PlayerMonkey : MonoBehaviour
     private Vector2 playerGravity;
     private bool doubleJumpUsed = false;
     private bool isInteractable = false;
- 
-
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private BoxCollider2D boxCollider;
     [SerializeField] Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float fallMultiplier;
 
-
     [Header("CoconutModeStuff")]
-
     [SerializeField] private Transform coconutFull;
     [SerializeField] private Transform coconutCut;
-
     [SerializeField] private int coconutsCutMax = 10;
     private int coconutsCutten = 0;
     public enum MonkeyState
@@ -43,17 +34,14 @@ public class PlayerMonkey : MonoBehaviour
         Modetopdown,
         Modecoconut
     }
-
     private MonkeyState state;
     private MonkeyState previousState;
-
     private void Start()
     {
         state = MonkeyState.Mode2d;
         Instance = this;
         rb = GetComponent<Rigidbody2D>();
         playerGravity = new Vector2(0, -Physics2D.gravity.y);
-
     }
     private void Update()
     {
@@ -66,32 +54,25 @@ public class PlayerMonkey : MonoBehaviour
                 MovementModeTopDown();
                 break;
             case MonkeyState.Modecoconut:
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    Debug.Log("COCOnut");
-                }
+                OnCoconutGameModeOn?.Invoke(this, EventArgs.Empty);
+                CutCoconut(); 
                 break;
         }
-
         if (Input.GetKeyDown(KeyCode.E) && isInteractable)
         {
             interactable.Interact();
         }
-        
         Debug.Log(state);
     }
-
     private bool IsGrounded()
     {
         //creates small circle and if collides with ground = we can jump
         return Physics2D.OverlapCapsule(groundCheck.position, new Vector2(1.0f, 0.2f), CapsuleDirection2D.Horizontal, 0, groundLayer);
     }
-
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
     }
-
     private void FlipPlayerDirection()
     {
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
@@ -109,7 +90,6 @@ public class PlayerMonkey : MonoBehaviour
             doubleJumpUsed = false;
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
-
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
@@ -122,7 +102,6 @@ public class PlayerMonkey : MonoBehaviour
             StartCoroutine(Rotate());
         }
     }
-
     IEnumerator Rotate()
     {
         float elapsedTime = 0f;
@@ -144,20 +123,17 @@ public class PlayerMonkey : MonoBehaviour
         }
         transform.eulerAngles = Vector3.zero;
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         interactable = collision.GetComponent<IInteractable>();
-       
         IPlayerDied playerDied = collision.GetComponent<IPlayerDied>();
         if (playerDied != null)
         {
             playerDied.PlayerDied();
             Destroy(gameObject);
             OnPlayerDied?.Invoke(this, EventArgs.Empty);
-
         }
-        if(interactable != null)
+        if (interactable != null)
         {
             isInteractable = true;
         }
@@ -167,19 +143,16 @@ public class PlayerMonkey : MonoBehaviour
         interactable = null;
         isInteractable = false;
     }
-
     public void ChangeGravityMode()
     {
         rb.gravityScale = 0;
         fallMultiplier = 0;
     }
-
     private void MovementModeHorizontal()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
         Jumping();
         FlipPlayerDirection();
-
         //FALL GRAVITY SPEED
         if (rb.velocity.y < 0)
         {
@@ -194,22 +167,38 @@ public class PlayerMonkey : MonoBehaviour
         rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
         boxCollider.isTrigger = true;
-
         Vector3 movement = new Vector3(horizontal, vertical, 0).normalized;
-
         transform.position += movement * speed * Time.deltaTime;
     }
-
     public void CoconutGameModeOn()
     {
         state = MonkeyState.Modecoconut;
     }
-
     public void ChangeMovementMode()
     {
         gameObject.SetActive(false);
         gameObject.SetActive(true);
         state = MonkeyState.Modetopdown;
     }
-}
 
+
+    private void CutCoconut()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (coconutsCutten < coconutsCutMax)
+            {
+                Transform coconut = Instantiate(coconutCut, coconutFull.GetComponent<Transform>().position, coconutFull.GetComponent<Transform>().rotation);
+                Destroy(coconut.gameObject, 15f);
+                coconutsCutten++;
+                Debug.Log("COCOnut");
+            }
+            else
+            {
+                Debug.Log("Enough");
+                return;
+            }
+        }
+    }
+
+}

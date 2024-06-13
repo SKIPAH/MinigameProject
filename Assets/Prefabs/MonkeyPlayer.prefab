@@ -131,13 +131,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eed752989946fa64e832493afb529345, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpPad: {fileID: 0}
   rb: {fileID: 7458786505578318169}
+  boxCollider: {fileID: 0}
   groundCheck: {fileID: 6963072495174323100}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
   fallMultiplier: 3
+  coconutFull: {fileID: 0}
+  coconutCut: {fileID: 0}
+  coconutsCutMax: 10
 --- !u!50 &7458786505578318169
 Rigidbody2D:
   serializedVersion: 4

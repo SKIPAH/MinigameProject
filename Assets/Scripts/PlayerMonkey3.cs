@@ -1,36 +1,23 @@
-
 using UnityEngine;
-
-
 public class PlayerMonkey3 : MonoBehaviour
 {
-
     public static PlayerMonkey3 Instance { get; private set; }
-
     [SerializeField] private Transform coconutFull;
     [SerializeField] private Transform coconutCut;
-
     [SerializeField] private float speed = 5f;
-
     private IInteractable interactable = null;
-
     private bool isInteractable = false;
-
     private int coconutsCutMax = 50;
     private int coconutsCutten = 0;
-
     private float horizontal;
     private float vertical;
-
     private bool canMove = false;
-
     public enum GameMonkeyState
     {
         coconutGame,
         coconutThrow,
     }
     private GameMonkeyState state;
-
     private void Start()
     {
         Instance = this;
@@ -38,7 +25,6 @@ public class PlayerMonkey3 : MonoBehaviour
     }
     private void Update()
     {
-
         switch (state)
         {
             case GameMonkeyState.coconutGame:
@@ -48,9 +34,7 @@ public class PlayerMonkey3 : MonoBehaviour
                 CoconutThrowState();
                 break;
         }
-
     }
-
     private void CutCoconut()
     {
         if(Input.GetKeyDown(KeyCode.Space)) 
@@ -67,18 +51,14 @@ public class PlayerMonkey3 : MonoBehaviour
                 canMove = true;
             }
         }
-
     }
-
     private void Movement()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
         Vector3 movement = new Vector3(horizontal, vertical, 0).normalized;
-
         transform.position += movement * speed * Time.deltaTime;
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         interactable = collision.GetComponent<IInteractable>();
@@ -87,15 +67,11 @@ public class PlayerMonkey3 : MonoBehaviour
             isInteractable = true;
         }
     }
-
     private void OnTriggerExit2D(Collider2D collision)
     {
         interactable = null;
         isInteractable = false;
     }
-
-
-
     public void CutCoconutState()
     {
         CutCoconut();
@@ -108,12 +84,9 @@ public class PlayerMonkey3 : MonoBehaviour
             interactable.Interact();
         }
     }
-
     public void CoconutThrowState()
     {
         state = GameMonkeyState.coconutGame;
         Debug.Log("coconutthrowstate");
     }
-
-   
 }

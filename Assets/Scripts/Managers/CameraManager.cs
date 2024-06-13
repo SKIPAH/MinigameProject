@@ -1,11 +1,8 @@
-
 using Cinemachine;
 using UnityEngine;
-
 public class CameraManager : MonoBehaviour
 {
     public static CameraManager Instance { get; private set; }
-
     [SerializeField] private Camera mainCamera;
     [SerializeField] private CinemachineVirtualCamera cinemachineCam;
     [SerializeField] private GameObject mainCameraObject;
@@ -13,7 +10,6 @@ public class CameraManager : MonoBehaviour
     [SerializeField] private Transform lionGameCameraPos;
     [SerializeField] private GameObject cinemachineGameObject;
     [SerializeField] private Bananas bananas;
-
     private void Start()
     {
         Instance = this;
@@ -21,7 +17,6 @@ public class CameraManager : MonoBehaviour
         mainCameraObject.transform.position = asteroidCameraPos.transform.position;
         ChangeCameraProjectionSizeDefault();
     }
-
     private void Bananas_OnBananaHit(object sender, System.EventArgs e)
     {
         ChangeCameraPos(lionGameCameraPos);
