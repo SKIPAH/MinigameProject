@@ -7,6 +7,7 @@ public class PlayerMonkey : MonoBehaviour
     public static PlayerMonkey Instance { get; private set; }
     public event EventHandler OnPlayerDied;
     public event EventHandler OnCoconutGameModeOn;
+    public event EventHandler OnCoconutGameDone;
     private IInteractable interactable = null;
     private float horizontal;
     private float vertical;
@@ -195,6 +196,7 @@ public class PlayerMonkey : MonoBehaviour
             }
             else
             {
+                OnCoconutGameDone?.Invoke(this, EventArgs.Empty);
                 Debug.Log("Enough");
                 return;
             }
