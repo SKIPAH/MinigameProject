@@ -2123,8 +2123,8 @@ Transform:
   m_GameObject: {fileID: 511924999}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 410.79, y: 9.94, z: 0}
-  m_LocalScale: {x: 3.7843, y: 3.7843, z: 3.7843}
+  m_LocalPosition: {x: 410.79, y: 6.289999, z: 0}
+  m_LocalScale: {x: 1.9446003, y: 1.9446003, z: 1.9446003}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1584487406}
@@ -3116,8 +3116,8 @@ Transform:
   m_GameObject: {fileID: 724621850}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 430, y: 9.85, z: 0}
-  m_LocalScale: {x: 3.7843, y: 3.7843, z: 3.7843}
+  m_LocalPosition: {x: 430, y: 6.2, z: 0}
+  m_LocalScale: {x: 1.7803847, y: 1.7803847, z: 1.7803847}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1584487406}
@@ -3509,7 +3509,7 @@ Transform:
   m_GameObject: {fileID: 826175410}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 307.63, y: 7.07, z: -2}
+  m_LocalPosition: {x: 421.32, y: 6.49, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3544,7 +3544,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 421.57, y: 6.54, z: 0}
-  m_LocalScale: {x: 4.6829205, y: 7.4201603, z: 3.1744}
+  m_LocalScale: {x: 2.7526798, y: 4.361664, z: 1.8659525}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1584487406}
@@ -5172,7 +5172,7 @@ Transform:
   m_GameObject: {fileID: 1212500674}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 306.02, y: 7.96, z: -2}
+  m_LocalPosition: {x: 307.49, y: 2.64, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5836,6 +5836,18 @@ PrefabInstance:
     - target: {fileID: 4728860936447204011, guid: 0a73939f9f85a34498e81bde7fb565ec, type: 3}
       propertyPath: m_Name
       value: coconut
+      objectReference: {fileID: 0}
+    - target: {fileID: 8328042991243571242, guid: 0a73939f9f85a34498e81bde7fb565ec, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7533825
+      objectReference: {fileID: 0}
+    - target: {fileID: 8328042991243571242, guid: 0a73939f9f85a34498e81bde7fb565ec, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7533825
+      objectReference: {fileID: 0}
+    - target: {fileID: 8328042991243571242, guid: 0a73939f9f85a34498e81bde7fb565ec, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.7533825
       objectReference: {fileID: 0}
     - target: {fileID: 8328042991243571242, guid: 0a73939f9f85a34498e81bde7fb565ec, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7372,7 +7384,31 @@ MonoBehaviour:
   monkey1: {fileID: 1983230973}
   monkeyTeleported:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2082306852}
+        m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
+        m_MethodName: ChangeCameraPos
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 826175411}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2082306852}
+        m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
+        m_MethodName: ChangeCameraProjectionSize
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!212 &2098235273
 SpriteRenderer:
   m_ObjectHideFlags: 0

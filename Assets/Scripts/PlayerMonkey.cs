@@ -198,6 +198,7 @@ public class PlayerMonkey : MonoBehaviour
             {
                 OnCoconutGameDone?.Invoke(this, EventArgs.Empty);
                 Debug.Log("Enough");
+                state = MonkeyState.Modetopdown;
                 return;
             }
         }
