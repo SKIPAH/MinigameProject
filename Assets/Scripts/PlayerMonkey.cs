@@ -154,6 +154,11 @@ public class PlayerMonkey : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
         Jumping();
         FlipPlayerDirection();
+        rb.interpolation = RigidbodyInterpolation2D.None;
+        boxCollider.isTrigger = false;
+        rb.gravityScale = 4;
+        fallMultiplier = 3;
+
         //FALL GRAVITY SPEED
         if (rb.velocity.y < 0)
         {
@@ -198,7 +203,7 @@ public class PlayerMonkey : MonoBehaviour
             {
                 OnCoconutGameDone?.Invoke(this, EventArgs.Empty);
                 Debug.Log("Enough");
-                state = MonkeyState.Modetopdown;
+                state = MonkeyState.Mode2d;
                 return;
             }
         }

@@ -1,9 +1,11 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 public class GameCoconutUI : MonoBehaviour
 {
     [SerializeField] private Text roundTimeText;
     [SerializeField] private Text countdownTimerText;
+    [SerializeField] private Text mashText;
     [SerializeField] private float gameTime = 10f;
     private float gameTimeUI = 15f;
     public float countdownTime = 3f;
@@ -13,15 +15,18 @@ public class GameCoconutUI : MonoBehaviour
         PlayerMonkey.Instance.OnCoconutGameModeOn += Instance_OnCoconutGameModeOn;
         PlayerMonkey.Instance.OnCoconutGameDone += Instance_OnCoconutGameDone;
         roundTimeText.text = string.Empty;
+
         Hide();
     }
 
     private void Instance_OnCoconutGameDone(object sender, System.EventArgs e)
     {
         roundTimeText.text = "Done";
+        mashText.text = string.Empty;
         gameTime = 0f;
         countdownTime = 0f;
         isCoconutGameOn = false;
+        FunctionTimer.Create(() => roundTimeText.text = string.Empty, 3f);
     }
 
     private void Instance_OnCoconutGameModeOn(object sender, System.EventArgs e)
@@ -45,6 +50,7 @@ public class GameCoconutUI : MonoBehaviour
         if (countdownTime <= 0f)
         {
             countdownTimerText.text = string.Empty;
+            mashText.text = "MASH!";
             isCoconutGameOn = true;
         }
     }

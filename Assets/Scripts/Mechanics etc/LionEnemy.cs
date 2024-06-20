@@ -41,7 +41,7 @@ public class LionEnemy : MonoBehaviour, IPlayerDied
         changeDirectionTimer += Time.deltaTime;
         if (changeDirectionTimer >= changeDirectionTimerMax)
         {
-            randomDirectionNumber = UnityEngine.Random.Range(0, 5);
+            randomDirectionNumber = UnityEngine.Random.Range(0, 7);
             changeDirectionTimer = 0f;
         }
         if (randomDirectionNumber == 0)
@@ -60,7 +60,7 @@ public class LionEnemy : MonoBehaviour, IPlayerDied
         {
             lionTransform.Translate(lionSpeed * Time.deltaTime * Vector3.down);
         }
-        if (randomDirectionNumber == 4)
+        if (randomDirectionNumber >= 4)
         {
             if (playerMonkey != null)
             {
