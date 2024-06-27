@@ -29,6 +29,12 @@ public class PlayerMonkey : MonoBehaviour
     [SerializeField] private Transform coconutCut;
     [SerializeField] private int coconutsCutMax = 10;
     private int coconutsCutten = 0;
+
+    [Header("CoconutThrowStuff")]
+    [SerializeField] private Transform coconutHolder;
+    [SerializeField] private GameObject coconut;
+
+    
     public enum MonkeyState
     {
         Mode2d,
@@ -43,6 +49,8 @@ public class PlayerMonkey : MonoBehaviour
         Instance = this;
         rb = GetComponent<Rigidbody2D>();
         playerGravity = new Vector2(0, -Physics2D.gravity.y);
+
+        coconut.SetActive(false);
     }
     private void Update()
     {
@@ -207,6 +215,11 @@ public class PlayerMonkey : MonoBehaviour
                 return;
             }
         }
+    }
+
+    public void ActivateCoconut()
+    {
+        coconut.SetActive(true);
     }
 
 }

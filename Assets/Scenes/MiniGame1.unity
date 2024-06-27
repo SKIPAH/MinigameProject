@@ -3802,7 +3802,7 @@ Transform:
   m_GameObject: {fileID: 841458559}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 76.2, y: -1, z: 0}
+  m_LocalPosition: {x: 76.7, y: 65.3, z: 0}
   m_LocalScale: {x: 0.42548, y: 0.42548, z: 0.42548}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5072,7 +5072,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lionGame: {fileID: 1368419692}
-  gameTime: 2
+  gameTime: 10
   gameTimeText: {fileID: 265438349}
   teleportToCoconut: {fileID: 399648674}
 --- !u!1 &1129318657
@@ -5623,7 +5623,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roundTimeText: {fileID: 2091215003}
   countdownTimerText: {fileID: 1883120461}
-  gameTime: 1
+  gameTime: 15
   countdownTime: 3
 --- !u!1 &1402838248
 GameObject:
