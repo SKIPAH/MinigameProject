@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 public class PlayerMonkey : MonoBehaviour
 {
@@ -8,18 +7,19 @@ public class PlayerMonkey : MonoBehaviour
     public event EventHandler OnPlayerDied;
     public event EventHandler OnCoconutGameModeOn;
     public event EventHandler OnCoconutGameDone;
+
     private IInteractable interactable = null;
     private float horizontal;
     private float vertical;
-    private float speed = 8f;
-    private float jumpingPower = 16f;
+    [SerializeField] private float speed = 8f;
+    [SerializeField] private float jumpingPower = 16f;
     private bool isFacingRight = true;
     private bool isFlipping = false;
     private Vector2 playerGravity;
     private bool doubleJumpUsed = false;
     private bool isInteractable = false;
-    [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private BoxCollider2D boxCollider;
+    private Rigidbody2D rb;
+    private BoxCollider2D boxCollider;
     [SerializeField] Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float fallMultiplier;
@@ -38,8 +38,9 @@ public class PlayerMonkey : MonoBehaviour
     public enum MonkeyState
     {
         Mode2d,
-        Modetopdown,
-        Modecoconut
+        ModeTopdown,
+        ModeCoconutCut,
+        ModeCoconutThrow,
     }
     private MonkeyState state;
     private MonkeyState previousState;
@@ -48,6 +49,7 @@ public class PlayerMonkey : MonoBehaviour
         state = MonkeyState.Mode2d;
         Instance = this;
         rb = GetComponent<Rigidbody2D>();
+        boxCollider = GetComponent<BoxCollider2D>();
         playerGravity = new Vector2(0, -Physics2D.gravity.y);
 
         coconut.SetActive(false);
@@ -59,12 +61,15 @@ public class PlayerMonkey : MonoBehaviour
             case MonkeyState.Mode2d:
                 MovementModeHorizontal();
                 break;
-            case MonkeyState.Modetopdown:
+            case MonkeyState.ModeTopdown:
                 MovementModeTopDown();
                 break;
-            case MonkeyState.Modecoconut:
+            case MonkeyState.ModeCoconutCut:
                 OnCoconutGameModeOn?.Invoke(this, EventArgs.Empty);
                 CutCoconut(); 
+                break;
+            case MonkeyState.ModeCoconutThrow:
+                MovementModeCoconutThrow();
                 break;
         }
         if (Input.GetKeyDown(KeyCode.E) && isInteractable)
@@ -184,15 +189,25 @@ public class PlayerMonkey : MonoBehaviour
         Vector3 movement = new Vector3(horizontal, vertical, 0).normalized;
         transform.position += movement * speed * Time.deltaTime;
     }
+
+    private void MovementModeCoconutThrow()
+    {
+        Debug.Log("COCONUTTHROWMODEON ");
+    }
     public void CoconutGameModeOn()
     {
-        state = MonkeyState.Modecoconut;
+        state = MonkeyState.ModeCoconutCut;
+    }
+    public void CoconutThrowGameModeOn()
+    {
+        state = MonkeyState.ModeCoconutThrow;
+        speed = 0;
     }
     public void ChangeMovementMode()
     {
         gameObject.SetActive(false);
         gameObject.SetActive(true);
-        state = MonkeyState.Modetopdown;
+        state = MonkeyState.ModeTopdown;
     }
 
 
