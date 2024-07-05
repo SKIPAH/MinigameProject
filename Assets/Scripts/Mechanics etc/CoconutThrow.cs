@@ -8,10 +8,9 @@ public class CoconutThrow : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI coconutThrowText;
     [SerializeField] private GameObject coconutGameObject;
-
     [SerializeField] private Transform coconutHoldingPoint;
 
-
+    
 
 
     private void OnTriggerEnter2D(Collider2D collision)

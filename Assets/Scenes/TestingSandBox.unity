@@ -535,6 +535,22 @@ PrefabInstance:
       propertyPath: coconutHolder
       value: 
       objectReference: {fileID: 447779746}
+    - target: {fileID: 4133551804424824015, guid: 6b61bcbadda2c5c468391d12ff5b3a4a, type: 3}
+      propertyPath: throwingAngle
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4133551804424824015, guid: 6b61bcbadda2c5c468391d12ff5b3a4a, type: 3}
+      propertyPath: throwingForce
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 4133551804424824015, guid: 6b61bcbadda2c5c468391d12ff5b3a4a, type: 3}
+      propertyPath: coconutThrowable
+      value: 
+      objectReference: {fileID: 1142714856}
+    - target: {fileID: 4133551804424824015, guid: 6b61bcbadda2c5c468391d12ff5b3a4a, type: 3}
+      propertyPath: coconutThrowablerb2d
+      value: 
+      objectReference: {fileID: 1142714857}
     - target: {fileID: 4473412771029266252, guid: 6b61bcbadda2c5c468391d12ff5b3a4a, type: 3}
       propertyPath: m_Name
       value: MonkeyPlayer
@@ -1014,6 +1030,26 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3304512144098072933, guid: c7a7f8cfce2a2b44e9c235e2e9edce3b, type: 3}
+      propertyPath: m_Size.x
+      value: 1.4253309
+      objectReference: {fileID: 0}
+    - target: {fileID: 3304512144098072933, guid: c7a7f8cfce2a2b44e9c235e2e9edce3b, type: 3}
+      propertyPath: m_Size.y
+      value: 1.7255963
+      objectReference: {fileID: 0}
+    - target: {fileID: 3304512144098072933, guid: c7a7f8cfce2a2b44e9c235e2e9edce3b, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.032839745
+      objectReference: {fileID: 0}
+    - target: {fileID: 3304512144098072933, guid: c7a7f8cfce2a2b44e9c235e2e9edce3b, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.8836166
+      objectReference: {fileID: 0}
+    - target: {fileID: 3304512144098072933, guid: c7a7f8cfce2a2b44e9c235e2e9edce3b, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3304512144098072933, guid: c7a7f8cfce2a2b44e9c235e2e9edce3b, type: 3}
       propertyPath: m_LayerOverridePriority
       value: 0
       objectReference: {fileID: 0}
@@ -1087,11 +1123,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8670155398805162216, guid: c7a7f8cfce2a2b44e9c235e2e9edce3b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.21
+      value: 4.29
       objectReference: {fileID: 0}
     - target: {fileID: 8670155398805162216, guid: c7a7f8cfce2a2b44e9c235e2e9edce3b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.17
+      value: 1.67
       objectReference: {fileID: 0}
     - target: {fileID: 8670155398805162216, guid: c7a7f8cfce2a2b44e9c235e2e9edce3b, type: 3}
       propertyPath: m_LocalPosition.z
