@@ -7,36 +7,42 @@ public class PlayerMonkey : MonoBehaviour
     public event EventHandler OnPlayerDied;
     public event EventHandler OnCoconutGameModeOn;
     public event EventHandler OnCoconutGameDone;
+    public event EventHandler OnCoconutThrown;
 
-    private IInteractable interactable = null;
-    private float horizontal;
-    private float vertical;
-    [SerializeField] private float speed = 8f;
+    [SerializeField] private float movementSpeed = 8f;
     [SerializeField] private float jumpingPower = 16f;
-    private bool isFacingRight = true;
-    private bool isFlipping = false;
-    private Vector2 playerGravity;
-    private bool doubleJumpUsed = false;
-    private bool isInteractable = false;
-    private Rigidbody2D rb2d;
-    private BoxCollider2D boxCollider;
     [SerializeField] Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float fallMultiplier;
 
+    private IInteractable interactable;
+    private float horizontal;
+    private float vertical;
+    private bool isFacingRight = true;
+    private bool isFlipping = false;
+    private Vector2 playerGravity;
+    private bool isDoubleJumpUsed = false;
+    private bool isInteractable = false;
+    private Rigidbody2D monkeyRB2D;
+    private BoxCollider2D monkeyBoxCollider2D;
+    
+
     [Header("CoconutModeStuff")]
     [SerializeField] private Transform coconutFull;
     [SerializeField] private Transform coconutCut;
-    [SerializeField] private int coconutsCutMax = 10;
+    [SerializeField] private int coconutsCutMax = 30;
+    [SerializeField] private GameObject sword;
+
     private int coconutsCutten = 0;
 
     [Header("CoconutThrowStuff")]
     [SerializeField] private Transform coconutHolder;
     [SerializeField] private GameObject coconutThrowable;
-
-    [SerializeField] private Rigidbody2D coconutThrowablerb2d;
+    [SerializeField] private Rigidbody2D coconutThrowableRB2D;
     [SerializeField] private float throwingAngle = 0f;
     [SerializeField] private float throwingForce = 50f;
+    private float movementTimer = 0.5f;
+    private bool isMovingWithCoconut = false;
 
     public enum MonkeyState
     {
@@ -45,22 +51,47 @@ public class PlayerMonkey : MonoBehaviour
         ModeCoconutCut,
         ModeCoconutThrow,
     }
-    private MonkeyState state;
+    private MonkeyState currentState;
     private MonkeyState previousState;
     private void Start()
     {
-        state = MonkeyState.Mode2d;
         Instance = this;
-        rb2d = GetComponent<Rigidbody2D>();
-        
-        boxCollider = GetComponent<BoxCollider2D>();
+        currentState = MonkeyState.Mode2d;   
+        monkeyRB2D = GetComponent<Rigidbody2D>();    
+        monkeyBoxCollider2D = GetComponent<BoxCollider2D>();
         playerGravity = new Vector2(0, -Physics2D.gravity.y);
-
-        coconutThrowable.SetActive(false);
+        if (coconutThrowable){
+            coconutThrowable.SetActive(false);
+        }
+        if (sword)
+        {
+            sword.SetActive(false);
+        }
+        
     }
     private void Update()
     {
-        switch (state)
+        StateMachine();
+        MonkeyInteract();
+
+        Debug.Log(currentState);
+    }
+    private void FixedUpdate()
+    {
+        monkeyRB2D.velocity = new Vector2(horizontal * movementSpeed, monkeyRB2D.velocity.y);
+    }
+
+    private void MonkeyInteract()
+    {
+        if (Input.GetKeyDown(KeyCode.E) && isInteractable)
+        {
+            interactable.Interact();
+        }
+    }
+
+    private void StateMachine()
+    {
+        switch (currentState)
         {
             case MonkeyState.Mode2d:
                 MovementModeHorizontal();
@@ -70,28 +101,23 @@ public class PlayerMonkey : MonoBehaviour
                 break;
             case MonkeyState.ModeCoconutCut:
                 OnCoconutGameModeOn?.Invoke(this, EventArgs.Empty);
-                CutCoconut(); 
+                sword.SetActive(true);
+                CutCoconut();
                 break;
             case MonkeyState.ModeCoconutThrow:
                 MovementModeCoconutThrow();
-                Debug.Log(speed);
+                sword.SetActive(false);
+                Debug.Log(movementSpeed);
                 break;
         }
-        if (Input.GetKeyDown(KeyCode.E) && isInteractable)
-        {
-            interactable.Interact();
-        }
-        Debug.Log(state);
     }
+
     private bool IsGrounded()
     {
         //creates small circle and if collides with ground = we can jump
         return Physics2D.OverlapCapsule(groundCheck.position, new Vector2(1.0f, 0.2f), CapsuleDirection2D.Horizontal, 0, groundLayer);
     }
-    private void FixedUpdate()
-    {
-        rb2d.velocity = new Vector2(horizontal * speed, rb2d.velocity.y);
-    }
+   
     private void FlipPlayerDirection()
     {
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
@@ -106,18 +132,17 @@ public class PlayerMonkey : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
-            doubleJumpUsed = false;
-            rb2d.velocity = new Vector2(rb2d.velocity.x, jumpingPower);
+            isDoubleJumpUsed = false;
+            monkeyRB2D.velocity = new Vector2(monkeyRB2D.velocity.x, jumpingPower);
         }
-        if (Input.GetButtonUp("Jump") && rb2d.velocity.y > 0f)
+        if (Input.GetButtonUp("Jump") && monkeyRB2D.velocity.y > 0f)
         {
-            rb2d.velocity = new Vector2(rb2d.velocity.x, rb2d.velocity.y * 0.5f);
+            monkeyRB2D.velocity = new Vector2(monkeyRB2D.velocity.x, monkeyRB2D.velocity.y * 0.5f);
         }
-        //DoubleJump
-        if (Input.GetButtonDown("Jump") && !IsGrounded() && !doubleJumpUsed && !isFlipping)
+        if (Input.GetButtonDown("Jump") && !IsGrounded() && !isDoubleJumpUsed && !isFlipping)
         {
-            doubleJumpUsed = true;
-            rb2d.velocity = new Vector2(rb2d.velocity.x, jumpingPower * 1.2f);
+            isDoubleJumpUsed = true;
+            monkeyRB2D.velocity = new Vector2(monkeyRB2D.velocity.x, jumpingPower * 1.2f);
             StartCoroutine(Rotate());
         }
     }
@@ -164,80 +189,84 @@ public class PlayerMonkey : MonoBehaviour
     }
     public void ChangeGravityMode()
     {
-        rb2d.gravityScale = 0;
+        monkeyRB2D.gravityScale = 0;
         fallMultiplier = 0;
     }
     private void MovementModeHorizontal()
     {
+        monkeyRB2D.interpolation = RigidbodyInterpolation2D.None;
+        monkeyBoxCollider2D.isTrigger = false;
+        monkeyRB2D.gravityScale = 4;
+        fallMultiplier = 3;
+        
         horizontal = Input.GetAxisRaw("Horizontal");
         Jumping();
         FlipPlayerDirection();
-        rb2d.interpolation = RigidbodyInterpolation2D.None;
-        boxCollider.isTrigger = false;
-        rb2d.gravityScale = 4;
-        fallMultiplier = 3;
+        
 
         //FALL GRAVITY SPEED
-        if (rb2d.velocity.y < 0)
+        if (monkeyRB2D.velocity.y < 0)
         {
-            rb2d.velocity -= playerGravity * fallMultiplier * Time.deltaTime;
+            monkeyRB2D.velocity -= playerGravity * fallMultiplier * Time.deltaTime;
         }
     }
     private void MovementModeTopDown()
     {
+        monkeyRB2D.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+        monkeyRB2D.interpolation = RigidbodyInterpolation2D.Interpolate;
+        monkeyBoxCollider2D.isTrigger = true;
+        
         FlipPlayerDirection();
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
-        rb2d.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
-        rb2d.interpolation = RigidbodyInterpolation2D.Interpolate;
-        boxCollider.isTrigger = true;
+        
         Vector3 movement = new Vector3(horizontal, vertical, 0).normalized;
-        transform.position += movement * speed * Time.deltaTime;
+        transform.position += movement * movementSpeed * Time.deltaTime;
     }
 
     private void MovementModeCoconutThrow()
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            speed += 0.1f;
+            movementSpeed += 0.1f;
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-            speed += 0.1f;
+            movementSpeed += 0.1f;
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
-            coconutThrowablerb2d.isKinematic = false;
             ThrowCoconut();
+            OnCoconutThrown?.Invoke(this, EventArgs.Empty);
         }
     }
 
-
-
     private void ThrowCoconut()
     {
+        coconutThrowableRB2D.isKinematic = false;
         throwingAngle = coconutThrowable.GetComponent<Transform>().rotation.eulerAngles.z;
         float radAngle = throwingAngle * Mathf.Deg2Rad;
         float x1 = Mathf.Cos(radAngle);
         float y1 = Mathf.Sin(radAngle);
+        throwingForce = movementSpeed * 60;
         coconutThrowable.GetComponent<Rigidbody2D>().AddForce(new Vector2(x1, y1) * throwingForce);
     }
 
 
     public void CoconutGameModeOn()
     {
-        state = MonkeyState.ModeCoconutCut;
+        currentState = MonkeyState.ModeCoconutCut;
     }
     public void CoconutThrowGameModeOn()
     {
-        state = MonkeyState.ModeCoconutThrow;
-        speed = 0;
+        movementSpeed = 0;
+        currentState = MonkeyState.ModeCoconutThrow; 
     }
     public void ChangeMovementMode()
     {
         gameObject.SetActive(false);
         gameObject.SetActive(true);
-        state = MonkeyState.ModeTopdown;
+        currentState = MonkeyState.ModeTopdown;
     }
 
 
@@ -256,12 +285,11 @@ public class PlayerMonkey : MonoBehaviour
             {
                 OnCoconutGameDone?.Invoke(this, EventArgs.Empty);
                 Debug.Log("Enough");
-                state = MonkeyState.Mode2d;
+                currentState = MonkeyState.Mode2d;
                 return;
             }
         }
     }
-
     public void ActivateCoconut()
     {
         coconutThrowable.SetActive(true);

@@ -552,7 +552,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportDestination: {fileID: 1628898468}
-  monkey1: {fileID: 1983230973}
   monkeyTeleported:
     m_PersistentCalls:
       m_Calls: []
@@ -1068,7 +1067,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportDestination: {fileID: 1031813438}
-  monkey1: {fileID: 1983230973}
   monkeyTeleported:
     m_PersistentCalls:
       m_Calls:
@@ -1844,7 +1842,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportDestination: {fileID: 1898520866}
-  monkey1: {fileID: 1983230973}
   monkeyTeleported:
     m_PersistentCalls:
       m_Calls:
@@ -2725,7 +2722,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.4659201, y: 0}
+  m_Offset: {x: -0.06318119, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2736,7 +2733,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.06815979, y: 1}
+  m_Size: {x: 1.6792619, y: 1}
   m_EdgeRadius: 0
 --- !u!212 &639617296
 SpriteRenderer:
@@ -3419,7 +3416,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.4659204, y: 0}
+  m_Offset: {x: -0.14268297, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3430,7 +3427,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.06815919, y: 1}
+  m_Size: {x: 1.7236744, y: 1}
   m_EdgeRadius: 0
 --- !u!212 &786472349
 SpriteRenderer:
@@ -3607,7 +3604,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportDestination: {fileID: 2098235270}
-  monkey1: {fileID: 1983230973}
   monkeyTeleported:
     m_PersistentCalls:
       m_Calls: []
@@ -4219,7 +4215,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.47805947, y: 0}
+  m_Offset: {x: 0.15391392, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4230,7 +4226,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.04388109, y: 1}
+  m_Size: {x: 1.3078277, y: 1}
   m_EdgeRadius: 0
 --- !u!212 &977067055
 SpriteRenderer:
@@ -4495,7 +4491,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportDestination: {fileID: 325749095}
-  monkey1: {fileID: 1983230973}
   monkeyTeleported:
     m_PersistentCalls:
       m_Calls:
@@ -4896,7 +4891,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.49030697, y: 0}
+  m_Offset: {x: 0.020134062, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4907,7 +4902,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.019386023, y: 1}
+  m_Size: {x: 1.3088384, y: 1}
   m_EdgeRadius: 0
 --- !u!212 &1075972275
 SpriteRenderer:
@@ -5623,7 +5618,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roundTimeText: {fileID: 2091215003}
   countdownTimerText: {fileID: 1883120461}
-  gameTime: 15
+  gameTime: 4
   countdownTime: 3
 --- !u!1 &1402838248
 GameObject:
@@ -5763,7 +5758,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4133551804424824015, guid: 6b61bcbadda2c5c468391d12ff5b3a4a, type: 3}
   m_PrefabInstance: {fileID: 2794480279363002997}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1983230973}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eed752989946fa64e832493afb529345, type: 3}
@@ -5803,7 +5798,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32242532c78d3e145bad77c79293eef4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1461985980}
   gameUI: {fileID: 1396635023}
 --- !u!4 &1476669998
 Transform:
@@ -5902,7 +5896,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tryAgainButton: {fileID: 1646556028}
-  player: {fileID: 1461985980}
 --- !u!1 &1584487405
 GameObject:
   m_ObjectHideFlags: 0
@@ -6110,7 +6103,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportDestination: {fileID: 1628898468}
-  monkey1: {fileID: 1983230973}
   monkeyTeleported:
     m_PersistentCalls:
       m_Calls: []
@@ -6862,7 +6854,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportDestination: {fileID: 1031813438}
-  monkey1: {fileID: 1983230973}
   monkeyTeleported:
     m_PersistentCalls:
       m_Calls: []
@@ -6979,16 +6970,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3954470a6d4bea40b3261dd98069310, type: 3}
---- !u!1 &1983230973 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4473412771029266252, guid: 6b61bcbadda2c5c468391d12ff5b3a4a, type: 3}
-  m_PrefabInstance: {fileID: 2794480279363002997}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &1983230974 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 7519255738472544049, guid: 6b61bcbadda2c5c468391d12ff5b3a4a, type: 3}
-  m_PrefabInstance: {fileID: 2794480279363002997}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2057543815
 GameObject:
   m_ObjectHideFlags: 0
@@ -7132,17 +7113,6 @@ MonoBehaviour:
   lionGameCameraPos: {fileID: 1129318658}
   cinemachineGameObject: {fileID: 211714638}
   bananas: {fileID: 841458560}
---- !u!114 &2084159161 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6657870419756429647, guid: a3954470a6d4bea40b3261dd98069310, type: 3}
-  m_PrefabInstance: {fileID: 910979565618466140}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 512a22c075490b648b608ae8083a9184, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &2084159164 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5992945742168527028, guid: a3954470a6d4bea40b3261dd98069310, type: 3}
@@ -7319,7 +7289,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportDestination: {fileID: 828461115}
-  monkey1: {fileID: 1983230973}
   monkeyTeleported:
     m_PersistentCalls:
       m_Calls:
@@ -7576,29 +7545,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4133551804424824015, guid: 6b61bcbadda2c5c468391d12ff5b3a4a, type: 3}
-      propertyPath: jumpPad
-      value: 
-      objectReference: {fileID: 2084159161}
-    - target: {fileID: 4133551804424824015, guid: 6b61bcbadda2c5c468391d12ff5b3a4a, type: 3}
-      propertyPath: coconutCut
-      value: 
-      objectReference: {fileID: 8351787278719231828, guid: 144371072eda9894192eccc568bee7e9, type: 3}
-    - target: {fileID: 4133551804424824015, guid: 6b61bcbadda2c5c468391d12ff5b3a4a, type: 3}
-      propertyPath: boxCollider
-      value: 
-      objectReference: {fileID: 1983230974}
-    - target: {fileID: 4133551804424824015, guid: 6b61bcbadda2c5c468391d12ff5b3a4a, type: 3}
-      propertyPath: coconutFull
-      value: 
-      objectReference: {fileID: 8328042991243571242, guid: 0a73939f9f85a34498e81bde7fb565ec, type: 3}
     - target: {fileID: 4473412771029266252, guid: 6b61bcbadda2c5c468391d12ff5b3a4a, type: 3}
       propertyPath: m_Name
       value: MonkeyPlayer
-      objectReference: {fileID: 0}
-    - target: {fileID: 4473412771029266252, guid: 6b61bcbadda2c5c468391d12ff5b3a4a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5742977914707679451, guid: 6b61bcbadda2c5c468391d12ff5b3a4a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7638,14 +7587,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5742977914707679451, guid: 6b61bcbadda2c5c468391d12ff5b3a4a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7458786505578318169, guid: 6b61bcbadda2c5c468391d12ff5b3a4a, type: 3}
-      propertyPath: m_Interpolate
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7458786505578318169, guid: 6b61bcbadda2c5c468391d12ff5b3a4a, type: 3}
-      propertyPath: m_CollisionDetection
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

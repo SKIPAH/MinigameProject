@@ -6,12 +6,13 @@ public class LionEnemy : MonoBehaviour, IPlayerDied
     [SerializeField] private GameLionUI gameLionUI;
     [SerializeField] private Transform playerMonkey;
     public event EventHandler OnLionGameStarted;
+
     private float changeDirectionTimer = 0f;
     private float changeDirectionTimerMax = 0.5f;
     private float lionSpeed = 6.0f;
     private Transform lionTransform;
     private int randomDirectionNumber;
-    private bool isGameOn = false;
+    private bool isGameOn;
     private void Start()
     {
         isGameOn = false;
@@ -44,32 +45,27 @@ public class LionEnemy : MonoBehaviour, IPlayerDied
             randomDirectionNumber = UnityEngine.Random.Range(0, 7);
             changeDirectionTimer = 0f;
         }
-        if (randomDirectionNumber == 0)
+        switch (randomDirectionNumber)
         {
-            lionTransform.Translate(lionSpeed * Time.deltaTime * Vector3.right);
-        }
-        if (randomDirectionNumber == 1)
-        {
-            lionTransform.Translate(lionSpeed * Time.deltaTime * Vector3.left);
-        }
-        if (randomDirectionNumber == 2)
-        {
-            lionTransform.Translate(lionSpeed * Time.deltaTime * Vector3.up);
-        }
-        if (randomDirectionNumber == 3)
-        {
-            lionTransform.Translate(lionSpeed * Time.deltaTime * Vector3.down);
-        }
-        if (randomDirectionNumber >= 4)
-        {
-            if (playerMonkey != null)
-            {
-                lionTransform.position = (Vector2.MoveTowards(lionTransform.position, playerMonkey.position, lionSpeed * Time.deltaTime));
-            }
+            case 0:
+                lionTransform.Translate(lionSpeed * Time.deltaTime * Vector3.right);
+                break;
+            case 1:
+                lionTransform.Translate(lionSpeed * Time.deltaTime * Vector3.left);
+                break;
+            case 2:
+                lionTransform.Translate(lionSpeed * Time.deltaTime * Vector3.up);
+                break;
+            case 3:
+                lionTransform.Translate(lionSpeed * Time.deltaTime * Vector3.down);
+                break;
+            default:
+                if (playerMonkey != null)
+                {
+                    lionTransform.position = Vector2.MoveTowards(lionTransform.position, playerMonkey.position, lionSpeed * Time.deltaTime);
+                }
+                break;
         }
     }
-    public void PlayerDied()
-    {
-        Debug.Log("LOL");
-    }
+
 }

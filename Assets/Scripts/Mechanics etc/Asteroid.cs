@@ -1,12 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Asteroid : MonoBehaviour, IPlayerDied
 {
-
     BoxCollider2D boxCollider2D;
-
 
     private void Start()
     {

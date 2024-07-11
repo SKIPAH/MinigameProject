@@ -4,5 +4,8 @@ using UnityEngine;
 
 public interface IPlayerDied
 {
-    void PlayerDied();
+    void PlayerDied()
+    {
+        Debug.Log("PLAYER DIED LOL");
+    }
 }

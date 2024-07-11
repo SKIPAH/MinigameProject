@@ -3,10 +3,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class MiniGameManager : MonoBehaviour
 {
-    [SerializeField] private PlayerMonkey player;
+    public static MiniGameManager Instance { get; private set; }
+
     [SerializeField] private GameAsteroidUI gameUI;
     private bool isGameOver = false;
-    public static MiniGameManager Instance { get; private set; }
+    
     public event EventHandler OnGameStarted;
     public event EventHandler OnCountdownStarted;
     private enum State
@@ -23,7 +24,7 @@ public class MiniGameManager : MonoBehaviour
     }
     private void Start()
     {
-        player.OnPlayerDied += Player_OnPlayerDied;
+        PlayerMonkey.Instance.OnPlayerDied += Player_OnPlayerDied;
         gameState = State.Countdown;     
     }
     private void Player_OnPlayerDied(object sender, EventArgs e)
@@ -32,6 +33,8 @@ public class MiniGameManager : MonoBehaviour
     }
     private void Update()
     {
+        ModeStateMachine();
+
         if (isGameOver)
         {
             if(Input.GetKeyUp(KeyCode.Space)) 
@@ -39,14 +42,18 @@ public class MiniGameManager : MonoBehaviour
                 TryAgain();
             }
         }
-        Debug.Log(gameState);
+        Debug.Log(gameState);   
+    }
+
+    private void ModeStateMachine()
+    {
         switch (gameState)
         {
             case State.Countdown:
                 isGameOver = false;
                 Time.timeScale = 1.0f;
                 OnCountdownStarted?.Invoke(this, EventArgs.Empty);
-                if(gameUI.countdownTime <= 0f)
+                if (gameUI.countdownTime <= 0f)
                 {
                     gameState = State.GameStart;
                     OnGameStarted?.Invoke(this, EventArgs.Empty);
@@ -57,7 +64,7 @@ public class MiniGameManager : MonoBehaviour
                 break;
             case State.GameOver:
                 isGameOver = true;
-                Time.timeScale = 0f;             
+                Time.timeScale = 0f;
                 break;
             case State.WaitingForTeleport:
                 break;

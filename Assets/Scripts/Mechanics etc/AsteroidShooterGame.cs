@@ -45,7 +45,6 @@ public class AsteroidShooterGame : MonoBehaviour {
     {
         ShowTeleport();
         gameObject.SetActive(false);
-
     }
 
     private void MiniGameManager_OnAsteroidGameStarted(object sender, System.EventArgs e)
@@ -55,6 +54,11 @@ public class AsteroidShooterGame : MonoBehaviour {
     }
 
     private void Update()
+    {
+        RunAsteroidGame();
+    }
+
+    private void RunAsteroidGame()
     {
         if (IsGameStarted)
         {
@@ -97,9 +101,7 @@ public class AsteroidShooterGame : MonoBehaviour {
     private void MoveShooter()
     {
         LeanTween.moveY(asteroidShooter, -5, changeDirectionTimer).setEaseLinear().setLoopPingPong();
-        Debug.Log("MOving");
     }
-
 
     private void ShowTeleport()
     {

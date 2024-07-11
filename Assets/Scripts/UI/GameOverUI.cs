@@ -1,11 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 public class GameOverUI : MonoBehaviour
 {
     [SerializeField] private Button tryAgainButton;
-    [SerializeField] private PlayerMonkey player;
     private void Awake()
     {
         tryAgainButton.onClick.AddListener(() =>
@@ -15,7 +12,7 @@ public class GameOverUI : MonoBehaviour
     }
     private void Start()
     {
-        player.OnPlayerDied += Player_OnPlayerDied;
+        PlayerMonkey.Instance.OnPlayerDied += Player_OnPlayerDied;
         Hide();
     }
     private void Player_OnPlayerDied(object sender, System.EventArgs e)

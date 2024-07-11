@@ -14,9 +14,16 @@ public class CameraManager : MonoBehaviour
     {
         Instance = this;
         bananas.OnBananaHit += Bananas_OnBananaHit;
+        PlayerMonkey.Instance.OnCoconutThrown += Instance_OnCoconutThrown;
         mainCameraObject.transform.position = asteroidCameraPos.transform.position;
         ChangeCameraProjectionSizeDefault();
     }
+
+    private void Instance_OnCoconutThrown(object sender, System.EventArgs e)
+    {
+        
+    }
+
     private void Bananas_OnBananaHit(object sender, System.EventArgs e)
     {
         ChangeCameraPos(lionGameCameraPos);
