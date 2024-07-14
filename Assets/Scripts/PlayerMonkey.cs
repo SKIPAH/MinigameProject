@@ -295,4 +295,9 @@ public class PlayerMonkey : MonoBehaviour
         coconutThrowable.SetActive(true);
     }
 
+    public void DeactivateSword()
+    {
+        sword.SetActive(false);
+    }
+
 }
