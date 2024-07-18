@@ -5,11 +5,13 @@ public class CameraManager : MonoBehaviour
     public static CameraManager Instance { get; private set; }
     [SerializeField] private Camera mainCamera;
     [SerializeField] private CinemachineVirtualCamera cinemachineCam;
+    [SerializeField] private CinemachineClearShot clearShotCam;
     [SerializeField] private GameObject mainCameraObject;
     [SerializeField] private Transform asteroidCameraPos;
     [SerializeField] private Transform lionGameCameraPos;
     [SerializeField] private GameObject cinemachineGameObject;
     [SerializeField] private Bananas bananas;
+    [SerializeField] private GameObject thrownCoconut;
     private void Start()
     {
         Instance = this;
@@ -21,7 +23,7 @@ public class CameraManager : MonoBehaviour
 
     private void Instance_OnCoconutThrown(object sender, System.EventArgs e)
     {
-        
+        ChangeCameraToFollowCoconut();
     }
 
     private void Bananas_OnBananaHit(object sender, System.EventArgs e)
@@ -47,5 +49,12 @@ public class CameraManager : MonoBehaviour
     {
         cinemachineGameObject.SetActive(false);
         mainCamera.orthographicSize = 20.0f;
+    }
+
+    public void ChangeCameraToFollowCoconut()
+    {
+        cinemachineGameObject.SetActive(true);
+        clearShotCam.Follow = thrownCoconut.transform;
+        clearShotCam.LookAt = thrownCoconut.transform;
     }
 }

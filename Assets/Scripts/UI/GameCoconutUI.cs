@@ -6,7 +6,6 @@ public class GameCoconutUI : MonoBehaviour
     [SerializeField] private Text countdownTimerText;
     [SerializeField] private Text mashText;
     [SerializeField] private float gameTime = 10f;
-    private float gameTimeUI = 15f;
     public float countdownTime = 3f;
     private bool isCoconutGameOn = false;
     private void Start()
@@ -51,6 +50,7 @@ public class GameCoconutUI : MonoBehaviour
             countdownTimerText.text = string.Empty;
             mashText.text = "MASH!";
             isCoconutGameOn = true;
+            PlayerMonkey.Instance.CanCutCoconut();
         }
     }
     private void GameTimer()

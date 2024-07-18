@@ -3803,7 +3803,7 @@ Transform:
   m_GameObject: {fileID: 841458559}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 76.7, y: 65.3, z: 0}
+  m_LocalPosition: {x: 76.7, y: -1.5, z: 0}
   m_LocalScale: {x: 0.42548, y: 0.42548, z: 0.42548}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4809,7 +4809,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1584487406}
     m_Modifications:
     - target: {fileID: 4100769745149806818, guid: 74f8a453a99e3fe4584b81019e833211, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5129,7 +5129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lionGame: {fileID: 1368419692}
-  gameTime: 4
+  gameTime: 2
   gameTimeText: {fileID: 265438349}
   teleportToCoconut: {fileID: 399648674}
 --- !u!1 &1129318657
@@ -5992,6 +5992,7 @@ Transform:
   - {fileID: 724621851}
   - {fileID: 1034084894}
   - {fileID: 2107396554}
+  - {fileID: 1753304144}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1606901531
@@ -6619,6 +6620,16 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1747242091}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1753304139 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6716940656094838639, guid: 74f8a453a99e3fe4584b81019e833211, type: 3}
+  m_PrefabInstance: {fileID: 1047314522}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1753304144 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4100769745149806818, guid: 74f8a453a99e3fe4584b81019e833211, type: 3}
+  m_PrefabInstance: {fileID: 1047314522}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1877595827
 GameObject:
   m_ObjectHideFlags: 0
@@ -7227,11 +7238,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 519420031}
   cinemachineCam: {fileID: 2141208711}
+  clearShotCam: {fileID: 211714639}
   mainCameraObject: {fileID: 519420028}
   asteroidCameraPos: {fileID: 539800463}
   lionGameCameraPos: {fileID: 1129318658}
   cinemachineGameObject: {fileID: 211714638}
   bananas: {fileID: 841458560}
+  thrownCoconut: {fileID: 1753304139}
 --- !u!4 &2084159164 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5992945742168527028, guid: a3954470a6d4bea40b3261dd98069310, type: 3}
@@ -7825,4 +7838,3 @@ SceneRoots:
   - {fileID: 569591576}
   - {fileID: 1476669998}
   - {fileID: 359721844}
-  - {fileID: 1047314522}

@@ -23,6 +23,7 @@ public class LionEnemy : MonoBehaviour, IPlayerDied
     private void GameLionUI_OnLionGameEnded(object sender, EventArgs e)
     {
         isGameOn = false;
+        gameObject.SetActive(false);
     }
     private void Bananas_OnBananaHit(object sender, System.EventArgs e)
     {

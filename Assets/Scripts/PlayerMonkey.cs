@@ -32,6 +32,7 @@ public class PlayerMonkey : MonoBehaviour
     [SerializeField] private Transform coconutCut;
     [SerializeField] private int coconutsCutMax = 30;
     [SerializeField] private GameObject sword;
+    private bool canCutCoconut = false;
 
     private int coconutsCutten = 0;
 
@@ -41,8 +42,6 @@ public class PlayerMonkey : MonoBehaviour
     [SerializeField] private Rigidbody2D coconutThrowableRB2D;
     [SerializeField] private float throwingAngle = 0f;
     [SerializeField] private float throwingForce = 50f;
-    private float movementTimer = 0.5f;
-    private bool isMovingWithCoconut = false;
 
     public enum MonkeyState
     {
@@ -259,8 +258,8 @@ public class PlayerMonkey : MonoBehaviour
     }
     public void CoconutThrowGameModeOn()
     {
+        currentState = MonkeyState.ModeCoconutThrow;
         movementSpeed = 0;
-        currentState = MonkeyState.ModeCoconutThrow; 
     }
     public void ChangeMovementMode()
     {
@@ -272,7 +271,7 @@ public class PlayerMonkey : MonoBehaviour
 
     private void CutCoconut()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (canCutCoconut && Input.GetKeyDown(KeyCode.Space))
         {
             if (coconutsCutten < coconutsCutMax)
             {
@@ -298,6 +297,11 @@ public class PlayerMonkey : MonoBehaviour
     public void DeactivateSword()
     {
         sword.SetActive(false);
+    }
+
+    public void CanCutCoconut()
+    {
+        canCutCoconut = true;
     }
 
 }
