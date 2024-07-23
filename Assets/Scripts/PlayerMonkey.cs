@@ -52,9 +52,18 @@ public class PlayerMonkey : MonoBehaviour
     }
     private MonkeyState currentState;
     private MonkeyState previousState;
+
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+    }
     private void Start()
     {
-        Instance = this;
         currentState = MonkeyState.Mode2d;   
         monkeyRB2D = GetComponent<Rigidbody2D>();    
         monkeyBoxCollider2D = GetComponent<BoxCollider2D>();
@@ -247,7 +256,7 @@ public class PlayerMonkey : MonoBehaviour
         float radAngle = throwingAngle * Mathf.Deg2Rad;
         float x1 = Mathf.Cos(radAngle);
         float y1 = Mathf.Sin(radAngle);
-        throwingForce = movementSpeed * 60;
+        throwingForce = movementSpeed * 160;
         coconutThrowable.GetComponent<Rigidbody2D>().AddForce(new Vector2(x1, y1) * throwingForce);
     }
 
@@ -260,6 +269,7 @@ public class PlayerMonkey : MonoBehaviour
     {
         currentState = MonkeyState.ModeCoconutThrow;
         movementSpeed = 0;
+        CameraManager.Instance.ChangeCameraToFollowCoconut();
     }
     public void ChangeMovementMode()
     {
@@ -293,15 +303,12 @@ public class PlayerMonkey : MonoBehaviour
     {
         coconutThrowable.SetActive(true);
     }
-
     public void DeactivateSword()
     {
         sword.SetActive(false);
     }
-
     public void CanCutCoconut()
     {
         canCutCoconut = true;
     }
-
 }

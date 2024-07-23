@@ -1,12 +1,9 @@
-
 using UnityEngine;
 
 public class AsteroidShooterGame : MonoBehaviour {
 
     [SerializeField] private GameAsteroidUI gameUI;
-
     [SerializeField] private Transform asteroidPrefab;
-    
     [SerializeField] private float spawnTimerMax = 1f;
     [SerializeField] private float changeDirectionTimer = 1f;
     [SerializeField] private Transform shootingPoint;

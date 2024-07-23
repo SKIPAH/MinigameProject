@@ -57,6 +57,17 @@ public class GameAsteroidUI : MonoBehaviour
             }
         }
     }
+
+
+    public void SkipGame()
+    {
+        gameTime = 0f;
+    }
+
+
+
+
+
     public void Show()
     {
         gameObject.SetActive(true);

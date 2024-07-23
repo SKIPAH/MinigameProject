@@ -14,16 +14,21 @@ public class CameraManager : MonoBehaviour
     [SerializeField] private GameObject thrownCoconut;
     private void Start()
     {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
         Instance = this;
         bananas.OnBananaHit += Bananas_OnBananaHit;
-        PlayerMonkey.Instance.OnCoconutThrown += Instance_OnCoconutThrown;
+        PlayerMonkey.Instance.OnCoconutThrown += PlayerMonkey_OnCoconutThrown;
         mainCameraObject.transform.position = asteroidCameraPos.transform.position;
         ChangeCameraProjectionSizeDefault();
     }
 
-    private void Instance_OnCoconutThrown(object sender, System.EventArgs e)
+    private void PlayerMonkey_OnCoconutThrown(object sender, System.EventArgs e)
     {
-        ChangeCameraToFollowCoconut();
+        
     }
 
     private void Bananas_OnBananaHit(object sender, System.EventArgs e)
@@ -53,8 +58,6 @@ public class CameraManager : MonoBehaviour
 
     public void ChangeCameraToFollowCoconut()
     {
-        cinemachineGameObject.SetActive(true);
-        clearShotCam.Follow = thrownCoconut.transform;
-        clearShotCam.LookAt = thrownCoconut.transform;
+        clearShotCam.Follow = thrownCoconut.transform;   
     }
 }

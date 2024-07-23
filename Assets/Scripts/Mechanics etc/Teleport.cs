@@ -12,4 +12,9 @@ public class Teleport : MonoBehaviour, IInteractable
             monkeyTeleported.Invoke();
         }
     }
+    public void TeleportToNext(Transform location)
+    {
+        monkeyTeleported.Invoke();
+        PlayerMonkey.Instance.transform.position = location.position;        
+    }
 }

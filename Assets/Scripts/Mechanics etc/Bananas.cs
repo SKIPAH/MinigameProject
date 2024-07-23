@@ -13,12 +13,19 @@ public class Bananas : MonoBehaviour
     {
         if (collision.GetComponent<PlayerMonkey>())
         {
-            groundAndTeleport.gameObject.SetActive(true);
-            OnBananaHit?.Invoke(this, EventArgs.Empty);
-            PlayerMonkey.Instance.transform.position = liongamePos.transform.position;
-            PlayerMonkey.Instance.ChangeGravityMode();
-            PlayerMonkey.Instance.ChangeMovementMode();
-            CameraManager.Instance.ChangeCameraProjectionSizeLionGame();
+            LionGameMode();
         }
+    }
+
+
+
+    private void LionGameMode()
+    {
+        groundAndTeleport.gameObject.SetActive(true);
+        OnBananaHit?.Invoke(this, EventArgs.Empty);
+        PlayerMonkey.Instance.transform.position = liongamePos.transform.position;
+        PlayerMonkey.Instance.ChangeGravityMode();
+        PlayerMonkey.Instance.ChangeMovementMode();
+        CameraManager.Instance.ChangeCameraProjectionSizeLionGame();
     }
 }

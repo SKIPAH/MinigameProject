@@ -20,6 +20,11 @@ public class MiniGameManager : MonoBehaviour
     private State gameState;
     private void Awake()
     {
+        if(Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
         Instance = this;
     }
     private void Start()

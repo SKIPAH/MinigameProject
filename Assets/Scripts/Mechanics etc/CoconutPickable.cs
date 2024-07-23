@@ -1,8 +1,9 @@
 using UnityEngine;
 
-public class CoconutThrow : MonoBehaviour
+public class CoconutPickable : MonoBehaviour
 {
     [SerializeField] private GameObject coconutGameObject;
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -10,7 +11,7 @@ public class CoconutThrow : MonoBehaviour
 
             PlayerMonkey.Instance.ActivateCoconut();
             coconutGameObject.SetActive(false);
-        }
+        } 
     }
 
 }
