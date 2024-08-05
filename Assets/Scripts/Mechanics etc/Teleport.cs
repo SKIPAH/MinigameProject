@@ -9,6 +9,8 @@ public class Teleport : MonoBehaviour, IInteractable
         if (PlayerMonkey.Instance && teleportDestination)
         {
             PlayerMonkey.Instance.transform.position = teleportDestination.position;
+            PlayerMonkey.Instance.ResetMonkeyRotation();
+            PlayerMonkey.Instance.FlipToRightSide();
             monkeyTeleported.Invoke();
         }
     }

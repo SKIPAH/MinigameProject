@@ -73,8 +73,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5742977914707679451}
-  - component: {fileID: 2202827454635414831}
   - component: {fileID: 4133551804424824015}
+  - component: {fileID: 2202827454635414831}
   - component: {fileID: 7458786505578318169}
   - component: {fileID: 7519255738472544049}
   m_Layer: 0
@@ -101,6 +101,34 @@ Transform:
   - {fileID: 8394129753025072096}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4133551804424824015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4473412771029266252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed752989946fa64e832493afb529345, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 8
+  jumpingPower: 16
+  groundCheck: {fileID: 6963072495174323100}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  fallMultiplier: 3
+  coconutFull: {fileID: 8328042991243571242, guid: 0a73939f9f85a34498e81bde7fb565ec, type: 3}
+  coconutCut: {fileID: 8351787278719231828, guid: 144371072eda9894192eccc568bee7e9, type: 3}
+  coconutsCutMax: 10
+  sword: {fileID: 0}
+  coconutHolder: {fileID: 8394129753025072096}
+  coconutThrowable: {fileID: 1040076832519731093}
+  coconutThrowableRB2D: {fileID: 6273458584826163943}
+  throwingAngle: 50
+  throwingForce: 500
 --- !u!212 &2202827454635414831
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -153,34 +181,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4133551804424824015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4473412771029266252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eed752989946fa64e832493afb529345, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 8
-  jumpingPower: 16
-  groundCheck: {fileID: 6963072495174323100}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  fallMultiplier: 3
-  coconutFull: {fileID: 8328042991243571242, guid: 0a73939f9f85a34498e81bde7fb565ec, type: 3}
-  coconutCut: {fileID: 8351787278719231828, guid: 144371072eda9894192eccc568bee7e9, type: 3}
-  coconutsCutMax: 10
-  sword: {fileID: 0}
-  coconutHolder: {fileID: 8394129753025072096}
-  coconutThrowable: {fileID: 1040076832519731093}
-  coconutThrowableRB2D: {fileID: 6273458584826163943}
-  throwingAngle: 50
-  throwingForce: 500
 --- !u!50 &7458786505578318169
 Rigidbody2D:
   serializedVersion: 4

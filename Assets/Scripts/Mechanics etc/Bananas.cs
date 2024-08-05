@@ -14,6 +14,7 @@ public class Bananas : MonoBehaviour
         if (collision.GetComponent<PlayerMonkey>())
         {
             LionGameMode();
+            PlayerMonkey.Instance.ResetMonkeyRotation();
         }
     }
 

@@ -25,6 +25,7 @@ public class PlayerMonkey : MonoBehaviour
     private bool isInteractable = false;
     private Rigidbody2D monkeyRB2D;
     private BoxCollider2D monkeyBoxCollider2D;
+    private Quaternion currentRotation;
     
 
     [Header("CoconutModeStuff")]
@@ -64,6 +65,7 @@ public class PlayerMonkey : MonoBehaviour
     }
     private void Start()
     {
+        currentRotation = gameObject.transform.rotation;
         currentState = MonkeyState.Mode2d;   
         monkeyRB2D = GetComponent<Rigidbody2D>();    
         monkeyBoxCollider2D = GetComponent<BoxCollider2D>();
@@ -83,6 +85,11 @@ public class PlayerMonkey : MonoBehaviour
         MonkeyInteract();
 
         Debug.Log(currentState);
+
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            ResetMonkeyRotation();
+        }
     }
     private void FixedUpdate()
     {
@@ -131,6 +138,16 @@ public class PlayerMonkey : MonoBehaviour
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
         {
             isFacingRight = !isFacingRight;
+            Vector3 localScale = transform.localScale;
+            localScale.x *= -1f;
+            transform.localScale = localScale;
+        }
+    }
+
+    public void FlipToRightSide()
+    {
+        if (!isFacingRight)
+        {
             Vector3 localScale = transform.localScale;
             localScale.x *= -1f;
             transform.localScale = localScale;
@@ -310,5 +327,10 @@ public class PlayerMonkey : MonoBehaviour
     public void CanCutCoconut()
     {
         canCutCoconut = true;
+    }
+
+    public void ResetMonkeyRotation()
+    {
+        gameObject.transform.rotation = currentRotation;
     }
 }

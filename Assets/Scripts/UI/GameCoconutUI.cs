@@ -43,7 +43,7 @@ public class GameCoconutUI : MonoBehaviour
         countdownTime -= Time.deltaTime;
         if (countdownTimerText != null)
         {
-            countdownTimerText.text = countdownTime.ToString("F1");
+            countdownTimerText.text = "START MASHING SPACEBAR IN: " + countdownTime.ToString("F1");
         }
         if (countdownTime <= 0f)
         {

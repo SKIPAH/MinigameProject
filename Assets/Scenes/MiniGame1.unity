@@ -5150,7 +5150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lionGame: {fileID: 1368419692}
-  gameTime: 2
+  gameTime: 0.1
   gameTimeText: {fileID: 265438349}
   teleportToCoconut: {fileID: 399648674}
 --- !u!1 &1129318657
@@ -5701,8 +5701,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roundTimeText: {fileID: 2091215003}
   countdownTimerText: {fileID: 1883120461}
-  gameTime: 2
-  countdownTime: 3
+  gameTime: 0.1
+  countdownTime: 0.1
 --- !u!1 &1402838248
 GameObject:
   m_ObjectHideFlags: 0
@@ -6426,12 +6426,16 @@ PrefabInstance:
       value: ThrowingPlatform
       objectReference: {fileID: 0}
     - target: {fileID: 6911089969192677945, guid: d1bc2f6cf4543f2499d49d88269f258a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1921
+      objectReference: {fileID: 0}
+    - target: {fileID: 6911089969192677945, guid: d1bc2f6cf4543f2499d49d88269f258a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 455.06158
       objectReference: {fileID: 0}
     - target: {fileID: 6911089969192677945, guid: d1bc2f6cf4543f2499d49d88269f258a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.9623773
+      value: 2.5584
       objectReference: {fileID: 0}
     - target: {fileID: 6911089969192677945, guid: d1bc2f6cf4543f2499d49d88269f258a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6504,8 +6508,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -385.25647}
-  m_SizeDelta: {x: 106.332, y: 45.9089}
+  m_AnchoredPosition: {x: -29.9504, y: -286}
+  m_SizeDelta: {x: 352.5916, y: 110.3061}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1746445371
 MonoBehaviour:
