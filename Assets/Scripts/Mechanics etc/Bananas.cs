@@ -26,7 +26,7 @@ public class Bananas : MonoBehaviour
         OnBananaHit?.Invoke(this, EventArgs.Empty);
         PlayerMonkey.Instance.transform.position = liongamePos.transform.position;
         PlayerMonkey.Instance.ChangeGravityMode();
-        PlayerMonkey.Instance.ChangeMovementMode();
+        PlayerMonkey.Instance.ChangeMovementModeToTopDown();
         CameraManager.Instance.ChangeCameraProjectionSizeLionGame();
     }
 }

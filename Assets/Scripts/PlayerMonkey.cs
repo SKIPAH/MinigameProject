@@ -43,6 +43,7 @@ public class PlayerMonkey : MonoBehaviour
     [SerializeField] private Rigidbody2D coconutThrowableRB2D;
     [SerializeField] private float throwingAngle = 0f;
     [SerializeField] private float throwingForce = 50f;
+    private float throwingPower = 0f;
 
     public enum MonkeyState
     {
@@ -133,7 +134,7 @@ public class PlayerMonkey : MonoBehaviour
         return Physics2D.OverlapCapsule(groundCheck.position, new Vector2(1.0f, 0.2f), CapsuleDirection2D.Horizontal, 0, groundLayer);
     }
    
-    private void FlipPlayerDirection()
+    public void FlipPlayerDirection()
     {
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
         {
@@ -148,11 +149,11 @@ public class PlayerMonkey : MonoBehaviour
     {
         if (!isFacingRight)
         {
-            Vector3 localScale = transform.localScale;
-            localScale.x *= -1f;
-            transform.localScale = localScale;
+            FlipPlayerDirection();
         }
     }
+
+
     private void Jumping()
     {
         if (Input.GetButtonDown("Jump") && IsGrounded())
@@ -251,18 +252,23 @@ public class PlayerMonkey : MonoBehaviour
 
     private void MovementModeCoconutThrow()
     {
+
+        monkeyRB2D.isKinematic = true;
+
         if (Input.GetKeyDown(KeyCode.A))
         {
-            movementSpeed += 0.1f;
+            throwingPower += 0.1f;
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-            movementSpeed += 0.1f;
+            throwingPower += 0.1f;
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
             ThrowCoconut();
             OnCoconutThrown?.Invoke(this, EventArgs.Empty);
+
+            FunctionTimer.Create(() => ChangeTo2DModeFromThrowMode(), 5f);
         }
     }
 
@@ -273,7 +279,7 @@ public class PlayerMonkey : MonoBehaviour
         float radAngle = throwingAngle * Mathf.Deg2Rad;
         float x1 = Mathf.Cos(radAngle);
         float y1 = Mathf.Sin(radAngle);
-        throwingForce = movementSpeed * 160;
+        throwingForce = throwingPower * 160;
         coconutThrowable.GetComponent<Rigidbody2D>().AddForce(new Vector2(x1, y1) * throwingForce);
     }
 
@@ -288,11 +294,19 @@ public class PlayerMonkey : MonoBehaviour
         movementSpeed = 0;
         CameraManager.Instance.ChangeCameraToFollowCoconut();
     }
-    public void ChangeMovementMode()
+    public void ChangeMovementModeToTopDown()
     {
         gameObject.SetActive(false);
         gameObject.SetActive(true);
         currentState = MonkeyState.ModeTopdown;
+    }
+
+    public void ChangeTo2DModeFromThrowMode()
+    {
+        CameraManager.Instance.ChangeCameraToFollowMonkey();
+        monkeyRB2D.isKinematic = false;
+        currentState = MonkeyState.Mode2d;    
+        coconutThrowable.SetActive(false);
     }
 
 

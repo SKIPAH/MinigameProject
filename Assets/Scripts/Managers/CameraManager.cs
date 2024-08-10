@@ -40,6 +40,8 @@ public class CameraManager : MonoBehaviour
     {
         mainCameraObject.transform.position = cameraPos.position;
     }
+
+    
     public void ChangeCameraProjectionSize()
     {
         cinemachineCam.m_Lens.OrthographicSize = 15.0f;
@@ -59,5 +61,9 @@ public class CameraManager : MonoBehaviour
     public void ChangeCameraToFollowCoconut()
     {
         clearShotCam.Follow = thrownCoconut.transform;   
+    }
+    public void ChangeCameraToFollowMonkey()
+    {
+        clearShotCam.Follow = PlayerMonkey.Instance.transform;
     }
 }
