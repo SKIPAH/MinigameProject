@@ -44,6 +44,8 @@ public class PlayerMonkey : MonoBehaviour
     [SerializeField] private float throwingAngle = 0f;
     [SerializeField] private float throwingForce = 50f;
     private float throwingPower = 0f;
+    private bool isCoconutThrown;
+    private bool isPlatformActive = true;
 
     public enum MonkeyState
     {
@@ -66,6 +68,7 @@ public class PlayerMonkey : MonoBehaviour
     }
     private void Start()
     {
+        isCoconutThrown = false;
         currentRotation = gameObject.transform.rotation;
         currentState = MonkeyState.Mode2d;   
         monkeyRB2D = GetComponent<Rigidbody2D>();    
@@ -267,8 +270,10 @@ public class PlayerMonkey : MonoBehaviour
         {
             ThrowCoconut();
             OnCoconutThrown?.Invoke(this, EventArgs.Empty);
+            isCoconutThrown = true;
 
             FunctionTimer.Create(() => ChangeTo2DModeFromThrowMode(), 5f);
+            FunctionTimer.Create(() => isCoconutThrown = false, 6f);
         }
     }
 
@@ -290,9 +295,14 @@ public class PlayerMonkey : MonoBehaviour
     }
     public void CoconutThrowGameModeOn()
     {
-        currentState = MonkeyState.ModeCoconutThrow;
-        movementSpeed = 0;
-        CameraManager.Instance.ChangeCameraToFollowCoconut();
+        if (isPlatformActive)
+        {
+            currentState = MonkeyState.ModeCoconutThrow;
+            movementSpeed = 0;
+            CameraManager.Instance.ChangeCameraToFollowCoconut();
+            isPlatformActive = false;
+        }
+        
     }
     public void ChangeMovementModeToTopDown()
     {
@@ -305,6 +315,7 @@ public class PlayerMonkey : MonoBehaviour
     {
         CameraManager.Instance.ChangeCameraToFollowMonkey();
         monkeyRB2D.isKinematic = false;
+        movementSpeed = 8f;
         currentState = MonkeyState.Mode2d;    
         coconutThrowable.SetActive(false);
     }

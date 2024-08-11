@@ -3330,7 +3330,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7338942057456863262, guid: b4086d3f884c7a14b9f4e5e8794a35c1, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4086d3f884c7a14b9f4e5e8794a35c1, type: 3}
@@ -6623,7 +6624,7 @@ MonoBehaviour:
   countdownTimerText: {fileID: 1746445371}
   mashText: {fileID: 1606901533}
   gameTime: 15
-  countdownTime: 3
+  countdownTime: 1
 --- !u!1 &2076513716
 GameObject:
   m_ObjectHideFlags: 0
@@ -7116,6 +7117,10 @@ PrefabInstance:
       propertyPath: sword
       value: 
       objectReference: {fileID: 745019858}
+    - target: {fileID: 4133551804424824015, guid: 6b61bcbadda2c5c468391d12ff5b3a4a, type: 3}
+      propertyPath: coconutsCutMax
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4473412771029266252, guid: 6b61bcbadda2c5c468391d12ff5b3a4a, type: 3}
       propertyPath: m_Name
       value: MonkeyPlayer
