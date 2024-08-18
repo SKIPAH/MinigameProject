@@ -879,6 +879,10 @@ PrefabInstance:
       propertyPath: bouncePower
       value: 35
       objectReference: {fileID: 0}
+    - target: {fileID: 6657870419756429647, guid: a3954470a6d4bea40b3261dd98069310, type: 3}
+      propertyPath: isMovingJumpPad
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2248,6 +2252,10 @@ PrefabInstance:
     - target: {fileID: 6657870419756429647, guid: a3954470a6d4bea40b3261dd98069310, type: 3}
       propertyPath: bouncePower
       value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 6657870419756429647, guid: a3954470a6d4bea40b3261dd98069310, type: 3}
+      propertyPath: isMovingJumpPad
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4314,7 +4322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6657870419756429647, guid: a3954470a6d4bea40b3261dd98069310, type: 3}
       propertyPath: isMovingJumpPad
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6463,6 +6471,10 @@ PrefabInstance:
     - target: {fileID: 6657870419756429647, guid: a3954470a6d4bea40b3261dd98069310, type: 3}
       propertyPath: bouncePower
       value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 6657870419756429647, guid: a3954470a6d4bea40b3261dd98069310, type: 3}
+      propertyPath: isMovingJumpPad
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

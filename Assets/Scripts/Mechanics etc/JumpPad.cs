@@ -5,9 +5,10 @@ public class JumpPad : MonoBehaviour
     [SerializeField] private float bouncePower = 50f;
 
     [SerializeField] private bool isMovingJumpPad;
-    private float changeDirectionTimer = 2.0f;
+    private float changeDirectionTimer = 5.0f;
     private float currentXposition;
-
+    private float moveToPosition;
+    private float randomTimer;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -20,18 +21,19 @@ public class JumpPad : MonoBehaviour
 
     private void Start()
     {
+        randomTimer = Random.Range(1.0f, 5.0f);
+        currentXposition = gameObject.transform.position.x;
+        moveToPosition = currentXposition - 20f;
+        moveToPosition = currentXposition - 20f;
         if (isMovingJumpPad)
         {
             MoveJumpPad();
-            currentXposition = gameObject.transform.position.x;
-            
         }
     }
 
-
     private void MoveJumpPad()
     {
-        LeanTween.moveX(gameObject, currentXposition, changeDirectionTimer).setEaseLinear().setLoopPingPong();
+        LeanTween.moveX(gameObject, moveToPosition, randomTimer).setEaseLinear().setLoopPingPong();
     }
 
 }
