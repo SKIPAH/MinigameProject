@@ -19,11 +19,11 @@ namespace SoftBody2D.Demo
 
 		void OnCollisionEnter2D(Collision2D col)
 		{
-			if (!audioSource.isPlaying && Rigidbody2D.velocity.magnitude > MinVelocityForSound)
+			if (!audioSource.isPlaying && Rigidbody2D.linearVelocity.magnitude > MinVelocityForSound)
 			{
 				var soundIndex = Random.Range(0, demo.CollideSounds.Length);
 				audioSource.clip = demo.CollideSounds[soundIndex];
-				var volume = Mathf.Lerp(0f, 1f, Rigidbody2D.velocity.magnitude / MaxVelocityForSound);
+				var volume = Mathf.Lerp(0f, 1f, Rigidbody2D.linearVelocity.magnitude / MaxVelocityForSound);
 				audioSource.volume = volume;
 				audioSource.Play();
 			}

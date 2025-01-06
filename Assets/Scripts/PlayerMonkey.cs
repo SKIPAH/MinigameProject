@@ -87,17 +87,20 @@ public class PlayerMonkey : MonoBehaviour
     {
         StateMachine();
         MonkeyInteract();
+        
 
-        Debug.Log(currentState);
+       // Debug.Log(currentState);
+       Debug.Log(isDoubleJumpUsed);
 
         if (Input.GetKeyDown(KeyCode.O))
         {
             ResetMonkeyRotation();
         }
+
     }
     private void FixedUpdate()
     {
-        monkeyRB2D.velocity = new Vector2(horizontal * movementSpeed, monkeyRB2D.velocity.y);
+        monkeyRB2D.linearVelocity = new Vector2(horizontal * movementSpeed, monkeyRB2D.linearVelocity.y);
     }
 
     private void MonkeyInteract()
@@ -135,6 +138,7 @@ public class PlayerMonkey : MonoBehaviour
     {
         //creates small circle and if collides with ground = we can jump
         return Physics2D.OverlapCapsule(groundCheck.position, new Vector2(1.0f, 0.2f), CapsuleDirection2D.Horizontal, 0, groundLayer);
+        
     }
    
     public void FlipPlayerDirection()
@@ -159,20 +163,25 @@ public class PlayerMonkey : MonoBehaviour
 
     private void Jumping()
     {
+        if (IsGrounded())
+        {
+            isDoubleJumpUsed = false;
+        }
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             isDoubleJumpUsed = false;
-            monkeyRB2D.velocity = new Vector2(monkeyRB2D.velocity.x, jumpingPower);
+            monkeyRB2D.linearVelocity = new Vector2(monkeyRB2D.linearVelocity.x, jumpingPower);
         }
-        if (Input.GetButtonUp("Jump") && monkeyRB2D.velocity.y > 0f)
+        if (Input.GetButtonUp("Jump") && monkeyRB2D.linearVelocity.y > 0f)
         {
-            monkeyRB2D.velocity = new Vector2(monkeyRB2D.velocity.x, monkeyRB2D.velocity.y * 0.5f);
+            monkeyRB2D.linearVelocity = new Vector2(monkeyRB2D.linearVelocity.x, monkeyRB2D.linearVelocity.y * 0.5f);
         }
         if (Input.GetButtonDown("Jump") && !IsGrounded() && !isDoubleJumpUsed && !isFlipping)
         {
             isDoubleJumpUsed = true;
-            monkeyRB2D.velocity = new Vector2(monkeyRB2D.velocity.x, jumpingPower * 1.2f);
+            monkeyRB2D.linearVelocity = new Vector2(monkeyRB2D.linearVelocity.x, jumpingPower * 1.2f);
             StartCoroutine(Rotate());
+           
         }
     }
     IEnumerator Rotate()
@@ -234,9 +243,9 @@ public class PlayerMonkey : MonoBehaviour
         
 
         //FALL GRAVITY SPEED
-        if (monkeyRB2D.velocity.y < 0)
+        if (monkeyRB2D.linearVelocity.y < 0)
         {
-            monkeyRB2D.velocity -= playerGravity * fallMultiplier * Time.deltaTime;
+            monkeyRB2D.linearVelocity -= playerGravity * fallMultiplier * Time.deltaTime;
         }
     }
     private void MovementModeTopDown()

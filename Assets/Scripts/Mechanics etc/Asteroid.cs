@@ -25,9 +25,4 @@ public class Asteroid : MonoBehaviour, IPlayerDied
             Destroy(gameObject, 3f);
         }
     }
-
-    public void PlayerDied()
-    {
-        Debug.Log("Player died");
-    }
 }

@@ -131,7 +131,7 @@ namespace SoftBody2D.Demo
 					var body = capturedObject.GetComponent<Rigidbody2D>();
 					if (body != null)
 					{
-						body.velocity = Vector3.zero;
+						body.linearVelocity = Vector3.zero;
 						body.angularVelocity = 0f;
 					}
 					capturedObject = null;

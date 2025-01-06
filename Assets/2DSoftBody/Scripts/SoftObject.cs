@@ -308,8 +308,8 @@ namespace SoftBody2D
 			{
 				softObjectJoint.Rigidbody2D.mass = Mass;
 			}
-			softObjectJoint.Rigidbody2D.drag = LinearDrag;
-			softObjectJoint.Rigidbody2D.angularDrag = AngularDrag;
+			softObjectJoint.Rigidbody2D.linearDamping = LinearDrag;
+			softObjectJoint.Rigidbody2D.angularDamping = AngularDrag;
 			softObjectJoint.Rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
 			softObjectJoint.Joint.enableCollision = EnableCollision;
 			softObjectJoint.Joint.connectedBody = thisRigidbody;

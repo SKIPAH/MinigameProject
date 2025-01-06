@@ -6,6 +6,7 @@ public class GameAsteroidUI : MonoBehaviour
     public event EventHandler OnAsteroidGameFinished;
     [SerializeField] private Text roundTimeText;
     [SerializeField] private Text countdownTimerText;
+    [SerializeField] private Text keyBindsText;
     [SerializeField] private float gameTime;
     private float gameTimeUI;
     public float countdownTime;
@@ -34,10 +35,12 @@ public class GameAsteroidUI : MonoBehaviour
         if (countdownTimerText != null)
         {
             countdownTimerText.text = countdownTime.ToString("F1");
+            keyBindsText.text = "WASD to move and SPACE to jump!";
         }
         if (countdownTime <= 0f)
         {
             countdownTimerText.text = string.Empty;
+            keyBindsText.text = string.Empty;
             return;
         }
     }

@@ -6,6 +6,6 @@ public class Lava : MonoBehaviour, IPlayerDied
 {
     public void PlayerDied()
     {
-        Debug.Log("KEKW");
+       
     }
 }
