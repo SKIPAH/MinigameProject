@@ -46,8 +46,7 @@ public class MiniGameManager : MonoBehaviour
             {
                 TryAgain();
             }
-        }
-        //Debug.Log(gameState);   
+        } 
     }
 
     private void ModeStateMachine()

@@ -8,7 +8,7 @@ public class CoconutThrowable : MonoBehaviour
     {
         if (collision.gameObject.name == "coconutWall")
         {
-            Debug.Log("LOL");
+
         }
     }
 }

@@ -55,7 +55,7 @@ public class CameraManager : MonoBehaviour
     public void ChangeCameraProjectionSizeLionGame()
     {
         cinemachineGameObject.SetActive(false);
-        mainCamera.orthographicSize = 20.0f;
+        mainCamera.orthographicSize = 18.0f;
     }
 
     public void ChangeCameraToFollowCoconut()

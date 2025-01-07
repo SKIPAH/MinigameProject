@@ -5,16 +5,26 @@ public class GameCoconutUI : MonoBehaviour
     [SerializeField] private Text roundTimeText;
     [SerializeField] private Text countdownTimerText;
     [SerializeField] private Text mashText;
+    [SerializeField] private Text coconutsCuttenText;
     [SerializeField] private float gameTime = 10f;
+    private int coconutsCutten = 0;
+    private int coconutsToCut = 5;
     public float countdownTime = 3f;
     private bool isCoconutGameOn = false;
+    private bool isCountDownActive = false;
     private void Start()
     {
         PlayerMonkey.Instance.OnCoconutGameModeOn += Instance_OnCoconutGameModeOn;
         PlayerMonkey.Instance.OnCoconutGameDone += Instance_OnCoconutGameDone;
+        PlayerMonkey.Instance.OnCoconutCutten += Instance_OnCoconutCutten;
         roundTimeText.text = string.Empty;
 
         Hide();
+    }
+
+    private void Instance_OnCoconutCutten(object sender, System.EventArgs e)
+    {
+        IncreaseCoconutCut();
     }
 
     private void Instance_OnCoconutGameDone(object sender, System.EventArgs e)
@@ -30,12 +40,18 @@ public class GameCoconutUI : MonoBehaviour
     private void Instance_OnCoconutGameModeOn(object sender, System.EventArgs e)
     {
         Show();
-        CountdownTimer();
+        
+        isCountDownActive = true;
     }
 
     private void Update()
     {
         GameTimer(); 
+
+        if(isCountDownActive)
+        {
+            CountdownTimer();
+        }
     }
 
     private void CountdownTimer()
@@ -49,6 +65,7 @@ public class GameCoconutUI : MonoBehaviour
         {
             countdownTimerText.text = string.Empty;
             mashText.text = "MASH!";
+            isCountDownActive = false;
             isCoconutGameOn = true;
             PlayerMonkey.Instance.CanCutCoconut();
         }
@@ -79,4 +96,16 @@ public class GameCoconutUI : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+
+    public void IncreaseCoconutCut()
+    {
+        if(coconutsCutten == coconutsToCut)
+        {
+         PlayerMonkey.Instance.CoconutCutGameDone();
+            Hide();
+        }
+        coconutsCutten++;
+        coconutsCuttenText.text = coconutsCutten.ToString();
+
+    }
 }

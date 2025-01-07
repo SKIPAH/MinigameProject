@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using UnityEditor;
 using UnityEngine;
 public class PlayerMonkey : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class PlayerMonkey : MonoBehaviour
     public event EventHandler OnCoconutGameModeOn;
     public event EventHandler OnCoconutGameDone;
     public event EventHandler OnCoconutThrown;
+    public event EventHandler OnCoconutThrowModeOn;
+    public event EventHandler OnCoconutCutten;
 
     [SerializeField] private float movementSpeed = 8f;
     [SerializeField] private float jumpingPower = 16f;
@@ -25,17 +28,16 @@ public class PlayerMonkey : MonoBehaviour
     private bool isInteractable = false;
     private Rigidbody2D monkeyRB2D;
     private BoxCollider2D monkeyBoxCollider2D;
+    [SerializeField] private BoxCollider2D monkeyTriggerBoxCollider2D;
     private Quaternion currentRotation;
     
 
     [Header("CoconutModeStuff")]
     [SerializeField] private Transform coconutFull;
     [SerializeField] private Transform coconutCut;
-    [SerializeField] private int coconutsCutMax = 30;
     [SerializeField] private GameObject sword;
     private bool canCutCoconut = false;
 
-    private int coconutsCutten = 0;
 
     [Header("CoconutThrowStuff")]
     [SerializeField] private Transform coconutHolder;
@@ -87,16 +89,7 @@ public class PlayerMonkey : MonoBehaviour
     {
         StateMachine();
         MonkeyInteract();
-        
-
-       // Debug.Log(currentState);
-       Debug.Log(isDoubleJumpUsed);
-
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            ResetMonkeyRotation();
-        }
-
+        Debug.Log(currentState);
     }
     private void FixedUpdate()
     {
@@ -113,6 +106,13 @@ public class PlayerMonkey : MonoBehaviour
 
     private void StateMachine()
     {
+
+        if(currentState != previousState)
+        {
+            OnStateExit(previousState);
+            OnStateEnter(currentState);
+            previousState = currentState;
+        }
         switch (currentState)
         {
             case MonkeyState.Mode2d:
@@ -122,18 +122,39 @@ public class PlayerMonkey : MonoBehaviour
                 MovementModeTopDown();
                 break;
             case MonkeyState.ModeCoconutCut:
-                OnCoconutGameModeOn?.Invoke(this, EventArgs.Empty);
-                sword.SetActive(true);
                 CutCoconut();
                 break;
             case MonkeyState.ModeCoconutThrow:
                 MovementModeCoconutThrow();
-                sword.SetActive(false);
-                Debug.Log(movementSpeed);
                 break;
         }
     }
 
+    private void OnStateEnter(MonkeyState state)
+    {
+        switch (state)
+        {
+            case MonkeyState.ModeCoconutCut:
+                OnCoconutGameModeOn?.Invoke(this, EventArgs.Empty);
+                sword.SetActive(true);
+                break;
+            case MonkeyState.ModeCoconutThrow:
+                OnCoconutThrowModeOn?.Invoke(this, EventArgs.Empty);
+                sword.SetActive(false);
+                break;
+        }
+    }
+
+    private void OnStateExit(MonkeyState state)
+    {
+        switch (state)
+        {
+            case MonkeyState.ModeCoconutCut:
+                break;
+            case MonkeyState.ModeCoconutThrow:
+                break;
+        }
+    }
     private bool IsGrounded()
     {
         //creates small circle and if collides with ground = we can jump
@@ -252,8 +273,10 @@ public class PlayerMonkey : MonoBehaviour
     {
         monkeyRB2D.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         monkeyRB2D.interpolation = RigidbodyInterpolation2D.Interpolate;
-        monkeyBoxCollider2D.isTrigger = true;
-        
+        monkeyBoxCollider2D.isTrigger = false;
+        monkeyTriggerBoxCollider2D.isTrigger = true;
+
+
         FlipPlayerDirection();
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
@@ -334,22 +357,22 @@ public class PlayerMonkey : MonoBehaviour
     {
         if (canCutCoconut && Input.GetKeyDown(KeyCode.Space))
         {
-            if (coconutsCutten < coconutsCutMax)
-            {
-                Transform coconut = Instantiate(coconutCut, coconutFull.GetComponent<Transform>().position, coconutFull.GetComponent<Transform>().rotation);
-                Destroy(coconut.gameObject, 15f);
-                coconutsCutten++;
-                Debug.Log("COCOnut");
-            }
-            else
-            {
-                OnCoconutGameDone?.Invoke(this, EventArgs.Empty);
-                Debug.Log("Enough");
-                currentState = MonkeyState.Mode2d;
-                return;
-            }
+            Transform coconut = Instantiate(coconutCut, coconutFull.GetComponent<Transform>().position, coconutFull.GetComponent<Transform>().rotation);
+            Destroy(coconut.gameObject, 15f);
+            OnCoconutCutten?.Invoke(this, EventArgs.Empty);
         }
+
     }
+
+
+    public void CoconutCutGameDone()
+    {
+        OnCoconutGameDone?.Invoke(this, EventArgs.Empty);
+        currentState = MonkeyState.Mode2d;
+        return;
+    }
+
+
     public void ActivateCoconut()
     {
         coconutThrowable.SetActive(true);

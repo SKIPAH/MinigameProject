@@ -23,8 +23,7 @@ public class JumpPad : MonoBehaviour
     {
         randomTimer = Random.Range(1.0f, 5.0f);
         currentXposition = gameObject.transform.position.x;
-        moveToPosition = currentXposition - 20f;
-        moveToPosition = currentXposition - 20f;
+        moveToPosition = currentXposition - 24f;
         if (isMovingJumpPad)
         {
             MoveJumpPad();
