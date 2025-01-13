@@ -1,0 +1,635 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a6b9796d1c0440eba061ace5e9dff6, type: 3}
+  m_Name: Blue sky with clouds
+  m_EditorClassIdentifier: 
+  assetsData:
+  - rid: 6901431367692976288
+  - rid: 6901431367692976296
+  - rid: 6901431367692976303
+  - rid: 6901431367692976310
+  currentMode: TextToSprite
+  m_Data:
+  - rid: 6901431367692976275
+  - rid: 6901431367692976276
+  - rid: 6901431367692976277
+  - rid: 6901431367692976278
+  - rid: 6901431367692976279
+  - rid: 6901431367692976280
+  - rid: 6901431367692976281
+  - rid: 6901431367692976289
+  preRefinedArtifact:
+    rid: -2
+  refinedArtifact:
+    rid: -2
+  selectedArtifact:
+    rid: 6901431367692976310
+  m_Operators:
+  - rid: 6901431367692976282
+  - rid: 6901431367692976283
+  - rid: 6901431367692976284
+  - rid: 6901431367692976285
+  - rid: 6901431367692976286
+  - rid: 6901431367692976287
+  m_PreRefineOperators: []
+  m_ExportedArtifacts:
+  - m_UnityGuid: 018df6c8dc1aa6d4087e6a4676b70c61
+    m_MuseGuid: 8563251d-62a0-4c45-9fb5-2b6dfbcff8db
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 6901431367692976275
+      type: {class: BookmarkManager, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_BookmarkedArtifacts:
+          m_Values: []
+        m_IsFilterEnabled: 0
+    - rid: 6901431367692976276
+      type: {class: FeedbackManager, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_Liked:
+          m_Values: []
+        m_Disliked:
+          m_Values: []
+    - rid: 6901431367692976277
+      type: {class: DefaultStyleData, ns: Unity.Muse.Sprite.Data, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 6901431367692976278
+      type: {class: GenerateButtonData, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data: 
+    - rid: 6901431367692976279
+      type: {class: MainUI/UISize, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_NodeListWidth: 300
+        m_NodeListRefineWidth: 300
+        m_AssetListRefineWidth: 200
+    - rid: 6901431367692976280
+      type: {class: OperatorOverridePublishers, ns: Unity.Muse.Sprite.Data, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 6901431367692976281
+      type: {class: SessionData, ns: Unity.Muse.Sprite.Data, asm: Unity.Muse.Sprite}
+      data:
+        m_SessionId: 7967a359-e98e-46d6-8885-d6f732c201e4
+        sessionLoaded: 
+    - rid: 6901431367692976282
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          key: GenerateOperator
+          version: 1.0.0
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+          hideable: 0
+          hidden: 0
+          isRefinement: 0
+    - rid: 6901431367692976283
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          key: PromptOperator
+          version: 0.0.2
+          settings:
+          - Blue sky with clouds
+          - 
+          enabled: 1
+          assembly: 
+          hideable: 0
+          hidden: 0
+          isRefinement: 0
+    - rid: 6901431367692976284
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          key: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 63478
+          - 0
+          - 0
+          - 5cc104e0-423a-473e-8034-b9d346cb2357
+          - 0
+          - 0
+          - 
+          - 
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+          hideable: 0
+          hidden: 0
+          isRefinement: 0
+    - rid: 6901431367692976285
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          key: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+          hideable: 0
+          hidden: 0
+          isRefinement: 0
+    - rid: 6901431367692976286
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 6901431367692976287
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          key: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 7967a359-e98e-46d6-8885-d6f732c201e4
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+          hideable: 0
+          hidden: 0
+          isRefinement: 0
+    - rid: 6901431367692976288
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        mode: TextToSprite
+        Guid: a551881d-f172-44a7-b833-78ae815299ee
+        BatchRequestIdentifier: 
+        Seed: 54274
+        m_Operators:
+        - rid: 6901431367692976290
+        - rid: 6901431367692976291
+        - rid: 6901431367692976292
+        - rid: 6901431367692976293
+        - rid: 6901431367692976294
+        - rid: 6901431367692976295
+        history:
+        - rid: 6901431367692976288
+        children: []
+        m_UnsafeContent: 0
+    - rid: 6901431367692976289
+      type: {class: GenerateCountData, ns: Unity.Muse.Sprite.Data, asm: Unity.Muse.Sprite}
+      data:
+        m_Counter: 0
+    - rid: 6901431367692976290
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          key: GenerateOperator
+          version: 1.0.0
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+          hideable: 0
+          hidden: 0
+          isRefinement: 0
+    - rid: 6901431367692976291
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          key: PromptOperator
+          version: 0.0.2
+          settings:
+          - Blue sky with clouds
+          - 
+          enabled: 1
+          assembly: 
+          hideable: 0
+          hidden: 0
+          isRefinement: 0
+    - rid: 6901431367692976292
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          key: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 54274
+          - a551881d-f172-44a7-b833-78ae815299ee
+          - 0
+          - 5cc104e0-423a-473e-8034-b9d346cb2357
+          - 0
+          - 03fa404b-39fc-4979-9272-deb5d8c4b24c
+          - 'Happy Harvest [Orion V4 2000]'
+          - 8 Nov 2023
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+          hideable: 0
+          hidden: 0
+          isRefinement: 0
+    - rid: 6901431367692976293
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          key: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+          hideable: 0
+          hidden: 0
+          isRefinement: 0
+    - rid: 6901431367692976294
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 6901431367692976295
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          key: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 7967a359-e98e-46d6-8885-d6f732c201e4
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+          hideable: 0
+          hidden: 0
+          isRefinement: 0
+    - rid: 6901431367692976296
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        mode: TextToSprite
+        Guid: cf7fc8a7-e50a-42ce-8b40-b9e6de5aad19
+        BatchRequestIdentifier: 
+        Seed: 41175
+        m_Operators:
+        - rid: 6901431367692976297
+        - rid: 6901431367692976298
+        - rid: 6901431367692976299
+        - rid: 6901431367692976300
+        - rid: 6901431367692976301
+        - rid: 6901431367692976302
+        history:
+        - rid: 6901431367692976296
+        children: []
+        m_UnsafeContent: 0
+    - rid: 6901431367692976297
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          key: GenerateOperator
+          version: 1.0.0
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+          hideable: 0
+          hidden: 0
+          isRefinement: 0
+    - rid: 6901431367692976298
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          key: PromptOperator
+          version: 0.0.2
+          settings:
+          - Blue sky with clouds
+          - 
+          enabled: 1
+          assembly: 
+          hideable: 0
+          hidden: 0
+          isRefinement: 0
+    - rid: 6901431367692976299
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          key: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 41175
+          - cf7fc8a7-e50a-42ce-8b40-b9e6de5aad19
+          - 0
+          - 5cc104e0-423a-473e-8034-b9d346cb2357
+          - 0
+          - 03fa404b-39fc-4979-9272-deb5d8c4b24c
+          - 'Happy Harvest [Orion V4 2000]'
+          - 8 Nov 2023
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+          hideable: 0
+          hidden: 0
+          isRefinement: 0
+    - rid: 6901431367692976300
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          key: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+          hideable: 0
+          hidden: 0
+          isRefinement: 0
+    - rid: 6901431367692976301
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 6901431367692976302
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          key: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 7967a359-e98e-46d6-8885-d6f732c201e4
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+          hideable: 0
+          hidden: 0
+          isRefinement: 0
+    - rid: 6901431367692976303
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        mode: TextToSprite
+        Guid: cdbb12a5-7a84-4772-ae35-75a8f0549442
+        BatchRequestIdentifier: 
+        Seed: 1708
+        m_Operators:
+        - rid: 6901431367692976304
+        - rid: 6901431367692976305
+        - rid: 6901431367692976306
+        - rid: 6901431367692976307
+        - rid: 6901431367692976308
+        - rid: 6901431367692976309
+        history:
+        - rid: 6901431367692976303
+        children: []
+        m_UnsafeContent: 0
+    - rid: 6901431367692976304
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          key: GenerateOperator
+          version: 1.0.0
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+          hideable: 0
+          hidden: 0
+          isRefinement: 0
+    - rid: 6901431367692976305
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          key: PromptOperator
+          version: 0.0.2
+          settings:
+          - Blue sky with clouds
+          - 
+          enabled: 1
+          assembly: 
+          hideable: 0
+          hidden: 0
+          isRefinement: 0
+    - rid: 6901431367692976306
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          key: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 1708
+          - cdbb12a5-7a84-4772-ae35-75a8f0549442
+          - 0
+          - 5cc104e0-423a-473e-8034-b9d346cb2357
+          - 0
+          - 03fa404b-39fc-4979-9272-deb5d8c4b24c
+          - 'Happy Harvest [Orion V4 2000]'
+          - 8 Nov 2023
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+          hideable: 0
+          hidden: 0
+          isRefinement: 0
+    - rid: 6901431367692976307
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          key: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+          hideable: 0
+          hidden: 0
+          isRefinement: 0
+    - rid: 6901431367692976308
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 6901431367692976309
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          key: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 7967a359-e98e-46d6-8885-d6f732c201e4
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+          hideable: 0
+          hidden: 0
+          isRefinement: 0
+    - rid: 6901431367692976310
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        mode: TextToSprite
+        Guid: 8563251d-62a0-4c45-9fb5-2b6dfbcff8db
+        BatchRequestIdentifier: 
+        Seed: 44522
+        m_Operators:
+        - rid: 6901431367692976311
+        - rid: 6901431367692976312
+        - rid: 6901431367692976313
+        - rid: 6901431367692976314
+        - rid: 6901431367692976315
+        - rid: 6901431367692976316
+        history:
+        - rid: 6901431367692976310
+        children: []
+        m_UnsafeContent: 0
+    - rid: 6901431367692976311
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          key: GenerateOperator
+          version: 1.0.0
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+          hideable: 0
+          hidden: 0
+          isRefinement: 0
+    - rid: 6901431367692976312
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          key: PromptOperator
+          version: 0.0.2
+          settings:
+          - Blue sky with clouds
+          - 
+          enabled: 1
+          assembly: 
+          hideable: 0
+          hidden: 0
+          isRefinement: 0
+    - rid: 6901431367692976313
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          key: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 44522
+          - 8563251d-62a0-4c45-9fb5-2b6dfbcff8db
+          - 0
+          - 5cc104e0-423a-473e-8034-b9d346cb2357
+          - 0
+          - 03fa404b-39fc-4979-9272-deb5d8c4b24c
+          - 'Happy Harvest [Orion V4 2000]'
+          - 8 Nov 2023
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+          hideable: 0
+          hidden: 0
+          isRefinement: 0
+    - rid: 6901431367692976314
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          key: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+          hideable: 0
+          hidden: 0
+          isRefinement: 0
+    - rid: 6901431367692976315
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 6901431367692976316
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          key: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 7967a359-e98e-46d6-8885-d6f732c201e4
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+          hideable: 0
+          hidden: 0
+          isRefinement: 0

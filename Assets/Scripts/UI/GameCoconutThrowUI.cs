@@ -16,7 +16,14 @@ public class GameCoconutThrowUI : MonoBehaviour
     {
         PlayerMonkey.Instance.OnCoconutThrowModeOn += Instance_OnCoconutThrowModeOn;
         PlayerMonkey.Instance.OnCoconutThrown += Instance_OnCoconutThrown;
+        PlayerMonkey.Instance.OnPowerIncreased += Instance_OnPowerIncreased;
         Hide();
+    }
+
+    private void Instance_OnPowerIncreased(object sender, System.EventArgs e)
+    {
+        power += 0.1f;
+        UpdatePowerText();
     }
 
     private void Instance_OnCoconutThrown(object sender, System.EventArgs e)
@@ -31,10 +38,9 @@ public class GameCoconutThrowUI : MonoBehaviour
 
 
 
-    private void IncreasePower()
+    private void UpdatePowerText()
     {
-
-        powerText.text = power.ToString();
+        powerText.text = power.ToString("F2");
     }
 
 

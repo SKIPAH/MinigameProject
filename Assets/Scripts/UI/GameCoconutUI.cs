@@ -7,8 +7,8 @@ public class GameCoconutUI : MonoBehaviour
     [SerializeField] private Text mashText;
     [SerializeField] private Text coconutsCuttenText;
     [SerializeField] private float gameTime = 10f;
+    [SerializeField] private int coconutsToCut = 5;
     private int coconutsCutten = 0;
-    private int coconutsToCut = 5;
     public float countdownTime = 3f;
     private bool isCoconutGameOn = false;
     private bool isCountDownActive = false;

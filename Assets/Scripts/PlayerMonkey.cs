@@ -11,6 +11,7 @@ public class PlayerMonkey : MonoBehaviour
     public event EventHandler OnCoconutThrown;
     public event EventHandler OnCoconutThrowModeOn;
     public event EventHandler OnCoconutCutten;
+    public event EventHandler OnPowerIncreased;
 
     [SerializeField] private float movementSpeed = 8f;
     [SerializeField] private float jumpingPower = 16f;
@@ -290,13 +291,10 @@ public class PlayerMonkey : MonoBehaviour
 
         monkeyRB2D.isKinematic = true;
 
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A) || (Input.GetKeyDown(KeyCode.D)))
         {
             throwingPower += 0.1f;
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            throwingPower += 0.1f;
+            OnPowerIncreased?.Invoke(this, EventArgs.Empty);
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
@@ -308,6 +306,8 @@ public class PlayerMonkey : MonoBehaviour
             FunctionTimer.Create(() => isCoconutThrown = false, 6f);
         }
     }
+
+
 
     private void ThrowCoconut()
     {
