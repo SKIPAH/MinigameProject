@@ -6,8 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TestingSandBox.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    path: Assets/Scenes/OpeningScene.unity
+    guid: 09aeffcc6a5706a4c97e85e4dbbbcad1
+  - enabled: 1
+    path: Assets/Scenes/MiniGame1.unity
+    guid: 125527f4846676947a47bec4a0b42a5b
+  - enabled: 1
+    path: Assets/Scenes/EndingScene.unity
+    guid: 63f166595eae65e46b714b9af3223bcf
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 99f9c9493070a9d4c979a8fec7c5a8d3, type: 2}
   m_UseUCBPForAssetBundles: 0
