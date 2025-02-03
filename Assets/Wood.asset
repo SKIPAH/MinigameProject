@@ -10,91 +10,87 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31a6b9796d1c0440eba061ace5e9dff6, type: 3}
-  m_Name: Fence
+  m_Name: Wood
   m_EditorClassIdentifier: 
   assetsData:
-  - rid: 6901431769674285252
-  - rid: 6901431769674285260
-  - rid: 6901431769674285267
-  - rid: 6901431769674285274
-  - rid: 6901431769674285281
-  - rid: 6901431769674285288
-  - rid: 6901431769674285295
-  - rid: 6901431769674285302
-  - rid: 6901431769674285309
-  - rid: 6901431769674285316
-  - rid: 6901431769674285323
-  - rid: 6901431769674285330
+  - rid: 3998565426673222047
+  - rid: 3998565426673222055
+  - rid: 3998565426673222062
+  - rid: 3998565426673222069
+  - rid: 3998565426673222076
+  - rid: 3998565426673222083
+  - rid: 3998565426673222090
+  - rid: 3998565426673222097
+  - rid: 3998565426673222104
+  - rid: 3998565426673222111
+  - rid: 3998565426673222118
+  - rid: 3998565426673222125
   currentMode: TextToSprite
   m_Data:
-  - rid: 6901431769674285239
-  - rid: 6901431769674285240
-  - rid: 6901431769674285241
-  - rid: 6901431769674285242
-  - rid: 6901431769674285243
-  - rid: 6901431769674285244
-  - rid: 6901431769674285245
-  - rid: 6901431769674285253
+  - rid: 3998565426673222034
+  - rid: 3998565426673222035
+  - rid: 3998565426673222036
+  - rid: 3998565426673222037
+  - rid: 3998565426673222038
+  - rid: 3998565426673222039
+  - rid: 3998565426673222040
+  - rid: 3998565426673222048
   preRefinedArtifact:
     rid: -2
   refinedArtifact:
     rid: -2
   selectedArtifact:
-    rid: 6901431769674285302
+    rid: 3998565426673222104
   m_Operators:
-  - rid: 6901431769674285246
-  - rid: 6901431769674285247
-  - rid: 6901431769674285248
-  - rid: 6901431769674285249
-  - rid: 6901431769674285250
-  - rid: 6901431769674285251
+  - rid: 3998565426673222041
+  - rid: 3998565426673222042
+  - rid: 3998565426673222043
+  - rid: 3998565426673222044
+  - rid: 3998565426673222045
+  - rid: 3998565426673222046
   m_PreRefineOperators: []
   m_ExportedArtifacts:
-  - m_UnityGuid: a3226dc4c9b18964dbf9d9310b44ed30
-    m_MuseGuid: 9556eee1-a6c1-4079-9b92-c7aeb84ea8fd
-  - m_UnityGuid: 12399a9643128a94c9ee1c80a91f7282
-    m_MuseGuid: 8ffda6dd-ba84-418a-945a-1d458241130a
-  - m_UnityGuid: 001fc24fff814bf4b84f1547a7d57389
-    m_MuseGuid: 18613ad1-8b39-4795-8d47-161fe3faa925
+  - m_UnityGuid: d26ecc9b3ce3b1549a7fed54f8b990c8
+    m_MuseGuid: e56ce9b9-6448-42f5-ac8e-3e5257d3f779
   references:
     version: 2
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 6901431769674285239
+    - rid: 3998565426673222034
       type: {class: BookmarkManager, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_BookmarkedArtifacts:
           m_Values: []
         m_IsFilterEnabled: 0
-    - rid: 6901431769674285240
+    - rid: 3998565426673222035
       type: {class: FeedbackManager, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_Liked:
           m_Values: []
         m_Disliked:
           m_Values: []
-    - rid: 6901431769674285241
+    - rid: 3998565426673222036
       type: {class: DefaultStyleData, ns: Unity.Muse.Sprite.Data, asm: Unity.Muse.Sprite}
       data: 
-    - rid: 6901431769674285242
+    - rid: 3998565426673222037
       type: {class: GenerateButtonData, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data: 
-    - rid: 6901431769674285243
+    - rid: 3998565426673222038
       type: {class: MainUI/UISize, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_NodeListWidth: 300
         m_NodeListRefineWidth: 300
         m_AssetListRefineWidth: 200
-    - rid: 6901431769674285244
+    - rid: 3998565426673222039
       type: {class: OperatorOverridePublishers, ns: Unity.Muse.Sprite.Data, asm: Unity.Muse.Sprite}
       data: 
-    - rid: 6901431769674285245
+    - rid: 3998565426673222040
       type: {class: SessionData, ns: Unity.Muse.Sprite.Data, asm: Unity.Muse.Sprite}
       data:
-        m_SessionId: ca8acf4e-4a3c-41ba-bd1a-9c3d9fd01a10
+        m_SessionId: fdf57f26-023f-42ef-8627-e5f7596706fe
         sessionLoaded: 
-    - rid: 6901431769674285246
+    - rid: 3998565426673222041
       type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_OperatorData:
@@ -103,13 +99,13 @@ MonoBehaviour:
           version: 1.0.0
           settings:
           - TextToSprite
-          - 6
+          - 4
           enabled: 1
           assembly: 
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285247
+    - rid: 3998565426673222042
       type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_OperatorData:
@@ -117,14 +113,14 @@ MonoBehaviour:
           key: PromptOperator
           version: 0.0.2
           settings:
-          - Fence
+          - Wood pillar
           - 
           enabled: 1
           assembly: 
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285248
+    - rid: 3998565426673222043
       type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -139,7 +135,7 @@ MonoBehaviour:
           - 512
           - 1
           - 1
-          - 35860
+          - 40000
           - 0
           - 0
           - 5cc104e0-423a-473e-8034-b9d346cb2357
@@ -153,7 +149,7 @@ MonoBehaviour:
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285249
+    - rid: 3998565426673222044
       type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -172,10 +168,10 @@ MonoBehaviour:
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285250
+    - rid: 3998565426673222045
       type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data: 
-    - rid: 6901431769674285251
+    - rid: 3998565426673222046
       type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -183,35 +179,35 @@ MonoBehaviour:
           key: Unity.Muse.Sprite.Operators.SessionOperator
           version: 0.0.1
           settings:
-          - ca8acf4e-4a3c-41ba-bd1a-9c3d9fd01a10
+          - fdf57f26-023f-42ef-8627-e5f7596706fe
           enabled: 0
           assembly: Unity.Muse.Sprite
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285252
+    - rid: 3998565426673222047
       type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
       data:
         mode: TextToSprite
-        Guid: 3de3a3c1-5375-4a2a-9f6d-21a78bd902eb
+        Guid: 2a48b2e3-d827-47c1-8139-90029554cd59
         BatchRequestIdentifier: 
-        Seed: 12100
+        Seed: 27128
         m_Operators:
-        - rid: 6901431769674285254
-        - rid: 6901431769674285255
-        - rid: 6901431769674285256
-        - rid: 6901431769674285257
-        - rid: 6901431769674285258
-        - rid: 6901431769674285259
+        - rid: 3998565426673222049
+        - rid: 3998565426673222050
+        - rid: 3998565426673222051
+        - rid: 3998565426673222052
+        - rid: 3998565426673222053
+        - rid: 3998565426673222054
         history:
-        - rid: 6901431769674285252
+        - rid: 3998565426673222047
         children: []
         m_UnsafeContent: 0
-    - rid: 6901431769674285253
+    - rid: 3998565426673222048
       type: {class: GenerateCountData, ns: Unity.Muse.Sprite.Data, asm: Unity.Muse.Sprite}
       data:
         m_Counter: 0
-    - rid: 6901431769674285254
+    - rid: 3998565426673222049
       type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_OperatorData:
@@ -220,13 +216,13 @@ MonoBehaviour:
           version: 1.0.0
           settings:
           - TextToSprite
-          - 6
+          - 4
           enabled: 1
           assembly: 
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285255
+    - rid: 3998565426673222050
       type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_OperatorData:
@@ -234,14 +230,14 @@ MonoBehaviour:
           key: PromptOperator
           version: 0.0.2
           settings:
-          - Fence
+          - Wood
           - 
           enabled: 1
           assembly: 
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285256
+    - rid: 3998565426673222051
       type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -256,8 +252,8 @@ MonoBehaviour:
           - 512
           - 1
           - 1
-          - 12100
-          - 3de3a3c1-5375-4a2a-9f6d-21a78bd902eb
+          - 27128
+          - 2a48b2e3-d827-47c1-8139-90029554cd59
           - 0
           - 5cc104e0-423a-473e-8034-b9d346cb2357
           - 0
@@ -270,7 +266,7 @@ MonoBehaviour:
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285257
+    - rid: 3998565426673222052
       type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -289,10 +285,10 @@ MonoBehaviour:
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285258
+    - rid: 3998565426673222053
       type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data: 
-    - rid: 6901431769674285259
+    - rid: 3998565426673222054
       type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -300,31 +296,31 @@ MonoBehaviour:
           key: Unity.Muse.Sprite.Operators.SessionOperator
           version: 0.0.1
           settings:
-          - ca8acf4e-4a3c-41ba-bd1a-9c3d9fd01a10
+          - fdf57f26-023f-42ef-8627-e5f7596706fe
           enabled: 0
           assembly: Unity.Muse.Sprite
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285260
+    - rid: 3998565426673222055
       type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
       data:
         mode: TextToSprite
-        Guid: 581de4c0-ff58-4b15-9bc6-cf2524f72494
+        Guid: 2413bafe-71c4-4377-b674-1ba852fd9a6c
         BatchRequestIdentifier: 
-        Seed: 38271
+        Seed: 42755
         m_Operators:
-        - rid: 6901431769674285261
-        - rid: 6901431769674285262
-        - rid: 6901431769674285263
-        - rid: 6901431769674285264
-        - rid: 6901431769674285265
-        - rid: 6901431769674285266
+        - rid: 3998565426673222056
+        - rid: 3998565426673222057
+        - rid: 3998565426673222058
+        - rid: 3998565426673222059
+        - rid: 3998565426673222060
+        - rid: 3998565426673222061
         history:
-        - rid: 6901431769674285260
+        - rid: 3998565426673222055
         children: []
         m_UnsafeContent: 0
-    - rid: 6901431769674285261
+    - rid: 3998565426673222056
       type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_OperatorData:
@@ -333,13 +329,13 @@ MonoBehaviour:
           version: 1.0.0
           settings:
           - TextToSprite
-          - 6
+          - 4
           enabled: 1
           assembly: 
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285262
+    - rid: 3998565426673222057
       type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_OperatorData:
@@ -347,14 +343,14 @@ MonoBehaviour:
           key: PromptOperator
           version: 0.0.2
           settings:
-          - Fence
+          - Wood
           - 
           enabled: 1
           assembly: 
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285263
+    - rid: 3998565426673222058
       type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -369,8 +365,8 @@ MonoBehaviour:
           - 512
           - 1
           - 1
-          - 38271
-          - 581de4c0-ff58-4b15-9bc6-cf2524f72494
+          - 42755
+          - 2413bafe-71c4-4377-b674-1ba852fd9a6c
           - 0
           - 5cc104e0-423a-473e-8034-b9d346cb2357
           - 0
@@ -383,7 +379,7 @@ MonoBehaviour:
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285264
+    - rid: 3998565426673222059
       type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -402,10 +398,10 @@ MonoBehaviour:
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285265
+    - rid: 3998565426673222060
       type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data: 
-    - rid: 6901431769674285266
+    - rid: 3998565426673222061
       type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -413,31 +409,31 @@ MonoBehaviour:
           key: Unity.Muse.Sprite.Operators.SessionOperator
           version: 0.0.1
           settings:
-          - ca8acf4e-4a3c-41ba-bd1a-9c3d9fd01a10
+          - fdf57f26-023f-42ef-8627-e5f7596706fe
           enabled: 0
           assembly: Unity.Muse.Sprite
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285267
+    - rid: 3998565426673222062
       type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
       data:
         mode: TextToSprite
-        Guid: dd37aba9-7dc2-4b15-8e8e-eb1eb1ff0b42
+        Guid: 70053041-c077-4195-bedb-e9402a84c07b
         BatchRequestIdentifier: 
-        Seed: 61952
+        Seed: 24266
         m_Operators:
-        - rid: 6901431769674285268
-        - rid: 6901431769674285269
-        - rid: 6901431769674285270
-        - rid: 6901431769674285271
-        - rid: 6901431769674285272
-        - rid: 6901431769674285273
+        - rid: 3998565426673222063
+        - rid: 3998565426673222064
+        - rid: 3998565426673222065
+        - rid: 3998565426673222066
+        - rid: 3998565426673222067
+        - rid: 3998565426673222068
         history:
-        - rid: 6901431769674285267
+        - rid: 3998565426673222062
         children: []
         m_UnsafeContent: 0
-    - rid: 6901431769674285268
+    - rid: 3998565426673222063
       type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_OperatorData:
@@ -446,13 +442,13 @@ MonoBehaviour:
           version: 1.0.0
           settings:
           - TextToSprite
-          - 6
+          - 4
           enabled: 1
           assembly: 
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285269
+    - rid: 3998565426673222064
       type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_OperatorData:
@@ -460,14 +456,14 @@ MonoBehaviour:
           key: PromptOperator
           version: 0.0.2
           settings:
-          - Fence
+          - Wood
           - 
           enabled: 1
           assembly: 
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285270
+    - rid: 3998565426673222065
       type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -482,8 +478,8 @@ MonoBehaviour:
           - 512
           - 1
           - 1
-          - 61952
-          - dd37aba9-7dc2-4b15-8e8e-eb1eb1ff0b42
+          - 24266
+          - 70053041-c077-4195-bedb-e9402a84c07b
           - 0
           - 5cc104e0-423a-473e-8034-b9d346cb2357
           - 0
@@ -496,7 +492,7 @@ MonoBehaviour:
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285271
+    - rid: 3998565426673222066
       type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -515,10 +511,10 @@ MonoBehaviour:
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285272
+    - rid: 3998565426673222067
       type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data: 
-    - rid: 6901431769674285273
+    - rid: 3998565426673222068
       type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -526,31 +522,31 @@ MonoBehaviour:
           key: Unity.Muse.Sprite.Operators.SessionOperator
           version: 0.0.1
           settings:
-          - ca8acf4e-4a3c-41ba-bd1a-9c3d9fd01a10
+          - fdf57f26-023f-42ef-8627-e5f7596706fe
           enabled: 0
           assembly: Unity.Muse.Sprite
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285274
+    - rid: 3998565426673222069
       type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
       data:
         mode: TextToSprite
-        Guid: e4e4fe6d-04f5-4637-93f1-8ba8e33c179e
+        Guid: 4fb7e091-4fde-4bd6-829c-802303f0eff9
         BatchRequestIdentifier: 
-        Seed: 34956
+        Seed: 7041
         m_Operators:
-        - rid: 6901431769674285275
-        - rid: 6901431769674285276
-        - rid: 6901431769674285277
-        - rid: 6901431769674285278
-        - rid: 6901431769674285279
-        - rid: 6901431769674285280
+        - rid: 3998565426673222070
+        - rid: 3998565426673222071
+        - rid: 3998565426673222072
+        - rid: 3998565426673222073
+        - rid: 3998565426673222074
+        - rid: 3998565426673222075
         history:
-        - rid: 6901431769674285274
+        - rid: 3998565426673222069
         children: []
         m_UnsafeContent: 0
-    - rid: 6901431769674285275
+    - rid: 3998565426673222070
       type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_OperatorData:
@@ -559,13 +555,13 @@ MonoBehaviour:
           version: 1.0.0
           settings:
           - TextToSprite
-          - 6
+          - 4
           enabled: 1
           assembly: 
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285276
+    - rid: 3998565426673222071
       type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_OperatorData:
@@ -573,14 +569,14 @@ MonoBehaviour:
           key: PromptOperator
           version: 0.0.2
           settings:
-          - Fence
+          - Wood
           - 
           enabled: 1
           assembly: 
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285277
+    - rid: 3998565426673222072
       type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -595,8 +591,8 @@ MonoBehaviour:
           - 512
           - 1
           - 1
-          - 34956
-          - e4e4fe6d-04f5-4637-93f1-8ba8e33c179e
+          - 7041
+          - 4fb7e091-4fde-4bd6-829c-802303f0eff9
           - 0
           - 5cc104e0-423a-473e-8034-b9d346cb2357
           - 0
@@ -609,7 +605,7 @@ MonoBehaviour:
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285278
+    - rid: 3998565426673222073
       type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -628,10 +624,10 @@ MonoBehaviour:
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285279
+    - rid: 3998565426673222074
       type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data: 
-    - rid: 6901431769674285280
+    - rid: 3998565426673222075
       type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -639,31 +635,31 @@ MonoBehaviour:
           key: Unity.Muse.Sprite.Operators.SessionOperator
           version: 0.0.1
           settings:
-          - ca8acf4e-4a3c-41ba-bd1a-9c3d9fd01a10
+          - fdf57f26-023f-42ef-8627-e5f7596706fe
           enabled: 0
           assembly: Unity.Muse.Sprite
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285281
+    - rid: 3998565426673222076
       type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
       data:
         mode: TextToSprite
-        Guid: fd1ef155-83c5-4f70-bc94-5f3b32f37a43
+        Guid: ede64f7d-a5a7-4b30-a8f7-e3f988724093
         BatchRequestIdentifier: 
-        Seed: 41684
+        Seed: 27653
         m_Operators:
-        - rid: 6901431769674285282
-        - rid: 6901431769674285283
-        - rid: 6901431769674285284
-        - rid: 6901431769674285285
-        - rid: 6901431769674285286
-        - rid: 6901431769674285287
+        - rid: 3998565426673222077
+        - rid: 3998565426673222078
+        - rid: 3998565426673222079
+        - rid: 3998565426673222080
+        - rid: 3998565426673222081
+        - rid: 3998565426673222082
         history:
-        - rid: 6901431769674285281
+        - rid: 3998565426673222076
         children: []
-        m_UnsafeContent: 0
-    - rid: 6901431769674285282
+        m_UnsafeContent: 1
+    - rid: 3998565426673222077
       type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_OperatorData:
@@ -672,13 +668,13 @@ MonoBehaviour:
           version: 1.0.0
           settings:
           - TextToSprite
-          - 6
+          - 4
           enabled: 1
           assembly: 
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285283
+    - rid: 3998565426673222078
       type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_OperatorData:
@@ -686,14 +682,14 @@ MonoBehaviour:
           key: PromptOperator
           version: 0.0.2
           settings:
-          - Fence
+          - Wood pillar
           - 
           enabled: 1
           assembly: 
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285284
+    - rid: 3998565426673222079
       type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -708,8 +704,8 @@ MonoBehaviour:
           - 512
           - 1
           - 1
-          - 41684
-          - fd1ef155-83c5-4f70-bc94-5f3b32f37a43
+          - 27653
+          - ede64f7d-a5a7-4b30-a8f7-e3f988724093
           - 0
           - 5cc104e0-423a-473e-8034-b9d346cb2357
           - 0
@@ -722,7 +718,7 @@ MonoBehaviour:
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285285
+    - rid: 3998565426673222080
       type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -741,10 +737,10 @@ MonoBehaviour:
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285286
+    - rid: 3998565426673222081
       type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data: 
-    - rid: 6901431769674285287
+    - rid: 3998565426673222082
       type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -752,31 +748,31 @@ MonoBehaviour:
           key: Unity.Muse.Sprite.Operators.SessionOperator
           version: 0.0.1
           settings:
-          - ca8acf4e-4a3c-41ba-bd1a-9c3d9fd01a10
+          - fdf57f26-023f-42ef-8627-e5f7596706fe
           enabled: 0
           assembly: Unity.Muse.Sprite
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285288
+    - rid: 3998565426673222083
       type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
       data:
         mode: TextToSprite
-        Guid: 9556eee1-a6c1-4079-9b92-c7aeb84ea8fd
+        Guid: 7fcc3e8f-dde6-4ba7-bee5-9b961b2f8418
         BatchRequestIdentifier: 
-        Seed: 42418
+        Seed: 5156
         m_Operators:
-        - rid: 6901431769674285289
-        - rid: 6901431769674285290
-        - rid: 6901431769674285291
-        - rid: 6901431769674285292
-        - rid: 6901431769674285293
-        - rid: 6901431769674285294
+        - rid: 3998565426673222084
+        - rid: 3998565426673222085
+        - rid: 3998565426673222086
+        - rid: 3998565426673222087
+        - rid: 3998565426673222088
+        - rid: 3998565426673222089
         history:
-        - rid: 6901431769674285288
+        - rid: 3998565426673222083
         children: []
-        m_UnsafeContent: 0
-    - rid: 6901431769674285289
+        m_UnsafeContent: 1
+    - rid: 3998565426673222084
       type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_OperatorData:
@@ -785,13 +781,13 @@ MonoBehaviour:
           version: 1.0.0
           settings:
           - TextToSprite
-          - 6
+          - 4
           enabled: 1
           assembly: 
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285290
+    - rid: 3998565426673222085
       type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_OperatorData:
@@ -799,14 +795,14 @@ MonoBehaviour:
           key: PromptOperator
           version: 0.0.2
           settings:
-          - Fence
+          - Wood pillar
           - 
           enabled: 1
           assembly: 
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285291
+    - rid: 3998565426673222086
       type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -821,8 +817,8 @@ MonoBehaviour:
           - 512
           - 1
           - 1
-          - 42418
-          - 9556eee1-a6c1-4079-9b92-c7aeb84ea8fd
+          - 5156
+          - 7fcc3e8f-dde6-4ba7-bee5-9b961b2f8418
           - 0
           - 5cc104e0-423a-473e-8034-b9d346cb2357
           - 0
@@ -835,7 +831,7 @@ MonoBehaviour:
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285292
+    - rid: 3998565426673222087
       type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -854,10 +850,10 @@ MonoBehaviour:
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285293
+    - rid: 3998565426673222088
       type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data: 
-    - rid: 6901431769674285294
+    - rid: 3998565426673222089
       type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -865,31 +861,31 @@ MonoBehaviour:
           key: Unity.Muse.Sprite.Operators.SessionOperator
           version: 0.0.1
           settings:
-          - ca8acf4e-4a3c-41ba-bd1a-9c3d9fd01a10
+          - fdf57f26-023f-42ef-8627-e5f7596706fe
           enabled: 0
           assembly: Unity.Muse.Sprite
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285295
+    - rid: 3998565426673222090
       type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
       data:
         mode: TextToSprite
-        Guid: d0da3997-6cb1-4779-8e36-e105854096b5
+        Guid: d098fc4f-27fc-4162-ac31-f578a5aac6f3
         BatchRequestIdentifier: 
-        Seed: 29967
+        Seed: 9198
         m_Operators:
-        - rid: 6901431769674285296
-        - rid: 6901431769674285297
-        - rid: 6901431769674285298
-        - rid: 6901431769674285299
-        - rid: 6901431769674285300
-        - rid: 6901431769674285301
+        - rid: 3998565426673222091
+        - rid: 3998565426673222092
+        - rid: 3998565426673222093
+        - rid: 3998565426673222094
+        - rid: 3998565426673222095
+        - rid: 3998565426673222096
         history:
-        - rid: 6901431769674285295
+        - rid: 3998565426673222090
         children: []
         m_UnsafeContent: 0
-    - rid: 6901431769674285296
+    - rid: 3998565426673222091
       type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_OperatorData:
@@ -898,13 +894,13 @@ MonoBehaviour:
           version: 1.0.0
           settings:
           - TextToSprite
-          - 6
+          - 4
           enabled: 1
           assembly: 
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285297
+    - rid: 3998565426673222092
       type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_OperatorData:
@@ -912,14 +908,14 @@ MonoBehaviour:
           key: PromptOperator
           version: 0.0.2
           settings:
-          - Fence
+          - Wood pillar
           - 
           enabled: 1
           assembly: 
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285298
+    - rid: 3998565426673222093
       type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -934,8 +930,8 @@ MonoBehaviour:
           - 512
           - 1
           - 1
-          - 29967
-          - d0da3997-6cb1-4779-8e36-e105854096b5
+          - 9198
+          - d098fc4f-27fc-4162-ac31-f578a5aac6f3
           - 0
           - 5cc104e0-423a-473e-8034-b9d346cb2357
           - 0
@@ -948,7 +944,7 @@ MonoBehaviour:
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285299
+    - rid: 3998565426673222094
       type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -967,10 +963,10 @@ MonoBehaviour:
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285300
+    - rid: 3998565426673222095
       type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data: 
-    - rid: 6901431769674285301
+    - rid: 3998565426673222096
       type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -978,31 +974,31 @@ MonoBehaviour:
           key: Unity.Muse.Sprite.Operators.SessionOperator
           version: 0.0.1
           settings:
-          - ca8acf4e-4a3c-41ba-bd1a-9c3d9fd01a10
+          - fdf57f26-023f-42ef-8627-e5f7596706fe
           enabled: 0
           assembly: Unity.Muse.Sprite
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285302
+    - rid: 3998565426673222097
       type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
       data:
         mode: TextToSprite
-        Guid: 18613ad1-8b39-4795-8d47-161fe3faa925
+        Guid: 13aee3fd-b692-46ca-9168-48edfe83c84c
         BatchRequestIdentifier: 
-        Seed: 15647
+        Seed: 50984
         m_Operators:
-        - rid: 6901431769674285303
-        - rid: 6901431769674285304
-        - rid: 6901431769674285305
-        - rid: 6901431769674285306
-        - rid: 6901431769674285307
-        - rid: 6901431769674285308
+        - rid: 3998565426673222098
+        - rid: 3998565426673222099
+        - rid: 3998565426673222100
+        - rid: 3998565426673222101
+        - rid: 3998565426673222102
+        - rid: 3998565426673222103
         history:
-        - rid: 6901431769674285302
+        - rid: 3998565426673222097
         children: []
-        m_UnsafeContent: 0
-    - rid: 6901431769674285303
+        m_UnsafeContent: 1
+    - rid: 3998565426673222098
       type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_OperatorData:
@@ -1011,13 +1007,13 @@ MonoBehaviour:
           version: 1.0.0
           settings:
           - TextToSprite
-          - 6
+          - 4
           enabled: 1
           assembly: 
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285304
+    - rid: 3998565426673222099
       type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_OperatorData:
@@ -1025,14 +1021,14 @@ MonoBehaviour:
           key: PromptOperator
           version: 0.0.2
           settings:
-          - Fence
+          - Wood pillar
           - 
           enabled: 1
           assembly: 
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285305
+    - rid: 3998565426673222100
       type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -1047,8 +1043,8 @@ MonoBehaviour:
           - 512
           - 1
           - 1
-          - 15647
-          - 18613ad1-8b39-4795-8d47-161fe3faa925
+          - 50984
+          - 13aee3fd-b692-46ca-9168-48edfe83c84c
           - 0
           - 5cc104e0-423a-473e-8034-b9d346cb2357
           - 0
@@ -1061,7 +1057,7 @@ MonoBehaviour:
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285306
+    - rid: 3998565426673222101
       type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -1080,10 +1076,10 @@ MonoBehaviour:
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285307
+    - rid: 3998565426673222102
       type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data: 
-    - rid: 6901431769674285308
+    - rid: 3998565426673222103
       type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -1091,31 +1087,31 @@ MonoBehaviour:
           key: Unity.Muse.Sprite.Operators.SessionOperator
           version: 0.0.1
           settings:
-          - ca8acf4e-4a3c-41ba-bd1a-9c3d9fd01a10
+          - fdf57f26-023f-42ef-8627-e5f7596706fe
           enabled: 0
           assembly: Unity.Muse.Sprite
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285309
+    - rid: 3998565426673222104
       type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
       data:
         mode: TextToSprite
-        Guid: 4115b215-3f1a-476b-aca3-1f5a2238a1bb
+        Guid: e56ce9b9-6448-42f5-ac8e-3e5257d3f779
         BatchRequestIdentifier: 
-        Seed: 41256
+        Seed: 50705
         m_Operators:
-        - rid: 6901431769674285310
-        - rid: 6901431769674285311
-        - rid: 6901431769674285312
-        - rid: 6901431769674285313
-        - rid: 6901431769674285314
-        - rid: 6901431769674285315
+        - rid: 3998565426673222105
+        - rid: 3998565426673222106
+        - rid: 3998565426673222107
+        - rid: 3998565426673222108
+        - rid: 3998565426673222109
+        - rid: 3998565426673222110
         history:
-        - rid: 6901431769674285309
+        - rid: 3998565426673222104
         children: []
         m_UnsafeContent: 0
-    - rid: 6901431769674285310
+    - rid: 3998565426673222105
       type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_OperatorData:
@@ -1124,13 +1120,13 @@ MonoBehaviour:
           version: 1.0.0
           settings:
           - TextToSprite
-          - 6
+          - 4
           enabled: 1
           assembly: 
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285311
+    - rid: 3998565426673222106
       type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_OperatorData:
@@ -1138,14 +1134,14 @@ MonoBehaviour:
           key: PromptOperator
           version: 0.0.2
           settings:
-          - Fence
+          - Wood pillar
           - 
           enabled: 1
           assembly: 
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285312
+    - rid: 3998565426673222107
       type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -1160,8 +1156,8 @@ MonoBehaviour:
           - 512
           - 1
           - 1
-          - 41256
-          - 4115b215-3f1a-476b-aca3-1f5a2238a1bb
+          - 50705
+          - e56ce9b9-6448-42f5-ac8e-3e5257d3f779
           - 0
           - 5cc104e0-423a-473e-8034-b9d346cb2357
           - 0
@@ -1174,7 +1170,7 @@ MonoBehaviour:
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285313
+    - rid: 3998565426673222108
       type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -1193,10 +1189,10 @@ MonoBehaviour:
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285314
+    - rid: 3998565426673222109
       type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data: 
-    - rid: 6901431769674285315
+    - rid: 3998565426673222110
       type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -1204,31 +1200,31 @@ MonoBehaviour:
           key: Unity.Muse.Sprite.Operators.SessionOperator
           version: 0.0.1
           settings:
-          - ca8acf4e-4a3c-41ba-bd1a-9c3d9fd01a10
+          - fdf57f26-023f-42ef-8627-e5f7596706fe
           enabled: 0
           assembly: Unity.Muse.Sprite
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285316
+    - rid: 3998565426673222111
       type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
       data:
         mode: TextToSprite
-        Guid: 33d5326d-8c04-4779-b045-9cc368ef2f29
+        Guid: 503e5719-39d8-4ad0-996d-f4c7c54a9cf7
         BatchRequestIdentifier: 
-        Seed: 32556
+        Seed: 32808
         m_Operators:
-        - rid: 6901431769674285317
-        - rid: 6901431769674285318
-        - rid: 6901431769674285319
-        - rid: 6901431769674285320
-        - rid: 6901431769674285321
-        - rid: 6901431769674285322
+        - rid: 3998565426673222112
+        - rid: 3998565426673222113
+        - rid: 3998565426673222114
+        - rid: 3998565426673222115
+        - rid: 3998565426673222116
+        - rid: 3998565426673222117
         history:
-        - rid: 6901431769674285316
+        - rid: 3998565426673222111
         children: []
-        m_UnsafeContent: 0
-    - rid: 6901431769674285317
+        m_UnsafeContent: 1
+    - rid: 3998565426673222112
       type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_OperatorData:
@@ -1237,13 +1233,13 @@ MonoBehaviour:
           version: 1.0.0
           settings:
           - TextToSprite
-          - 6
+          - 4
           enabled: 1
           assembly: 
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285318
+    - rid: 3998565426673222113
       type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_OperatorData:
@@ -1251,14 +1247,14 @@ MonoBehaviour:
           key: PromptOperator
           version: 0.0.2
           settings:
-          - Fence
+          - Wood pillar
           - 
           enabled: 1
           assembly: 
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285319
+    - rid: 3998565426673222114
       type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -1273,8 +1269,8 @@ MonoBehaviour:
           - 512
           - 1
           - 1
-          - 32556
-          - 33d5326d-8c04-4779-b045-9cc368ef2f29
+          - 32808
+          - 503e5719-39d8-4ad0-996d-f4c7c54a9cf7
           - 0
           - 5cc104e0-423a-473e-8034-b9d346cb2357
           - 0
@@ -1287,7 +1283,7 @@ MonoBehaviour:
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285320
+    - rid: 3998565426673222115
       type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -1306,10 +1302,10 @@ MonoBehaviour:
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285321
+    - rid: 3998565426673222116
       type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data: 
-    - rid: 6901431769674285322
+    - rid: 3998565426673222117
       type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -1317,31 +1313,31 @@ MonoBehaviour:
           key: Unity.Muse.Sprite.Operators.SessionOperator
           version: 0.0.1
           settings:
-          - ca8acf4e-4a3c-41ba-bd1a-9c3d9fd01a10
+          - fdf57f26-023f-42ef-8627-e5f7596706fe
           enabled: 0
           assembly: Unity.Muse.Sprite
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285323
+    - rid: 3998565426673222118
       type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
       data:
         mode: TextToSprite
-        Guid: cce1c46c-4128-493c-b55b-ebe2b1ba7ce3
+        Guid: 405c4c9d-3826-4993-a294-bef6c5b47388
         BatchRequestIdentifier: 
-        Seed: 41111
+        Seed: 54602
         m_Operators:
-        - rid: 6901431769674285324
-        - rid: 6901431769674285325
-        - rid: 6901431769674285326
-        - rid: 6901431769674285327
-        - rid: 6901431769674285328
-        - rid: 6901431769674285329
+        - rid: 3998565426673222119
+        - rid: 3998565426673222120
+        - rid: 3998565426673222121
+        - rid: 3998565426673222122
+        - rid: 3998565426673222123
+        - rid: 3998565426673222124
         history:
-        - rid: 6901431769674285323
+        - rid: 3998565426673222118
         children: []
         m_UnsafeContent: 0
-    - rid: 6901431769674285324
+    - rid: 3998565426673222119
       type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_OperatorData:
@@ -1350,13 +1346,13 @@ MonoBehaviour:
           version: 1.0.0
           settings:
           - TextToSprite
-          - 6
+          - 4
           enabled: 1
           assembly: 
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285325
+    - rid: 3998565426673222120
       type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_OperatorData:
@@ -1364,14 +1360,14 @@ MonoBehaviour:
           key: PromptOperator
           version: 0.0.2
           settings:
-          - Fence
+          - Wood pillar
           - 
           enabled: 1
           assembly: 
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285326
+    - rid: 3998565426673222121
       type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -1386,8 +1382,8 @@ MonoBehaviour:
           - 512
           - 1
           - 1
-          - 41111
-          - cce1c46c-4128-493c-b55b-ebe2b1ba7ce3
+          - 54602
+          - 405c4c9d-3826-4993-a294-bef6c5b47388
           - 0
           - 5cc104e0-423a-473e-8034-b9d346cb2357
           - 0
@@ -1400,7 +1396,7 @@ MonoBehaviour:
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285327
+    - rid: 3998565426673222122
       type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -1419,10 +1415,10 @@ MonoBehaviour:
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285328
+    - rid: 3998565426673222123
       type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data: 
-    - rid: 6901431769674285329
+    - rid: 3998565426673222124
       type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -1430,31 +1426,31 @@ MonoBehaviour:
           key: Unity.Muse.Sprite.Operators.SessionOperator
           version: 0.0.1
           settings:
-          - ca8acf4e-4a3c-41ba-bd1a-9c3d9fd01a10
+          - fdf57f26-023f-42ef-8627-e5f7596706fe
           enabled: 0
           assembly: Unity.Muse.Sprite
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285330
+    - rid: 3998565426673222125
       type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
       data:
         mode: TextToSprite
-        Guid: 8ffda6dd-ba84-418a-945a-1d458241130a
+        Guid: bfe374a7-f31c-42b6-b5b4-dfee01470d40
         BatchRequestIdentifier: 
-        Seed: 54773
+        Seed: 10731
         m_Operators:
-        - rid: 6901431769674285331
-        - rid: 6901431769674285332
-        - rid: 6901431769674285333
-        - rid: 6901431769674285334
-        - rid: 6901431769674285335
-        - rid: 6901431769674285336
+        - rid: 3998565426673222126
+        - rid: 3998565426673222127
+        - rid: 3998565426673222128
+        - rid: 3998565426673222129
+        - rid: 3998565426673222130
+        - rid: 3998565426673222131
         history:
-        - rid: 6901431769674285330
+        - rid: 3998565426673222125
         children: []
-        m_UnsafeContent: 0
-    - rid: 6901431769674285331
+        m_UnsafeContent: 1
+    - rid: 3998565426673222126
       type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_OperatorData:
@@ -1463,13 +1459,13 @@ MonoBehaviour:
           version: 1.0.0
           settings:
           - TextToSprite
-          - 6
+          - 4
           enabled: 1
           assembly: 
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285332
+    - rid: 3998565426673222127
       type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_OperatorData:
@@ -1477,14 +1473,14 @@ MonoBehaviour:
           key: PromptOperator
           version: 0.0.2
           settings:
-          - Fence
+          - Wood pillar
           - 
           enabled: 1
           assembly: 
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285333
+    - rid: 3998565426673222128
       type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -1499,8 +1495,8 @@ MonoBehaviour:
           - 512
           - 1
           - 1
-          - 54773
-          - 8ffda6dd-ba84-418a-945a-1d458241130a
+          - 10731
+          - bfe374a7-f31c-42b6-b5b4-dfee01470d40
           - 0
           - 5cc104e0-423a-473e-8034-b9d346cb2357
           - 0
@@ -1513,7 +1509,7 @@ MonoBehaviour:
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285334
+    - rid: 3998565426673222129
       type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -1532,10 +1528,10 @@ MonoBehaviour:
           hideable: 0
           hidden: 0
           isRefinement: 0
-    - rid: 6901431769674285335
+    - rid: 3998565426673222130
       type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data: 
-    - rid: 6901431769674285336
+    - rid: 3998565426673222131
       type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -1543,7 +1539,7 @@ MonoBehaviour:
           key: Unity.Muse.Sprite.Operators.SessionOperator
           version: 0.0.1
           settings:
-          - ca8acf4e-4a3c-41ba-bd1a-9c3d9fd01a10
+          - fdf57f26-023f-42ef-8627-e5f7596706fe
           enabled: 0
           assembly: Unity.Muse.Sprite
           hideable: 0
