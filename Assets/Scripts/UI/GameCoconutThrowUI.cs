@@ -1,10 +1,11 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GameCoconutThrowUI : MonoBehaviour
 {
 
-    [SerializeField] private Text coconutThrowInstructions;
+    [SerializeField] private TextMeshProUGUI coconutThrowInstructions;
     [SerializeField] private Text powerText;
 
     private float power = 0f;
@@ -48,12 +49,12 @@ public class GameCoconutThrowUI : MonoBehaviour
 
     public void Show()
     {
-        gameObject.SetActive(true);
+        coconutThrowInstructions.gameObject.SetActive(true);
     }
 
     public void Hide()
     {
-        gameObject.SetActive(false);
+        coconutThrowInstructions.gameObject.SetActive(false);
     }
 
 
