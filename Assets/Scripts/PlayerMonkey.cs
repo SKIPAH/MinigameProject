@@ -302,7 +302,7 @@ public class PlayerMonkey : MonoBehaviour
             OnCoconutThrown?.Invoke(this, EventArgs.Empty);
             isCoconutThrown = true;
 
-            FunctionTimer.Create(() => ChangeTo2DModeFromThrowMode(), 5f);
+            FunctionTimer.Create(() => ChangeTo2DModeFromThrowMode(), 8f);
             FunctionTimer.Create(() => isCoconutThrown = false, 6f);
         }
     }
