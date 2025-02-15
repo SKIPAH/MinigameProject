@@ -12,6 +12,8 @@ public class PlayerMonkey : MonoBehaviour
     public event EventHandler OnCoconutThrowModeOn;
     public event EventHandler OnCoconutCutten;
     public event EventHandler OnPowerIncreased;
+    public event EventHandler OnCoconutHitGeorge;
+    public event EventHandler OnCoconutDidNotHitGeorge;
 
     [SerializeField] private float movementSpeed = 8f;
     [SerializeField] private float jumpingPower = 16f;
@@ -30,7 +32,7 @@ public class PlayerMonkey : MonoBehaviour
     private Rigidbody2D monkeyRB2D;
     private BoxCollider2D monkeyBoxCollider2D;
     [SerializeField] private BoxCollider2D monkeyTriggerBoxCollider2D;
-    private Quaternion currentRotation;
+    private Quaternion defaultRotation;
     
 
     [Header("CoconutModeStuff")]
@@ -44,11 +46,13 @@ public class PlayerMonkey : MonoBehaviour
     [SerializeField] private Transform coconutHolder;
     [SerializeField] private GameObject coconutThrowable;
     [SerializeField] private Rigidbody2D coconutThrowableRB2D;
+    [SerializeField] private CoconutPickable coconutPickable;
     [SerializeField] private float throwingAngle = 0f;
     [SerializeField] private float throwingForce = 50f;
     private float throwingPower = 0f;
-    private bool isCoconutThrown;
+    private bool isCoconutThrown = false;
     private bool isPlatformActive = true;
+    private bool isCoconutFarEnough = false;
 
     public enum MonkeyState
     {
@@ -72,7 +76,7 @@ public class PlayerMonkey : MonoBehaviour
     private void Start()
     {
         isCoconutThrown = false;
-        currentRotation = gameObject.transform.rotation;
+        defaultRotation = gameObject.transform.rotation;
         currentState = MonkeyState.Mode2d;   
         monkeyRB2D = GetComponent<Rigidbody2D>();    
         monkeyBoxCollider2D = GetComponent<BoxCollider2D>();
@@ -91,6 +95,15 @@ public class PlayerMonkey : MonoBehaviour
         StateMachine();
         MonkeyInteract();
         Debug.Log(currentState);
+
+        if(Input.GetKeyDown(KeyCode.J))
+        {
+            isFacingRight = !isFacingRight;
+            Vector3 localScale = transform.localScale;
+            localScale.x *= -1f;
+            transform.localScale = localScale;
+            Debug.Log("Pressed J");
+        }
     }
     private void FixedUpdate()
     {
@@ -193,6 +206,7 @@ public class PlayerMonkey : MonoBehaviour
         {
             isDoubleJumpUsed = false;
             monkeyRB2D.linearVelocity = new Vector2(monkeyRB2D.linearVelocity.x, jumpingPower);
+         
         }
         if (Input.GetButtonUp("Jump") && monkeyRB2D.linearVelocity.y > 0f)
         {
@@ -203,7 +217,8 @@ public class PlayerMonkey : MonoBehaviour
             isDoubleJumpUsed = true;
             monkeyRB2D.linearVelocity = new Vector2(monkeyRB2D.linearVelocity.x, jumpingPower * 1.2f);
             StartCoroutine(Rotate());
-           
+          
+
         }
     }
     IEnumerator Rotate()
@@ -296,17 +311,23 @@ public class PlayerMonkey : MonoBehaviour
             throwingPower += 0.1f;
             OnPowerIncreased?.Invoke(this, EventArgs.Empty);
         }
-        if (Input.GetKeyDown(KeyCode.S))
+
+        if (!isCoconutThrown && Input.GetKeyDown(KeyCode.S))
         {
             ThrowCoconut();
             OnCoconutThrown?.Invoke(this, EventArgs.Empty);
             isCoconutThrown = true;
 
-            FunctionTimer.Create(() => ChangeTo2DModeFromThrowMode(), 8f);
-            FunctionTimer.Create(() => isCoconutThrown = false, 6f);
+            FunctionTimer.Create(() => ChangeTo2DModeFromThrowMode(), 10f);
         }
     }
 
+   
+    public void CoconutHitGeorge()
+    {
+        isCoconutFarEnough = true;
+        OnCoconutHitGeorge?.Invoke(this, EventArgs.Empty);
+    }
 
 
     private void ThrowCoconut()
@@ -323,16 +344,26 @@ public class PlayerMonkey : MonoBehaviour
 
     public void CoconutGameModeOn()
     {
+        isFlipping = false;
+        ResetMonkeyRotation();
         currentState = MonkeyState.ModeCoconutCut;
     }
     public void CoconutThrowGameModeOn()
     {
         if (isPlatformActive)
         {
+            if (!isFacingRight)
+            {
+                isFacingRight = !isFacingRight;
+                Vector3 localScale = transform.localScale;
+                localScale.x *= -1f;
+                transform.localScale = localScale;
+            }
             currentState = MonkeyState.ModeCoconutThrow;
             movementSpeed = 0;
             CameraManager.Instance.ChangeCameraToFollowCoconut();
             isPlatformActive = false;
+          
         }
         
     }
@@ -348,8 +379,18 @@ public class PlayerMonkey : MonoBehaviour
         CameraManager.Instance.ChangeCameraToFollowMonkey();
         monkeyRB2D.isKinematic = false;
         movementSpeed = 8f;
-        currentState = MonkeyState.Mode2d;    
-        coconutThrowable.SetActive(false);
+        currentState = MonkeyState.Mode2d;
+        if (isCoconutFarEnough)
+        {
+            Debug.Log("Game Done");
+            OnCoconutHitGeorge?.Invoke(this, EventArgs.Empty);
+        }
+        if(!isCoconutFarEnough)
+        {
+            Debug.Log("Try Again");
+            OnCoconutDidNotHitGeorge?.Invoke(this, EventArgs.Empty);
+        }
+
     }
 
 
@@ -369,7 +410,9 @@ public class PlayerMonkey : MonoBehaviour
     {
         OnCoconutGameDone?.Invoke(this, EventArgs.Empty);
         currentState = MonkeyState.Mode2d;
-        return;
+        FunctionTimer.Create(() => isFlipping = false, 2f);
+        FunctionTimer.Create(() => ResetMonkeyRotation(), 2f);
+
     }
 
 
@@ -388,6 +431,8 @@ public class PlayerMonkey : MonoBehaviour
 
     public void ResetMonkeyRotation()
     {
-        gameObject.transform.rotation = currentRotation;
+        gameObject.transform.rotation = defaultRotation;
+
+
     }
 }

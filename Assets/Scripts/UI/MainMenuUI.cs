@@ -48,4 +48,14 @@ public class MainMenuUI : MonoBehaviour
     {
         instructionsUI.SetActive(false);
     }
+
+
+    public void PlayAgain()
+    {
+        SceneManager.LoadScene("MiniGame1");
+    }
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
