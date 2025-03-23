@@ -52,6 +52,10 @@ public class CameraManager : MonoBehaviour
         cinemachineGameObject.SetActive(false);
         mainCamera.orthographicSize = 10.0f;
     }
+    public void ChangeCameraProjectionSizeCoconutCutGame()
+    {
+        mainCamera.orthographicSize = 14.0f;
+    }
     public void ChangeCameraProjectionSizeLionGame()
     {
         cinemachineGameObject.SetActive(false);

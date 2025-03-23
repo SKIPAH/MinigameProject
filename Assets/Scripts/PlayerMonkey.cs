@@ -303,17 +303,15 @@ public class PlayerMonkey : MonoBehaviour
 
     private void MovementModeCoconutThrow()
     {
-
         monkeyRB2D.isKinematic = true;
-
         if (Input.GetKeyDown(KeyCode.A) || (Input.GetKeyDown(KeyCode.D)))
         {
             throwingPower += 0.1f;
             OnPowerIncreased?.Invoke(this, EventArgs.Empty);
         }
-
-        if (!isCoconutThrown && Input.GetKeyDown(KeyCode.S))
+        if (!isCoconutThrown && throwingPower >= 12.0f)
         {
+            Debug.Log("THROWING FORCE IS 12");
             ThrowCoconut();
             OnCoconutThrown?.Invoke(this, EventArgs.Empty);
             isCoconutThrown = true;
